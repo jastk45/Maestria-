@@ -1,0 +1,5 @@
+3ddd483 Actualizar git_history.txt con el historial final
+175445a Simplificar pipeline sin alterar resultados ni salidas verificadas
+69a8405 Anadir resultado analizado en Parquet requerido para la entrega
+9772b97 Implementar pipeline completo: ServerMeasurements, z-score ponderado, revision, resumen y round trip Parquet
+aecfaa5 Configurar entorno reproducible con uv y fijar dependencias en uv.lock

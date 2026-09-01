@@ -1,0 +1,23 @@
+[project]
+name = "week1-exercise"
+version = "0.1.0"
+description = "Ejercicio de refuerzo - Semana 1"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "pyarrow>=17.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+week1-exercise = "week1_exercise.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/week1_exercise"]
