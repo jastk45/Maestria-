@@ -1,0 +1,8 @@
+1f3ab11 Agrega el historial de commits y excluye el zip de entrega del control de versiones
+7f9c65e Corrige el conteo de palabras del informe ejecutivo
+7e1d72d Reorganiza el informe ejecutivo en bloques de diseno, efecto, procedimiento y limites
+d272aac Resume las respuestas del informe a formato breve
+9de7bec Acorta las respuestas del informe y registra el nombre del estudiante
+27d572b Responde el informe con el contrato previo y los resultados numericos del pipeline
+61a673c Implementa carga validada, tabla pareada, prueba t, sign-flip exacto, bootstrap y figura
+be8f530 Inicializa el proyecto de la semana 2 con datos, pruebas publicas y estructura del paquete

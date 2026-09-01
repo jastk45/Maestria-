@@ -1,0 +1,33 @@
+[project]
+name = "week2-exercise"
+version = "0.1.0"
+description = "Ejercicio de refuerzo - Semana 2"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+    "matplotlib>=3.9,<4",
+    "numpy>=2.0,<3",
+    "pandas>=2.2,<4",
+    "scipy>=1.14,<2",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.30,<8",
+    "nbclient>=0.10,<0.12",
+    "nbformat>=5.10,<6",
+    "pytest>=8.0,<10",
+]
+
+[project.scripts]
+week2-exercise = "week2_exercise.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/week2_exercise"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
