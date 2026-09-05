@@ -1,0 +1,14 @@
+{
+  "status": "pass_technical_only",
+  "verified_at_utc": "2026-09-05T15:58:26.314107+00:00",
+  "notebook": "Hackathon_3_Starter.ipynb",
+  "source_sha256": "0be2a83d9e9e9255158a26f72337063e313d1965fedcbd11437428cd1b0a583b",
+  "python": "3.13.5",
+  "python_executable": "c:\\Users\\Jastk\\OneDrive\\Escritorio\\Maestria\\Programación Avanzada\\control de lectura 3\\hackathon3_student\\.venv\\Scripts\\python.exe",
+  "human_review": "Las predicciones y reflexiones requieren revisión docente.",
+  "outputs_sha256": {
+    "traza_entrenamiento.csv": "5ecc1356ee317d9b62b09e69d5fb6423ef32f4dbcefd3e9a8111befd00cae4df",
+    "tabla_and.csv": "0df74670881cf327314a6ee38c383e068587589b5ff84d3820f561e56f479135",
+    "entrenamiento_and.png": "c08a9ecd4b4d6b3d4556b082b4d991b10828f2151aec932d6aa36cc10a049893"
+  }
+}

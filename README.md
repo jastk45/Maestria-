@@ -18,6 +18,12 @@ Trabajos y ejercicios de la maestría, organizados por materia y semana.
 | Control de lectura 2 | `semana2/Control_Lectura_2.ipynb` |
 | Hackathon 2 — PCA sobre penguins | `semana2/hackathon2/` |
 
+### Semana 3
+| Trabajo | Carpeta |
+|---|---|
+| Control de lectura 3 | `semana3/control_lectura_3/` |
+| Hackathon 3 — una neurona aprende AND | `semana3/hackathon3/` |
+
 ## Ejecutar un ejercicio
 
 Desde la carpeta del trabajo correspondiente:
