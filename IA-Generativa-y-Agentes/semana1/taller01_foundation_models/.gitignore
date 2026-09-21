@@ -17,3 +17,10 @@ wheels/
 # Salidas del taller (el CSV crudo SÍ se versiona, las figuras no)
 figuras/
 .jupyter_runtime/
+
+# LaTeX: artefactos de compilación (el PDF final vive en la raíz)
+informe-latex/*.aux
+informe-latex/*.log
+informe-latex/*.out
+informe-latex/informe.pdf
+.jupyter_runtime/
