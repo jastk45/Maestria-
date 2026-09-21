@@ -49,7 +49,7 @@ for modelo, params in DECLARADO.items():
                               observado="rechazado",
                               evidencia=f"{len(err)}/{len(g)} llamadas con error",
                               fecha=FECHA,
-                              error_literal=f"{err.error_codigo.iloc[0]}: {err.error_mensaje.iloc[0][:220]}"))
+                              error_literal=f"{err.error_codigo.iloc[0]}: {err.error_mensaje.iloc[0]}"))
             continue
         valores = sorted(g[param].unique())
         disp = {v: dispersion(g[g[param] == v]) for v in valores}

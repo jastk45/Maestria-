@@ -61,13 +61,15 @@ def parte2a():
     return matriz
 
 
-def parte2b():
-    print("\n=== PARTE 2.b (reducida: 3 corridas) ===")
+def parte2b(corridas=range(5)):
+    """Rejilla completa: 15 celdas x 5 corridas x 10 casos = 750 llamadas.
+    'corridas' permite completar solo las que falten (p. ej. range(3, 5))."""
+    print(f"\n=== PARTE 2.b (corridas {list(corridas)}) ===")
     for T in (0.0, 0.3, 0.7, 1.0, 1.5):
         for tp in (0.5, 0.9, 1.0):
             tareas = [{"caso": c, "modelo": ECONOMICO, "temperature": T,
                        "top_p": tp, "corrida": i}
-                      for c in LIMPIOS for i in range(3)]
+                      for c in LIMPIOS for i in corridas]
             filas = en_paralelo(tareas)
             anotar(filas, "2b")
             print(f"  T={T:<4} top_p={tp:<4} exactitud={resumen(filas):.0%} "
@@ -117,6 +119,7 @@ def parte4b():
 if __name__ == "__main__":
     cuales = sys.argv[1:] or ["1", "2a", "3", "4a", "4b", "2b"]
     fns = {"1": parte1, "2a": parte2a, "2b": parte2b,
+           "2b-completar": lambda: parte2b(range(3, 5)),   # corridas 3 y 4 que faltaban
            "3": parte3, "4a": parte4a, "4b": parte4b}
     for c in cuales:
         fns[c]()

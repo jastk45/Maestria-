@@ -58,11 +58,14 @@ Cada ejecución **añade** filas a `datos/resultados.csv`; no borra las anterior
 | `openai_razonamiento` | `gpt-5.6-luna` | 0,20 | 1,20 | 2026-09-18 |
 | `open_weight_pequeno` | `qwen3:1.7b` (Ollama) | 0 | 0 | — |
 
-## Desviaciones declaradas
+## Notas de medición
 
-- La rejilla de 2.b se corrió con 3 corridas por celda en vez de 5.
-- Las sondas de 2.a en OpenAI y qwen3 fueron con 4 peticiones en paralelo; el
-  barrido de `top_k`, en secuencia.
+- Las sondas de 2.a y la rejilla de 2.b (750 llamadas) se mandaron con 4
+  peticiones en paralelo; el barrido de `top_k` en local, en secuencia.
+- Los tokens de razonamiento de qwen3 se miden en tokens: `eval_count` de
+  Ollama menos los tokens de la respuesta visible (tokenizador de Qwen3).
+- `ollama pull qwen3:1.7b` y la descarga de GPT-2 (~550 MB) y del tokenizador
+  de Qwen3 necesitan red la primera vez.
 
 ## Credenciales
 

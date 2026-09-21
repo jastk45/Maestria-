@@ -7,6 +7,7 @@ celdas markdown de taller-01-informe.ipynb (no se reescriben).
 import io
 import re
 import shutil
+import textwrap
 from pathlib import Path
 
 import nbformat
@@ -18,8 +19,11 @@ PLANTILLA = RAIZ.parent / "temples" / "Article_Review_pdf"
 (OUT / "figuras").mkdir(parents=True, exist_ok=True)
 (OUT / "tablas").mkdir(exist_ok=True)
 
+# llncs.cls y splncs04.bst ya viven en informe-latex/ (versionados). Solo se
+# copian desde la plantilla externa si faltan y esa carpeta existe.
 for f in ("llncs.cls", "splncs04.bst"):
-    shutil.copy(PLANTILLA / f, OUT / f)
+    if not (OUT / f).exists() and (PLANTILLA / f).exists():
+        shutil.copy(PLANTILLA / f, OUT / f)
 for p in (RAIZ / "figuras").glob("*.png"):
     shutil.copy(p, OUT / "figuras" / p.name)
 
@@ -138,15 +142,17 @@ d2a.columns = ["modelo", "parámetro", "declarado (tabla)", "observado", "eviden
 T2A = tabla("p2a", d2a, "Parte 2.a: matriz de exposición, declarado frente a observado (2026-09-20). "
             "Evidencia: porcentaje de casos cuyas corridas difieren con cada valor; o número de llamadas con error.",
             "tab:p2a", colfmt="@{}lllp{2.0cm}p{3.3cm}@{}")
+# mensajes de error COMPLETOS, uno por celda rechazada, tal como los devolvio el SDK
 err = pd.read_csv(D / "tabla_parte2a.csv")
-err = err[err.error_literal.notna()][["modelo", "parametro", "error_literal"]]
-err["error_literal"] = err.error_literal.str.slice(0, 160)
-err.columns = ["modelo", "parámetro", "mensaje literal (truncado a 160 caracteres)"]
-T2AE = tabla("p2ae", err, "Parte 2.a: mensajes de error transcritos de las celdas rechazadas.", "tab:p2ae", colfmt="llp{7.5cm}")
+err = err[err.error_literal.notna()]
+T2AE = "Mensajes literales completos de las celdas rechazadas:\n"
+for _, r in err.iterrows():
+    T2AE += ("\\smallskip\\noindent\\texttt{" + tex_escape(r.modelo) + "} / \\texttt{" + tex_escape(r.parametro)
+             + "}:\n\\begin{verbatim}\n" + "\n".join(textwrap.wrap(str(r.error_literal), 66)) + "\n\\end{verbatim}\n")
 
 d2b = pd.read_csv(D / "tabla_parte2b.csv")
 d2b.columns = ["T", "top_p", "exactitud", "tokens out (media)", "estabilidad"]
-T2B = tabla("p2b", d2b, "Parte 2.b: rejilla temperature $\\times$ top\\_p sobre gpt-4o-mini, 3 corridas $\\times$ 10 casos por celda.", "tab:p2b")
+T2B = tabla("p2b", d2b, "Parte 2.b: rejilla temperature $\\times$ top\\_p sobre gpt-4o-mini, 5 corridas $\\times$ 10 casos por celda (750 llamadas).", "tab:p2b")
 dk = pd.read_csv(D / "tabla_parte2b_topk.csv")[["top_k", "exactitud", "tokens_out", "estabilidad_salida", "casos_identicos_x5"]]
 dk.columns = ["top_k", "exactitud", "tokens out (media)", "estabilidad", "casos idénticos x5"]
 TK = tabla("p2bk", dk, "Parte 2.b: barrido de top\\_k en local (qwen3:1.7b, T=1, 5 corridas secuenciales $\\times$ 10 casos).", "tab:p2bk")
@@ -174,13 +180,41 @@ def verb(s, n=420):
     return "\n".join(textwrap.fill(l, 58) if l.strip() else "" for l in s.splitlines())
 
 
-salida_0c = verb(p0.loc["zero_shot", "salida"])
-salida_deg = verb(p0.loc["0b_degeneracion", "salida"])
-salida_int = verb(p0.loc["0b_interruptor", "salida"], 160)
+salida_0c = verb(p0.loc["zero_shot", "salida"], 100000)          # completa, sin recortar
+salida_deg = verb(p0.loc["0b_degeneracion", "salida"], 100000)
+salida_int = verb(p0.loc["0b_interruptor", "salida"], 100000)
+
+# las cinco corridas de top_k=1 con sus IDs, desde parte0_generaciones.jsonl
+import json
+gens = [json.loads(l) for l in open(D / "parte0_generaciones.jsonl", encoding="utf-8") if l.strip()]
+k1g = [g for g in gens if g.get("plantilla") == "0b_top_k_1"][:5]      # primera ejecucion, 5 semillas
+greedy = next(g for g in gens if g.get("plantilla") == "0b_interruptor")
+filas_k1 = []
+for g in k1g:
+    ids = g["ids_salida"]
+    filas_k1.append({"corrida": g["corrida"], "semilla": g["semilla"],
+                     "primeros 10 IDs": " ".join(str(x) for x in ids[:10]) + " ...",
+                     "tokens": len(ids),
+                     "soporte/paso": ",".join(str(s) for s in sorted(set(g["soportes_por_paso"]))),
+                     "= greedy": "sí" if ids == greedy["ids_salida"] else "no"})
+TK1 = tabla("p0k1", pd.DataFrame(filas_k1),
+            "Parte 0.b: cinco corridas con \\texttt{do\\_sample=True} y \\texttt{top\\_k=1}. "
+            "IDs completos en \\texttt{datos/parte0\\_generaciones.jsonl}; soporte/paso = tokens con probabilidad no nula tras el filtro.",
+            "tab:p0k1", colfmt="@{}llp{4.6cm}lll@{}")
 k1 = df[(df.parte == "0") & (df.plantilla == "0b_top_k_1")]
 topk1_txt = (f"Con \\texttt{{do\\_sample=True}} y \\texttt{{top\\_k=1}}, las {len(k1)} corridas registradas en el CSV "
              f"({len(k1) // 5} ejecuciones del notebook con 5 semillas cada una) produjeron "
-             f"{k1.salida.nunique()} salida distinta: idéntica a la de greedy.")
+             f"{k1.salida.nunique()} salida distinta: idéntica a la de greedy (Tabla~\\ref{{tab:p0k1}}).")
+
+# respuestas COMPLETAS de las cuatro variantes de la Parte 3, sobre el mismo caso
+p3 = df[df.parte == "3"]
+caso_p3 = "c01"
+VARIANTES = ""
+for v in ("zero_shot", "few_shot", "cot", "structured"):
+    r = p3[(p3.plantilla == v) & (p3.caso_id == caso_p3)].iloc[0]
+    VARIANTES += ("\n\n\\smallskip\\noindent\\textbf{" + tex_escape(v) + "} (caso " + caso_p3 + ", esperado "
+                  + str(int(r.esperada)) + ", extraído " + tex_escape(str(r.respuesta_extraida)) + ", acierto "
+                  + ("sí" if r.acierto else "no") + "):\n\\begin{verbatim}\n" + verb(r.salida, 100000) + "\n\\end{verbatim}\n")
 
 
 def fig(archivo, caption, label, width="\\textwidth", extra=""):
@@ -231,7 +265,7 @@ Salida con \texttt{do\_sample=False} (idéntica para $T=0.2$ y $T=1.5$):
 \begin{verbatim}
 """ + salida_int + r"""
 \end{verbatim}
-""" + topk1_txt + r"""
+""" + topk1_txt + TK1 + r"""
 
 Degeneración con 100 tokens en modo greedy (Holtzman et al.~\cite{holtzman2020}), salida sin editar:
 \begin{verbatim}
@@ -253,20 +287,22 @@ Precios de la tabla semestral, cada uno con la fecha de verificación de su prop
 
 \section{Parte 2 --- Decodificación}
 \subsection{Matriz de exposición}
-Cada parámetro se mandó con dos valores extremos, 3 casos $\times$ 2 corridas. El estado se decide por la dispersión entre corridas de la tupla (salida, tokens de salida), no por la respuesta final (Tabla~\ref{tab:p2a}); los mensajes de error se transcriben en la Tabla~\ref{tab:p2ae}.
+Cada parámetro se mandó con dos valores extremos, 3 casos $\times$ 2 corridas. El estado se decide por la dispersión entre corridas de la tupla (salida, tokens de salida), no por la respuesta final (Tabla~\ref{tab:p2a}); los mensajes de error se transcriben completos a continuación de la tabla.
 """ + T2A + T2AE + t2a + r"""
 
 \subsection{Barrido de temperature y top-p}
-Estimación previa con el supuesto del enunciado (1\,000 tokens de entrada y 600 de salida por llamada) al precio de gpt-4o-mini verificado el 2026-08-26: 750 llamadas $\approx$ 0.38\,USD. Se corrieron 450 (3 corridas por celda); costo real 0.03\,USD.
+Estimación previa con el supuesto del enunciado (1\,000 tokens de entrada y 600 de salida por llamada) al precio de gpt-4o-mini verificado el 2026-08-26: 750 llamadas $\approx$ 0.38\,USD. Se corrieron las 750 (15 celdas $\times$ 5 corridas $\times$ 10 casos); costo real """ + f"{df[(df.parte == '2b') & df.top_k.isna()].costo_usd.sum():.3f}" + r"""\,USD, porque la salida media fue de 1--2 tokens y no de 600.
 """ + T2B + fig("parte2b_rejilla.png", "Exactitud por celda de la rejilla (gpt-4o-mini).", "fig:p2b", "0.6\\textwidth") + TK + t2b + r"""
 
 \section{Parte 3 --- Prompting estructurado}
 Las cuatro plantillas están en \texttt{src/prompts.py}. Los ejemplos del few-shot son problemas inventados, no los diez casos. La variante estructurada usa el modo JSON del proveedor (\texttt{response\_format} con tipo \texttt{json\_object}), sin esquema estricto.
-""" + T3 + t3 + r"""
+""" + T3 + r"""
+Respuestas completas de cada variante sobre el mismo caso (las diez por variante están en el CSV, columna \texttt{salida}):
+""" + VARIANTES + t3 + r"""
 
 \section{Parte 4 --- Modelos de razonamiento y niveles de esfuerzo}
 \subsection{Barrido de esfuerzo}
-Modelo gpt-5.6-luna. El dial es \texttt{reasoning\_effort}. El contador de tokens de razonamiento es el campo \texttt{reasoning\_tokens} que devuelve la API. Se corrió \texttt{low} completo antes de los otros dos: 287 tokens de razonamiento en 10 casos frente a los 1\,500 supuestos por el enunciado.
+Modelo gpt-5.6-luna. El dial es \texttt{reasoning\_effort}. El contador de tokens de razonamiento es el campo \texttt{reasoning\_tokens} que devuelve la API. Se corrió \texttt{low} completo antes de los otros dos: 388 tokens de salida totales en 10 casos (38,8 por llamada, razonamiento incluido) frente a los 1\,500 por llamada que supone el presupuesto del enunciado para el nivel bajo; la cuenta se rehizo con esa cifra antes de seguir.
 """ + T4A + fig("parte4a_exactitud_vs_tokens.png", "Exactitud frente a tokens de razonamiento medidos.", "fig:p4a1", "0.62\\textwidth") + fig("parte4a_costo_vs_exactitud.png", "Costo en USD frente a exactitud.", "fig:p4a2", "0.62\\textwidth") + t4a + r"""
 
 \subsection{El caso donde pensar más hace daño}
@@ -278,10 +314,10 @@ Casos c11 (distracción por lo irrelevante), c12 (sobreajuste al marco) y c13 (c
 
 \section{Reproducibilidad y desviaciones declaradas}
 \begin{itemize}
-\item Código, casos, \texttt{requirements.txt} y \texttt{datos/resultados.csv} (850 filas, una por llamada, las locales con costo cero) en \url{""" + REPO + r"""}.\newline Carpeta: \path{IA-Generativa-y-Agentes/semana1/taller01_foundation_models}
+\item Código, casos, \texttt{requirements.txt} y \texttt{datos/resultados.csv} (""" + f"{len(df)}" + r""" filas, una por llamada, las locales con costo cero) en \url{""" + REPO + r"""}.\newline Carpeta: \path{IA-Generativa-y-Agentes/semana1/taller01_foundation_models}
 \item Las claves se leen de un \texttt{.env} excluido por \texttt{.gitignore}; ninguna aparece en el informe, el notebook ni el repositorio.
-\item La rejilla de 2.b se corrió con 3 corridas por celda en vez de 5. Las sondas de 2.a se mandaron con 4 peticiones en paralelo; el barrido de top\_k, en secuencia.
-\item Los tokens de razonamiento de qwen3 se cuentan como palabras del campo \texttt{thinking} de \texttt{/api/chat}; los de gpt-5.6-luna, del contador de la API.
+\item Las sondas de 2.a y la rejilla de 2.b se mandaron con 4 peticiones en paralelo (por eso $T=0$ no da estabilidad 1,0); el barrido de top\_k en local, en secuencia.
+\item Los tokens de razonamiento de qwen3 se miden en tokens: \texttt{eval\_count} de Ollama (todo lo generado) menos los tokens de la respuesta visible contados con el tokenizador de Qwen3. Los de gpt-5.6-luna salen del contador \texttt{reasoning\_tokens} de la API.
 \end{itemize}
 
 \begin{thebibliography}{8}

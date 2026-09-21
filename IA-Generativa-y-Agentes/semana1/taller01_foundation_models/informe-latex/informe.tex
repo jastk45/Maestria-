@@ -73,7 +73,7 @@ calculate the total of all the items in the list.
 $item = array( 'total' => $item, 'total' => $item, 'total'
 => $item, '
 \end{verbatim}
-Con \texttt{do\_sample=True} y \texttt{top\_k=1}, las 20 corridas registradas en el CSV (4 ejecuciones del notebook con 5 semillas cada una) produjeron 1 salida distinta: idéntica a la de greedy.
+Con \texttt{do\_sample=True} y \texttt{top\_k=1}, las 25 corridas registradas en el CSV (5 ejecuciones del notebook con 5 semillas cada una) produjeron 1 salida distinta: idéntica a la de greedy (Tabla~\ref{tab:p0k1}).\input{tablas/p0k1}
 
 Degeneración con 100 tokens en modo greedy (Holtzman et al.~\cite{holtzman2020}), salida sin editar:
 \begin{verbatim}
@@ -99,63 +99,192 @@ Una cada una de 43 sillas. ¿Cuántos tornillos le sobran?
 
 Una cada una de 43 sillas. ¿Cuántos
 \end{verbatim}
-GPT-2 repitió partes del problema en lugar de responder con un número. Su
-entrenamiento está orientado a continuar texto. El ajuste con instrucciones
-puede mejorar ese comportamiento, aunque no garantiza respuestas correctas.
-También consideramos que el problema estaba en español y GPT-2 se entrenó
-principalmente en inglés.
+GPT-2 no entrega el entero pedido: copia un fragmento del enunciado («Una cada
+una de 43 sillas. ¿Cuántos tornillos le sobran?») y lo repite hasta agotar los
+100 tokens, el mismo bucle de la degeneración de 0.b. No intenta calcular
+porque para él no existe la noción de pregunta: fue entrenado solo para
+predecir el siguiente token de un corpus, y lo que sigue estadísticamente a un
+problema escrito es más texto parecido. Se suma que el prompt está en español y su corpus es casi todo inglés. Lo que tienen los modelos de
+las Partes 1 a 4 y a este le falta es la etapa de alineación posterior al
+preentrenamiento, que enseña a tratar la entrada como una orden y a producir
+la forma de respuesta esperada. Esa etapa no garantiza que el número sea correcto; el verificador sigue siendo necesario.
 
 \section{Parte 1 --- Comparación de modelos}
 Precios de la tabla semestral, cada uno con la fecha de verificación de su propia fila (Tabla~\ref{tab:p1}).
-\input{tablas/p1}Elegiríamos gpt-5.6-luna: acertó los diez casos y costó aproximadamente 0,00064
-dólares en total. Qwen acertó nueve sin cobro de API, pero tardó más y
-necesitó recursos locales. Ampliaríamos las pruebas antes de usar cualquiera en
-producción.
+\input{tablas/p1}Elegiríamos gpt-5.6-luna: acertó los diez casos, fue el más rápido (1,13 s
+frente a 1,91 s de gpt-4o-mini y 10,7 s de qwen3 en local) y costó 0,00064 USD
+por los diez. Qwen3 acertó nueve a costo cero, pero necesita GPU y tarda porque
+razona antes de responder; lo consideraríamos para trabajo local o con datos
+que no puedan salir de la máquina. Observaciones cualitativas: gpt-4o-mini
+respetó el formato (un solo número, sin unidades) en los diez casos, no fue
+verboso (1,2 tokens de salida por llamada) y falló los diez: dio cifras
+equivocadas con seguridad, sin señal de duda. gpt-5.6-luna respetó el formato
+y no mostró errores ni respuestas vacías. qwen3 respetó el formato en la
+respuesta visible, pero generó 7 424 tokens de salida en diez casos, casi todos
+de razonamiento; su único fallo fue de cálculo, no de formato. Ninguno devolvió
+errores de API. La latencia es tiempo de pared de la petición completa, red
+incluida. Ampliaríamos el conjunto antes de decidir en producción: diez casos
+permiten comparar, no generalizar.
 
-Confirmamos que los precios de la tabla se leyeron de la tabla semestral del
-enunciado, con la fecha de cada fila, y no de memoria.
+Confirmamos que los precios se leyeron de la tabla semestral del enunciado,
+con la fecha de cada fila, y no de memoria.
 
 \section{Parte 2 --- Decodificación}
 \subsection{Matriz de exposición}
-Cada parámetro se mandó con dos valores extremos, 3 casos $\times$ 2 corridas. El estado se decide por la dispersión entre corridas de la tupla (salida, tokens de salida), no por la respuesta final (Tabla~\ref{tab:p2a}); los mensajes de error se transcriben en la Tabla~\ref{tab:p2ae}.
-\input{tablas/p2a}\input{tablas/p2ae}En gpt-4o-mini, temperatura y top-p mostraron cambios entre corridas. Top-k
+Cada parámetro se mandó con dos valores extremos, 3 casos $\times$ 2 corridas. El estado se decide por la dispersión entre corridas de la tupla (salida, tokens de salida), no por la respuesta final (Tabla~\ref{tab:p2a}); los mensajes de error se transcriben completos a continuación de la tabla.
+\input{tablas/p2a}Mensajes literales completos de las celdas rechazadas:
+\smallskip\noindent\texttt{gpt-4o-mini} / \texttt{top\_k}:
+\begin{verbatim}
+TypeError: Completions.create() got an unexpected keyword argument
+'top_k'
+\end{verbatim}
+\smallskip\noindent\texttt{gpt-5.6-luna} / \texttt{temperature}:
+\begin{verbatim}
+400: Error code: 400 - {'error': {'message': "Unsupported value:
+'temperature' does not support 0.0 with this model. Only the
+default (1) value is supported.", 'type': 'invalid_request_error',
+'param': 'temperature', 'code': 'unsupported_value'}}
+\end{verbatim}
+\smallskip\noindent\texttt{gpt-5.6-luna} / \texttt{top\_p}:
+\begin{verbatim}
+400: Error code: 400 - {'error': {'message': "Unsupported
+parameter: 'top_p' is not supported with this model.", 'type':
+'invalid_request_error', 'param': 'top_p', 'code':
+'unsupported_parameter'}}
+\end{verbatim}
+\smallskip\noindent\texttt{gpt-5.6-luna} / \texttt{top\_k}:
+\begin{verbatim}
+TypeError: Completions.create() got an unexpected keyword argument
+'top_k'
+\end{verbatim}
+En gpt-4o-mini, temperatura y top-p mostraron cambios entre corridas. Top-k
 falló en el SDK, antes de llegar al servidor. Luna rechazó las temperaturas
 probadas y aceptó top\_p=1, pero rechazó 0.1. En Ollama observamos contenido en
 thinking sin pedirlo, contrario al valor predeterminado indicado en la tabla.
 
 \subsection{Barrido de temperature y top-p}
-Estimación previa con el supuesto del enunciado (1\,000 tokens de entrada y 600 de salida por llamada) al precio de gpt-4o-mini verificado el 2026-08-26: 750 llamadas $\approx$ 0.38\,USD. Se corrieron 450 (3 corridas por celda); costo real 0.03\,USD.
+Estimación previa con el supuesto del enunciado (1\,000 tokens de entrada y 600 de salida por llamada) al precio de gpt-4o-mini verificado el 2026-08-26: 750 llamadas $\approx$ 0.38\,USD. Se corrieron las 750 (15 celdas $\times$ 5 corridas $\times$ 10 casos); costo real 0.033\,USD, porque la salida media fue de 1--2 tokens y no de 600.
 \input{tablas/p2b}\begin{figure}[H]\centering\includegraphics[width=0.6\textwidth]{figuras/parte2b_rejilla.png}\caption{Exactitud por celda de la rejilla (gpt-4o-mini).}\label{fig:p2b}\end{figure}
-\input{tablas/p2bk}Encontramos doce configuraciones con 0 \% de exactitud y tres con 3,33 \%. Ninguna
-fue suficiente para esta tarea. Usaríamos T=0 y top\_p=1 como punto de partida por
-su estabilidad, pero tendríamos que mejorar el prompt o cambiar de modelo. Para
-titulares probaríamos T=1 y top\_p=0.9, evaluándolos por separado. Al bajar la
-temperatura, la distribución concentra más probabilidad en los tokens
-favorecidos; al subirla, reparte más masa entre alternativas. En local,
-top\_k=1 dio la misma salida en ocho de diez casos en cinco corridas
-secuenciales, no en los diez. Ejecutamos tres repeticiones por caso y
-configuración, no las cinco solicitadas.
+\input{tablas/p2bk}La temperatura divide los logits antes del softmax: con T<1 amplía la
+distancia entre el token más probable y el resto y concentra la masa; con T>1
+la reduce y reparte masa hacia la cola. top\_p corta esa cola por masa
+acumulada. Sobre gpt-4o-mini (750 llamadas), la exactitud fue 0 \% en once celdas y 2 \% (una de cincuenta) en las
+otras cuatro: el muestreo no cambia lo que el modelo sabe hacer, solo cuánto
+varía su salida. Lo que sí se mueve es la estabilidad: entre 0,96 y 0,98 con
+T=0, alrededor de 0,75 con T=0,3 y 0,28 en T=1,5 con top\_p=1. Esa celda además
+degenera: 771 tokens de salida en promedio frente a 1,2-1,4 en el resto,
+sin corte de núcleo la cola aplanada no termina; con
+top\_p=0,5 la misma T=1,5 vuelve a 1,26 tokens. Que T=0 no dé 1,0 es un hallazgo: la rama argmax no es una promesa de
+reproducibilidad en una API. Para esta tarea elegiríamos T=0 y
+top\_p=1, por estabilidad, ya que ninguna celda mejora la exactitud: la única palanca que la mueve es el prompt (Parte 3) o el modelo.
+Para generar tres titulares alternativos elegiríamos T=1 con top\_p=0,9: hay
+dispersión entre corridas y el núcleo excluye continuaciones absurdas. En local, top\_k=1 dio la misma salida en
+ocho de diez casos en cinco corridas secuenciales, no en los diez, y la
+dispersión creció con k (estabilidad 0,96 → 0,86 de top\_k=1 a 40) sin cambiar
+la exactitud (92-98 \%).
 
 \section{Parte 3 --- Prompting estructurado}
 Las cuatro plantillas están en \texttt{src/prompts.py}. Los ejemplos del few-shot son problemas inventados, no los diez casos. La variante estructurada usa el modo JSON del proveedor (\texttt{response\_format} con tipo \texttt{json\_object}), sin esquema estricto.
-\input{tablas/p3}Zero-shot acertó un caso, few-shot ninguno y CoT los diez. CoT aumentó los
-tokens de salida de 11 a 3160 y el costo aproximado de 0,00013 a 0,00204
-dólares. La variante estructurada produjo diez JSON válidos, pero ninguna
-respuesta correcta; usamos el modo JSON del proveedor, sin esquema estricto.
-Elegiríamos CoT para estos ejercicios, few-shot para mostrar criterios mediante
-ejemplos y salida estructurada cuando otro programa necesite leer la
-respuesta.
+\input{tablas/p3}
+Respuestas completas de cada variante sobre el mismo caso (las diez por variante están en el CSV, columna \texttt{salida}):
+
+
+\smallskip\noindent\textbf{zero\_shot} (caso c01, esperado 311, extraído 245.0, acierto no):
+\begin{verbatim}
+245
+\end{verbatim}
+
+
+\smallskip\noindent\textbf{few\_shot} (caso c01, esperado 311, extraído 81.0, acierto no):
+\begin{verbatim}
+81
+\end{verbatim}
+
+
+\smallskip\noindent\textbf{cot} (caso c01, esperado 311, extraído 311.0, acierto sí):
+\begin{verbatim}
+Para resolver este problema, primero vamos a determinar
+cuántos tornillos hay en las cajas y luego cuántos
+tornillos se usan para fabricar las sillas.
+
+1. **Calcular el total de tornillos comprados:**
+   - El taller compra 17 cajas.
+   - Cada caja contiene 36 tornillos.
+   - Por lo tanto, el total de tornillos comprados es:
+     \[
+     17 \text{ cajas} \times 36 \text{ tornillos/caja} =
+612 \text{ tornillos}
+     \]
+
+2. **Calcular cuántos tornillos se usan para las sillas:**
+   - Se usan 7 tornillos para cada silla.
+   - El taller necesita hacer 43 sillas.
+   - Por lo tanto, el total de tornillos usados es:
+     \[
+     7 \text{ tornillos/silla} \times 43 \text{ sillas} =
+301 \text{ tornillos}
+     \]
+
+3. **Calcular cuántos tornillos sobran:**
+   - Para encontrar cuántos tornillos sobran, restamos los
+tornillos usados del total de tornillos comprados:
+     \[
+     612 \text{ tornillos} - 301 \text{ tornillos} = 311
+\text{ tornillos}
+     \]
+
+Finalmente, el número de tornillos que le sobran al taller
+es:
+
+Respuesta: 311
+\end{verbatim}
+
+
+\smallskip\noindent\textbf{structured} (caso c01, esperado 311, extraído 71.0, acierto no):
+\begin{verbatim}
+{"respuesta": 71}
+\end{verbatim}
+Zero-shot acertó un caso y few-shot ninguno. Las dos piden un número directo y
+gpt-4o-mini no puede encadenar dos o tres operaciones en un solo token; los
+ejemplos duplican los tokens de entrada (1 842 frente a 793 en los diez casos)
+sin ganar nada, porque enseñan el formato, no el procedimiento.
+Chain-of-Thought pasó a diez de diez a cambio de 3 160 tokens de salida, casi
+300 veces los 11 de zero-shot, y un costo 16 veces mayor (0,00204 frente a
+0,00013 USD): compra cómputo intermedio, que es lo que esta tarea necesita. La
+variante estructurada usó el modo JSON del proveedor (response\_format con
+json\_object), sin esquema estricto: las diez salidas parsearon como JSON y
+ninguna fue correcta. Distinguimos lo que garantiza el proveedor de lo que
+verificamos nosotros: el modo JSON garantiza la forma; el valor lo comprobó
+nuestro verificador. Usaríamos CoT cuando la tarea tenga pasos dependientes y
+la exactitud pese más que el costo y la latencia; zero-shot cuando la
+respuesta sea de recuperación directa o una etiqueta, donde razonar no añade
+información; few-shot cuando lo difícil sea el formato o el criterio de
+clasificación, no el cálculo; y salida estructurada siempre que otro programa
+consuma la respuesta, combinada con CoT si el contenido lo exige, porque por
+sí sola solo garantiza que parsea. No asumiríamos que combinar técnicas mejora
+el resultado sin medir esa combinación con los mismos diez casos.
 
 \section{Parte 4 --- Modelos de razonamiento y niveles de esfuerzo}
 \subsection{Barrido de esfuerzo}
-Modelo gpt-5.6-luna. El dial es \texttt{reasoning\_effort}. El contador de tokens de razonamiento es el campo \texttt{reasoning\_tokens} que devuelve la API. Se corrió \texttt{low} completo antes de los otros dos: 287 tokens de razonamiento en 10 casos frente a los 1\,500 supuestos por el enunciado.
+Modelo gpt-5.6-luna. El dial es \texttt{reasoning\_effort}. El contador de tokens de razonamiento es el campo \texttt{reasoning\_tokens} que devuelve la API. Se corrió \texttt{low} completo antes de los otros dos: 388 tokens de salida totales en 10 casos (38,8 por llamada, razonamiento incluido) frente a los 1\,500 por llamada que supone el presupuesto del enunciado para el nivel bajo; la cuenta se rehizo con esa cifra antes de seguir.
 \input{tablas/p4a}\begin{figure}[H]\centering\includegraphics[width=0.62\textwidth]{figuras/parte4a_exactitud_vs_tokens.png}\caption{Exactitud frente a tokens de razonamiento medidos.}\label{fig:p4a1}\end{figure}
 \begin{figure}[H]\centering\includegraphics[width=0.62\textwidth]{figuras/parte4a_costo_vs_exactitud.png}\caption{Costo en USD frente a exactitud.}\label{fig:p4a2}\end{figure}
-Los tres niveles acertaron los diez casos. Low consumió 287 tokens de
-razonamiento; medium, 288; y high, 375. De medium a high pagamos 0,0001044
-dólares adicionales sin mejorar la exactitud. Elegiríamos low para este conjunto.
-La similitud entre low y medium no demuestra que el parámetro se ignore;
-necesitaríamos más casos y repeticiones.
+La curva es plana: diez de diez en low, medium y high. Los tokens de
+razonamiento medidos fueron 287, 288 y 375 en los diez casos. Low y medium son
+indistinguibles en el contador, así que entre esos dos niveles el dial se
+comporta como «aceptado y no actúa», el mismo estado del medio de la Parte
+2.a, diagnosticado con el contador y no con la prosa de la respuesta. High sí
+mueve el contador (+30 \%) y el costo, de 0,00062 a 0,00073 USD, sin ganar un
+punto de exactitud: pagamos 0,0001 USD adicionales por cero puntos, así que no
+podemos calcular un costo por punto. El punto de rendimientos decrecientes
+está por debajo de low para este conjunto, y no podemos ubicarlo con precisión
+porque no evaluamos niveles inferiores. Las cifras también corrigen el
+supuesto del presupuesto: 38,8 tokens de salida totales por llamada en low
+frente a los 1 500 que supone el enunciado, por lo que el costo real fue unas
+40 veces menor. La lección no es que el dial no sirva, sino que el nivel se
+elige por tarea y se mide: estos diez casos están por debajo del umbral de
+dificultad donde el esfuerzo empieza a pagar. Con casos más difíciles y varias
+corridas por nivel esperaríamos ver la curva.
 
 \subsection{El caso donde pensar más hace daño}
 Casos c11 (distracción por lo irrelevante), c12 (sobreajuste al marco) y c13 (correlación espuria), según los modos de fallo de Gema et al.~\cite{gema2025}.
@@ -165,50 +294,89 @@ casos no permiten establecer una regla general.
 
 \section{Parte 5 --- Reflexión teórica}
 \subsection{Explica intuitivamente qué hace el mecanismo de atención en un transformer. ¿Por qué es importante el concepto de query, key, value?}
-Entendemos la atención como una forma de combinar información relevante del
-contexto. La query representa lo que una posición busca, las keys permiten
-comparar y los values aportan el contenido. En generación causal, el modelo no
-puede atender a tokens futuros.
+Entendemos la atención como una forma de decidir qué partes del contexto
+aportan información para representar cada token. Cada posición produce tres
+vectores por proyección lineal: la query expresa lo que esa posición busca, la
+key permite que las demás posiciones se comparen con esa búsqueda y el value
+contiene la información que se mezcla. El modelo calcula puntuaciones entre la
+query y todas las keys, las convierte en pesos con softmax y obtiene una
+combinación ponderada de los values. Así relaciona palabras cercanas o
+distantes según el contexto, y todas las posiciones se calculan en paralelo,
+sin el cuello de botella secuencial de una red recurrente. Separar los tres
+roles permite aprender por separado qué comparar y qué contenido recuperar. En
+generación causal, una máscara impide atender a tokens futuros.
 
 \subsection{¿Cuál es la diferencia entre un modelo base y un modelo alineado? ¿Por qué un modelo base no es directamente útil para las aplicaciones de este curso?}
-Salida cruda de 0.c ante la instrucción de la tarea. GPT-2 entró en bucle y
-repitió este fragmento hasta el límite de tokens; se muestran las tres
-primeras repeticiones tal como salieron, sin editar:\begin{verbatim}
+Salida completa de 0.c ante la instrucción de la tarea, sin editar:\begin{verbatim}
 Una cada una de 43 sillas. ¿Cuántos tornillos le sobran?
 
 Una cada una de 43 sillas. ¿Cuántos tornillos le sobran?
 
 Una cada una de 43 sillas. ¿Cuántos tornillos le sobran?
-\end{verbatim}En nuestra prueba, GPT-2 continuó el enunciado sin resolverlo. El ajuste con
-instrucciones y preferencias busca mejorar la respuesta a peticiones. Para
-estas aplicaciones necesitamos seguir instrucciones y respetar formatos, pero
-también verificar el contenido.
+
+Una cada una de 43 sillas. ¿Cuántos
+\end{verbatim}En nuestra prueba, GPT-2 continuó el enunciado sin resolverlo. Lo relacionamos con la diferencia entre
+continuar texto y estar ajustado para seguir instrucciones. Un modelo base
+aprende patrones del corpus durante el preentrenamiento y solo predice el
+siguiente token. Un modelo alineado recibe después ejemplos de peticiones y
+respuestas, y a menudo entrenamiento con preferencias humanas; eso le enseña a
+tratar la entrada como una orden y a responder en la forma esperada. Para las
+aplicaciones del curso necesitamos que la salida responda a una tarea y
+respete un formato, algo que no podemos dar por hecho con el modelo base. Aun
+así, el modelo base nos resultó útil para observar directamente los logits y
+el muestreo. El ajuste mejora el comportamiento, pero no elimina la necesidad
+de verificar las respuestas.
 
 \subsection{En la Parte 3, la variante con Chain-of-Thought probablemente usó más tokens que la zero-shot. ¿Cuándo vale la pena pagar ese costo y cuándo no?}
-Pagaríamos CoT en estos ejercicios porque pasó de uno a diez aciertos. Para
-extraer un dato explícito, primero probaríamos una instrucción corta. Decidiríamos
-según la mejora de exactitud, el costo y la latencia medidos.
+En nuestros resultados, CoT pasó de un acierto a diez frente a zero-shot, con
+los tokens de salida de 11 a 3 160 y el costo de 0,00013 a 0,00204 USD por los
+diez casos. Pagaríamos esa diferencia cuando la respuesta dependa de pasos
+intermedios que el modelo no resuelve en un solo token, cuando el costo de un
+error supere con mucho el de los tokens y cuando la latencia adicional sea
+aceptable. No la pagaríamos para extraer un dato explícito o devolver una
+etiqueta, donde primero probaríamos una instrucción corta; ni en aplicaciones
+de alto volumen con margen pequeño por llamada. También compararíamos con un
+modelo de razonamiento: en la Parte 4, gpt-5.6-luna resolvió los mismos casos
+con 38,8 tokens de salida por llamada en low, frente a 316 de CoT en
+gpt-4o-mini. Gastar más tokens solo tiene sentido si la mejora medida lo
+justifica.
 
 \subsection{En tu matriz de la Parte 2.a hay al menos una celda «rechazado». ¿Qué gana un proveedor al retirar un parámetro de muestreo de su API, y qué pierde quien lo usaba?}
-Consideramos que retirar un parámetro puede simplificar el servicio y limitar
-configuraciones poco evaluadas. Quien lo usa pierde control sobre el muestreo.
-El esfuerzo ofrece otro ajuste, pero no sustituye directamente a la
-temperatura.
+En nuestras pruebas, gpt-5.6-luna rechazó con 400 los valores de temperature y
+top\_p distintos del predeterminado. Consideramos que el proveedor gana control
+sobre la distribución de salida de un modelo cuyo comportamiento depende de
+una fase de razonamiento: con muestreo libre el usuario podría degradar esa
+fase y el proveedor tendría que dar soporte a resultados que no puede
+reproducir. Es una explicación plausible, no una intención
+que podamos demostrar con el CSV. Quien usaba la palanca pierde la capacidad
+de intercambiar exactitud por diversidad en la misma llamada y la
+reproducibilidad aproximada de T=0. Lo que la sustituye es el nivel de
+esfuerzo: en vez de controlar cómo se muestrea, se controla cuánto se piensa.
+La diversidad, cuando hace falta, se obtiene pidiendo varias alternativas en
+el prompt o con varias llamadas, y no equivale a la temperatura.
 
 \subsection{Los tokens de razonamiento de la Parte 4 se facturan y casi nunca se devuelven en crudo. Si tu modelo te mostrara la traza completa, ¿sería eso una explicación de cómo llegó a la respuesta?}
-No asumiríamos que una explicación convincente refleja cómo se obtuvo la
-respuesta. Lanham et al. encontraron que la influencia de la cadena cambia
-según la tarea y el modelo. Para auditar, combinaríamos las trazas con casos
-verificables y pruebas controladas.
+No tomaríamos una traza completa como explicación suficiente de cómo se obtuvo
+la respuesta. Lanham et al. (2023) miden si la respuesta cambia cuando se
+altera la cadena de razonamiento y encuentran que en muchos casos el modelo
+llega al mismo resultado con una traza truncada o con errores insertados, y
+que esa fidelidad varía con el tamaño del modelo y con la tarea. Una
+explicación puede ser coherente sin reflejar el proceso que produjo la
+respuesta. Para auditar un sistema en producción, esto significa que la traza
+es evidencia de proceso, no prueba de causa: sirve para detectar errores
+visibles y para medir cuánto cómputo se gastó, como el contador de la Parte 4,
+pero no basta para certificar por qué el modelo respondió lo que respondió. La
+auditoría debe apoyarse en pruebas de comportamiento sobre casos verificables y registro de versiones y condiciones de
+ejecución.
 
 
 
 \section{Reproducibilidad y desviaciones declaradas}
 \begin{itemize}
-\item Código, casos, \texttt{requirements.txt} y \texttt{datos/resultados.csv} (850 filas, una por llamada, las locales con costo cero) en \url{https://github.com/jastk45/Maestria-}.\newline Carpeta: \path{IA-Generativa-y-Agentes/semana1/taller01_foundation_models}
+\item Código, casos, \texttt{requirements.txt} y \texttt{datos/resultados.csv} (1159 filas, una por llamada, las locales con costo cero) en \url{https://github.com/jastk45/Maestria-}.\newline Carpeta: \path{IA-Generativa-y-Agentes/semana1/taller01_foundation_models}
 \item Las claves se leen de un \texttt{.env} excluido por \texttt{.gitignore}; ninguna aparece en el informe, el notebook ni el repositorio.
-\item La rejilla de 2.b se corrió con 3 corridas por celda en vez de 5. Las sondas de 2.a se mandaron con 4 peticiones en paralelo; el barrido de top\_k, en secuencia.
-\item Los tokens de razonamiento de qwen3 se cuentan como palabras del campo \texttt{thinking} de \texttt{/api/chat}; los de gpt-5.6-luna, del contador de la API.
+\item Las sondas de 2.a y la rejilla de 2.b se mandaron con 4 peticiones en paralelo (por eso $T=0$ no da estabilidad 1,0); el barrido de top\_k en local, en secuencia.
+\item Los tokens de razonamiento de qwen3 se miden en tokens: \texttt{eval\_count} de Ollama (todo lo generado) menos los tokens de la respuesta visible contados con el tokenizador de Qwen3. Los de gpt-5.6-luna salen del contador \texttt{reasoning\_tokens} de la API.
 \end{itemize}
 
 \begin{thebibliography}{8}

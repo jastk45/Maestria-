@@ -153,14 +153,39 @@ def llamar_ollama(caso, modelo="qwen3:1.7b", plantilla="zero_shot",
     msg = d.get("message", {})
     texto = msg.get("content", "")
     pensado = msg.get("thinking") or ""
+    # Ollama devuelve eval_count = TODOS los tokens generados (thinking + respuesta)
+    # pero no separa los del thinking. Se miden en la misma unidad restando los
+    # tokens de la respuesta visible, contados con el tokenizador del modelo.
+    eval_count = d.get("eval_count")
+    razonamiento = None
+    if pensado and eval_count is not None:
+        razonamiento = max(eval_count - _tokens_qwen(texto), 0)
     return fila(caso, modelo, plantilla, temperature, top_p, top_k,
                 esfuerzo, corrida,
                 salida=texto,
                 tokens_entrada=d.get("prompt_eval_count"),
-                tokens_salida=d.get("eval_count"),
-                # tokens de razonamiento MEDIDOS en local, no el nivel declarado
-                tokens_razonamiento=len(pensado.split()) if pensado else None,
+                tokens_salida=eval_count,
+                tokens_razonamiento=razonamiento,
                 latencia_s=latencia)
+
+
+_TOK_QWEN = None
+
+
+def _tokens_qwen(texto):
+    """Tokens de un texto con el tokenizador de Qwen3 (Apache 2.0, sin gate).
+    Si no se puede cargar, aproxima con palabras y lo avisa una sola vez."""
+    global _TOK_QWEN
+    if _TOK_QWEN is None:
+        try:
+            from transformers import AutoTokenizer
+            _TOK_QWEN = AutoTokenizer.from_pretrained("Qwen/Qwen3-1.7B")
+        except Exception as e:  # sin red o sin transformers
+            print(f"(tokenizador Qwen no disponible, se cuentan palabras: {e})")
+            _TOK_QWEN = False
+    if _TOK_QWEN is False:
+        return len(str(texto).split())
+    return len(_TOK_QWEN(str(texto))["input_ids"])
 
 
 def fila(caso, modelo, plantilla, temperature, top_p, top_k, esfuerzo, corrida,
