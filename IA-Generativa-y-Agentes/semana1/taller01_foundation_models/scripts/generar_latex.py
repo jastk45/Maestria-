@@ -200,6 +200,7 @@ tex = r"""\documentclass[runningheads]{llncs}
 \usepackage[hidelinks]{hyperref}
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\figurename}{Figura}
+\renewcommand{\andname}{y}
 \emergencystretch=2.5em
 \begin{document}
 
