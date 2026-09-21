@@ -1,0 +1,12 @@
+\begin{table}[H]\centering\caption{Parte 2.b: barrido de top\_k en local (qwen3:1.7b, T=1, 5 corridas secuenciales $\times$ 10 casos).}\label{tab:p2bk}
+{\footnotesize\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{rrrrr}
+\hline
+top\_k & exactitud & tokens out (media) & estabilidad & casos idénticos x5 \\
+\hline
+1.000 & 0.920 & 1080.320 & 0.960 & 8 \\
+5.000 & 0.960 & 947.780 & 0.880 & 7 \\
+40.000 & 0.980 & 931.120 & 0.860 & 7 \\
+\hline
+\end{tabular}
+}\end{table}

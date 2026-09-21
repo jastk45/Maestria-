@@ -1,0 +1,13 @@
+\begin{table}[H]\centering\caption{Parte 2.a: mensajes de error transcritos de las celdas rechazadas.}\label{tab:p2ae}
+{\footnotesize\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llp{7.5cm}}
+\hline
+modelo & parámetro & mensaje literal (truncado a 160 caracteres) \\
+\hline
+gpt-4o-mini & top\_k & TypeError: Completions.create() got an unexpected keyword argument 'top\_k' \\
+gpt-5.6-luna & temperature & 400: Error code: 400 - \{'error': \{'message': "Unsupported value: 'temperature' does not support 0.0 with this model. Only the default (1) value is supported.",  \\
+gpt-5.6-luna & top\_p & 400: Error code: 400 - \{'error': \{'message': "Unsupported parameter: 'top\_p' is not supported with this model.", 'type': 'invalid\_request\_error', 'param': 'top\_ \\
+gpt-5.6-luna & top\_k & TypeError: Completions.create() got an unexpected keyword argument 'top\_k' \\
+\hline
+\end{tabular}
+}\end{table}

@@ -1,0 +1,18 @@
+\begin{table}[H]\centering\caption{Parte 2.a: matriz de exposición, declarado frente a observado (2026-09-20). Evidencia: porcentaje de casos cuyas corridas difieren con cada valor; o número de llamadas con error.}\label{tab:p2a}
+{\footnotesize\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lllp{2.0cm}p{3.3cm}@{}}
+\hline
+modelo & parámetro & declarado (tabla) & observado & evidencia \\
+\hline
+gpt-4o-mini & temperature & si & aceptado y actua & temperature=0: 0\% / temperature=1.5: 100\% \\
+gpt-4o-mini & top\_p & si & aceptado y actua & top\_p=0.1: 33\% / top\_p=1: 67\% \\
+gpt-4o-mini & top\_k & no & rechazado & 12/12 llamadas con error \\
+gpt-5.6-luna & temperature & no\_en\_esta\_fila & rechazado & 12/12 llamadas con error \\
+gpt-5.6-luna & top\_p & no\_en\_esta\_fila & rechazado & 6/12 llamadas con error \\
+gpt-5.6-luna & top\_k & no & rechazado & 12/12 llamadas con error \\
+qwen3:1.7b & temperature & si & aceptado y actua & temperature=0: 33\% / temperature=1.5: 100\% \\
+qwen3:1.7b & top\_p & si & aceptado y actua & top\_p=0.1: 33\% / top\_p=1: 100\% \\
+qwen3:1.7b & top\_k & si & aceptado y actua & top\_k=1: 33\% / top\_k=40: 100\% \\
+\hline
+\end{tabular}
+}\end{table}

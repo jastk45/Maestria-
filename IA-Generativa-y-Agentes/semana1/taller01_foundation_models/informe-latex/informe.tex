@@ -1,0 +1,226 @@
+\documentclass[runningheads]{llncs}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\figurename}{Figura}
+\emergencystretch=2.5em
+\begin{document}
+
+\title{Taller 01 --- Foundation Models: Comparación, Decodificación y Razonamiento}
+\titlerunning{Taller 01 --- Foundation Models}
+\author{Roberth Chachalo}
+\authorrunning{Roberth Chachalo}
+\institute{MMIA 6013 --- IA Generativa y Agentes, Universidad San Francisco de Quito\\
+Semana 1, Sesión 05 \quad $\cdot$ \quad Repositorio: \url{https://github.com/jastk45/Maestria-}}
+\maketitle
+
+\begin{abstract}
+Mido las cinco palancas de inferencia (muestreo, prompt, formato de salida, costo y esfuerzo de razonamiento) sobre una sola tarea con diez casos de respuesta verificable. Todas las tablas se derivan del archivo crudo \texttt{datos/resultados.csv} (850 llamadas). No aparece ninguna credencial en el informe ni en el repositorio.
+\keywords{muestreo \and temperatura \and top-p \and prompting \and modelos de razonamiento}
+\end{abstract}
+
+\section{Tarea elegida}
+Elegí diez problemas de aritmética con respuesta entera para verificar
+automáticamente los resultados. Agregué tres casos contaminados y comparé cómo
+cambian las respuestas al modificar el modelo, el prompt y el esfuerzo.
+
+Los diez casos limpios y los tres contaminados, con sus respuestas esperadas, están en \texttt{datos/casos.json} del repositorio.
+
+\section{Parte 0 --- El modelo base y la distribución}
+Fila \texttt{base\_local}: \texttt{openai-community/gpt2}, 124\,M de parámetros, en CPU, sin API ni credenciales.
+
+\subsection{La distribución del siguiente token}
+En el dominio de números y cálculo uso \texttt{As easy as one, two,} como frase
+hecha relativamente predecible y \texttt{To calculate the total, we need to} como
+contexto abierto. Los prefijos están en inglés, la lengua predominante del
+modelo base.
+La certeza se comprueba con la probabilidad máxima y la entropía; no se supone.
+
+Se hace un forward por prefijo y se reutilizan sus logits para todas las
+temperaturas. La softmax, la entropía y el núcleo se calculan sobre \textbf{todo el
+vocabulario}, aunque la primera figura solo muestre los 15 primeros tokens.
+
+Al bajar la temperatura, observé más probabilidad concentrada en los primeros
+tokens. Al subirla, aumentaron la entropía y las alternativas. Con temperatura
+1, el núcleo del 90 \% incluyó cinco tokens en el prefijo seguro y 241 en el
+abierto.
+
+\begin{figure}[H]\centering\includegraphics[width=0.95\textwidth,height=0.42\textheight,keepaspectratio]{figuras/parte0a_temperatura.png}\caption{Distribución de los 15 candidatos más probables para $T\in\{0.1,0.7,1.0,1.5,2.0\}$ en los dos prefijos.}\label{fig:p0a}\end{figure}
+\input{tablas/p0}
+
+\subsection{Las tres palancas sobre esa misma distribución}
+Uso \texttt{model.generate(...)}, modo evaluación y semilla registrada por corrida.
+Para aislar cada palanca desactivo los otros filtros: \texttt{top\_k=0}, \texttt{top\_p=1},
+sin penalización de repetición y con un solo beam. El aviso de Transformers
+al enviar temperatura en modo greedy se conserva: ese parámetro se ignora.
+Véase la documentación de generación.
+
+Cada generación se añade a \texttt{datos/resultados.csv}, con \texttt{parte=0} y costo cero.
+\texttt{datos/parte0\_generaciones.jsonl} conserva además el prompt, los IDs, la semilla,
+la revisión del modelo, la fecha y los parámetros exactos. En esta parte
+\texttt{acierto} queda vacío porque no se evalúa exactitud.
+
+Arriba se conservan las dos salidas del interruptor,
+las cinco corridas de \texttt{top\_k=1} con sus IDs y soportes, la figura de cortes
+y la continuación de cien tokens sin editar. El conteo de cuatrigramas
+repetidos complementa la observación del texto; no evalúa su corrección.
+
+Salida con \texttt{do\_sample=False} (idéntica para $T=0.2$ y $T=1.5$):
+\begin{verbatim}
+calculate the total of all the items in the list.
+
+$item = array( 'total' => $item, 'total' => $item, 'total'
+=> $item, '
+\end{verbatim}
+Con \texttt{do\_sample=True} y \texttt{top\_k=1}, las 20 corridas registradas en el CSV (4 ejecuciones del notebook con 5 semillas cada una) produjeron 1 salida distinta: idéntica a la de greedy.
+
+Degeneración con 100 tokens en modo greedy (Holtzman et al.~\cite{holtzman2020}), salida sin editar:
+\begin{verbatim}
+calculate the total of all the items in the list.
+
+$item = array( 'total' => $item, 'total' => $item, 'total'
+=> $item, 'total' => $item, 'total' => $item, 'total' =>
+$item, 'total' => $item, 'total' => $item, 'total' =>
+$item, 'total' => $item, 'total' => $item, 'total' => $
+\end{verbatim}
+
+\begin{figure}[H]\centering\includegraphics[width=0.95\textwidth,height=0.42\textheight,keepaspectratio]{figuras/parte0b_cortes.png}\caption{Dónde corta cada palanca: tokens que sobreviven a top\_k=5 y a top\_p=0.9 en cada prefijo. En el prefijo abierto los dos conjuntos no coinciden (5 frente a 241 tokens).}\label{fig:p0b}\end{figure}
+
+
+\subsection{El límite del modelo base}
+Salida cruda de GPT-2 ante la instrucción exacta de las Partes 1 a 4:
+\begin{verbatim}
+Una cada una de 43 sillas. ¿Cuántos tornillos le sobran?
+
+Una cada una de 43 sillas. ¿Cuántos tornillos le sobran?
+
+Una cada una de 43 sillas. ¿Cuántos tornillos le sobran?
+
+Una cada una de 43 sillas. ¿Cuántos
+\end{verbatim}
+GPT-2 repitió partes del problema en lugar de responder con un número. Su
+entrenamiento está orientado a continuar texto. El ajuste con instrucciones
+puede mejorar ese comportamiento, aunque no garantiza respuestas correctas.
+También considero que el problema estaba en español y GPT-2 se entrenó
+principalmente en inglés.
+
+\section{Parte 1 --- Comparación de modelos}
+Precios de la tabla semestral, cada uno con la fecha de verificación de su propia fila (Tabla~\ref{tab:p1}).
+\input{tablas/p1}Elegiría gpt-5.6-luna: acertó los diez casos y costó aproximadamente 0,00064
+dólares en total. Qwen acertó nueve sin cobro de API, pero tardó más y
+necesitó recursos locales. Ampliaría las pruebas antes de usar cualquiera en
+producción.
+
+Confirmo que los precios de la tabla se leyeron de la tabla semestral del
+enunciado, con la fecha de cada fila, y no de memoria.
+
+\section{Parte 2 --- Decodificación}
+\subsection{Matriz de exposición}
+Cada parámetro se mandó con dos valores extremos, 3 casos $\times$ 2 corridas. El estado se decide por la dispersión entre corridas de la tupla (salida, tokens de salida), no por la respuesta final (Tabla~\ref{tab:p2a}); los mensajes de error se transcriben en la Tabla~\ref{tab:p2ae}.
+\input{tablas/p2a}\input{tablas/p2ae}En gpt-4o-mini, temperatura y top-p mostraron cambios entre corridas. Top-k
+falló en el SDK, antes de llegar al servidor. Luna rechazó las temperaturas
+probadas y aceptó top\_p=1, pero rechazó 0.1. En Ollama observé contenido en
+thinking sin pedirlo, contrario al valor predeterminado indicado en la tabla.
+
+\subsection{Barrido de temperature y top-p}
+Estimación previa con el supuesto del enunciado (1\,000 tokens de entrada y 600 de salida por llamada) al precio de gpt-4o-mini verificado el 2026-08-26: 750 llamadas $\approx$ 0.38\,USD. Se corrieron 450 (3 corridas por celda); costo real 0.03\,USD.
+\input{tablas/p2b}\begin{figure}[H]\centering\includegraphics[width=0.6\textwidth]{figuras/parte2b_rejilla.png}\caption{Exactitud por celda de la rejilla (gpt-4o-mini).}\label{fig:p2b}\end{figure}
+\input{tablas/p2bk}Encontré doce configuraciones con 0 \% de exactitud y tres con 3,33 \%. Ninguna
+fue suficiente para esta tarea. Usaría T=0 y top\_p=1 como punto de partida por
+su estabilidad, pero tendría que mejorar el prompt o cambiar de modelo. Para
+titulares probaría T=1 y top\_p=0.9, evaluándolos por separado. Al bajar la
+temperatura, la distribución concentra más probabilidad en los tokens
+favorecidos; al subirla, reparte más masa entre alternativas. En local,
+top\_k=1 dio la misma salida en ocho de diez casos en cinco corridas
+secuenciales, no en los diez. Ejecuté tres repeticiones por caso y
+configuración, no las cinco solicitadas.
+
+\section{Parte 3 --- Prompting estructurado}
+Las cuatro plantillas están en \texttt{src/prompts.py}. Los ejemplos del few-shot son problemas inventados, no los diez casos. La variante estructurada usa el modo JSON del proveedor (\texttt{response\_format} con tipo \texttt{json\_object}), sin esquema estricto.
+\input{tablas/p3}Zero-shot acertó un caso, few-shot ninguno y CoT los diez. CoT aumentó los
+tokens de salida de 11 a 3160 y el costo aproximado de 0,00013 a 0,00204
+dólares. La variante estructurada produjo diez JSON válidos, pero ninguna
+respuesta correcta; usé el modo JSON del proveedor, sin esquema estricto.
+Elegiría CoT para estos ejercicios, few-shot para mostrar criterios mediante
+ejemplos y salida estructurada cuando otro programa necesite leer la
+respuesta.
+
+\section{Parte 4 --- Modelos de razonamiento y niveles de esfuerzo}
+\subsection{Barrido de esfuerzo}
+Modelo gpt-5.6-luna. El dial es \texttt{reasoning\_effort}. El contador de tokens de razonamiento es el campo \texttt{reasoning\_tokens} que devuelve la API. Se corrió \texttt{low} completo antes de los otros dos: 287 tokens de razonamiento en 10 casos frente a los 1\,500 supuestos por el enunciado.
+\input{tablas/p4a}\begin{figure}[H]\centering\includegraphics[width=0.62\textwidth]{figuras/parte4a_exactitud_vs_tokens.png}\caption{Exactitud frente a tokens de razonamiento medidos.}\label{fig:p4a1}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.62\textwidth]{figuras/parte4a_costo_vs_exactitud.png}\caption{Costo en USD frente a exactitud.}\label{fig:p4a2}\end{figure}
+Los tres niveles acertaron los diez casos. Low consumió 287 tokens de
+razonamiento; medium, 288; y high, 375. De medium a high pagué 0,0001044
+dólares adicionales sin mejorar la exactitud. Elegiría low para este conjunto.
+La similitud entre low y medium no demuestra que el parámetro se ignore;
+necesitaría más casos y repeticiones.
+
+\subsection{El caso donde pensar más hace daño}
+Casos c11 (distracción por lo irrelevante), c12 (sobreajuste al marco) y c13 (correlación espuria), según los modos de fallo de Gema et al.~\cite{gema2025}.
+\input{tablas/p4b}No observé empeoramiento: ambos niveles acertaron los tres casos. No reproduje
+los fallos descritos por Gema et al., pero eso no contradice su estudio. Tres
+casos no permiten establecer una regla general.
+
+\section{Parte 5 --- Reflexión teórica}
+\subsection{Explica intuitivamente qué hace el mecanismo de atención en un transformer. ¿Por qué es importante el concepto de query, key, value?}
+Entiendo la atención como una forma de combinar información relevante del
+contexto. La query representa lo que una posición busca, las keys permiten
+comparar y los values aportan el contenido. En generación causal, el modelo no
+puede atender a tokens futuros.
+
+\subsection{¿Cuál es la diferencia entre un modelo base y un modelo alineado? ¿Por qué un modelo base no es directamente útil para las aplicaciones de este curso?}
+Salida cruda de 0.c ante la instrucción de la tarea. GPT-2 entró en bucle y
+repitió este fragmento hasta el límite de tokens; se muestran las tres
+primeras repeticiones tal como salieron, sin editar:\begin{verbatim}
+Una cada una de 43 sillas. ¿Cuántos tornillos le sobran?
+
+Una cada una de 43 sillas. ¿Cuántos tornillos le sobran?
+
+Una cada una de 43 sillas. ¿Cuántos tornillos le sobran?
+\end{verbatim}En mi prueba, GPT-2 continuó el enunciado sin resolverlo. El ajuste con
+instrucciones y preferencias busca mejorar la respuesta a peticiones. Para
+estas aplicaciones necesito seguir instrucciones y respetar formatos, pero
+también verificar el contenido.
+
+\subsection{En la Parte 3, la variante con Chain-of-Thought probablemente usó más tokens que la zero-shot. ¿Cuándo vale la pena pagar ese costo y cuándo no?}
+Pagaría CoT en estos ejercicios porque pasó de uno a diez aciertos. Para
+extraer un dato explícito, primero probaría una instrucción corta. Decidiría
+según la mejora de exactitud, el costo y la latencia medidos.
+
+\subsection{En tu matriz de la Parte 2.a hay al menos una celda «rechazado». ¿Qué gana un proveedor al retirar un parámetro de muestreo de su API, y qué pierde quien lo usaba?}
+Considero que retirar un parámetro puede simplificar el servicio y limitar
+configuraciones poco evaluadas. Quien lo usa pierde control sobre el muestreo.
+El esfuerzo ofrece otro ajuste, pero no sustituye directamente a la
+temperatura.
+
+\subsection{Los tokens de razonamiento de la Parte 4 se facturan y casi nunca se devuelven en crudo. Si tu modelo te mostrara la traza completa, ¿sería eso una explicación de cómo llegó a la respuesta?}
+No asumiría que una explicación convincente refleja cómo se obtuvo la
+respuesta. Lanham et al. encontraron que la influencia de la cadena cambia
+según la tarea y el modelo. Para auditar, combinaría las trazas con casos
+verificables y pruebas controladas.
+
+
+
+\section{Reproducibilidad y desviaciones declaradas}
+\begin{itemize}
+\item Código, casos, \texttt{requirements.txt} y \texttt{datos/resultados.csv} (850 filas, una por llamada, las locales con costo cero) en \url{https://github.com/jastk45/Maestria-}.\newline Carpeta: \path{IA-Generativa-y-Agentes/semana1/taller01_foundation_models}
+\item Las claves se leen de un \texttt{.env} excluido por \texttt{.gitignore}; ninguna aparece en el informe, el notebook ni el repositorio.
+\item La rejilla de 2.b se corrió con 3 corridas por celda en vez de 5. Las sondas de 2.a se mandaron con 4 peticiones en paralelo; el barrido de top\_k, en secuencia.
+\item Los tokens de razonamiento de qwen3 se cuentan como palabras del campo \texttt{thinking} de \texttt{/api/chat}; los de gpt-5.6-luna, del contador de la API.
+\end{itemize}
+
+\begin{thebibliography}{8}
+\bibitem{holtzman2020} Holtzman, A., Buys, J., Du, L., Forbes, M., Choi, Y.: The Curious Case of Neural Text Degeneration. ICLR (2020). \url{https://arxiv.org/abs/1904.09751}
+\bibitem{gema2025} Gema, A.P., et al.: Inverse Scaling in Test-Time Compute. TMLR (2025)
+\bibitem{lanham2023} Lanham, T., et al.: Measuring Faithfulness in Chain-of-Thought Reasoning. arXiv:2307.13702 (2023)
+\bibitem{vaswani2017} Vaswani, A., et al.: Attention Is All You Need. NeurIPS (2017)
+\bibitem{gpt2} Radford, A., et al.: Language Models are Unsupervised Multitask Learners. OpenAI (2019). Model card: \url{https://huggingface.co/openai-community/gpt2}
+\end{thebibliography}
+\end{document}
