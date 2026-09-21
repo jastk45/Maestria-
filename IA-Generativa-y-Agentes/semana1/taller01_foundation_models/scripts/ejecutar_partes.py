@@ -1,8 +1,8 @@
-"""Corre las Partes 1, 2.a, 2.b (reducida), 3, 4.a y 4.b.
+"""Corre las Partes 1, 2.a, 2.b, 3, 4.a y 4.b con la API de OpenAI.
 
-Las llamadas van en paralelo con hilos: son peticiones de red, no computo.
-El barrido de 2.b se corre reducido -- 3 corridas por celda en vez de 5 --
-y esa desviacion del enunciado se declara en el informe.
+Las llamadas van en paralelo con HILOS hilos: son peticiones de red, no
+computo. La rejilla de 2.b son 15 celdas x 5 corridas x 10 casos = 750
+llamadas; '2b-completar' permite anadir solo las corridas que falten.
 """
 
 import sys
