@@ -291,7 +291,7 @@ Cada parámetro se mandó con dos valores extremos, 3 casos $\times$ 2 corridas.
 """ + T2A + T2AE + t2a + r"""
 
 \subsection{Barrido de temperature y top-p}
-Estimación previa con el supuesto del enunciado (1\,000 tokens de entrada y 600 de salida por llamada) al precio de gpt-4o-mini verificado el 2026-08-26: 750 llamadas $\approx$ 0.38\,USD. Se corrieron las 750 (15 celdas $\times$ 5 corridas $\times$ 10 casos); costo real """ + f"{df[(df.parte == '2b') & df.top_k.isna()].costo_usd.sum():.3f}" + r"""\,USD, porque la salida media fue de 1--2 tokens y no de 600.
+Estimación previa con el supuesto del enunciado (1\,000 tokens de entrada y 600 de salida por llamada) al precio de gpt-4o-mini verificado el 2026-08-26: 750 llamadas $\approx$ 0.38\,USD. Se corrieron las 750 (15 celdas $\times$ 5 corridas $\times$ 10 casos); costo real """ + f"{df[(df.parte == '2b') & df.top_k.isna()].costo_usd.sum():.3f}" + r"""\,USD. Catorce configuraciones promediaron entre 1,18 y 1,36 tokens de salida; la restante (T=1,5, top\_p=1) promedió 771,14. La media global fue de 52,6 tokens por llamada, frente a los 600 del supuesto.
 """ + T2B + fig("parte2b_rejilla.png", "Exactitud por celda de la rejilla (gpt-4o-mini).", "fig:p2b", "0.6\\textwidth") + TK + t2b + r"""
 
 \section{Parte 3 --- Prompting estructurado}
@@ -316,7 +316,7 @@ Casos c11 (distracción por lo irrelevante), c12 (sobreajuste al marco) y c13 (c
 \begin{itemize}
 \item Código, casos, \texttt{requirements.txt} y \texttt{datos/resultados.csv} (""" + f"{len(df)}" + r""" filas, una por llamada, las locales con costo cero) en \url{""" + REPO + r"""}.\newline Carpeta: \path{IA-Generativa-y-Agentes/semana1/taller01_foundation_models}
 \item Las claves se leen de un \texttt{.env} excluido por \texttt{.gitignore}; ninguna aparece en el informe, el notebook ni el repositorio.
-\item Las sondas de 2.a y la rejilla de 2.b se mandaron con 4 peticiones en paralelo (por eso $T=0$ no da estabilidad 1,0); el barrido de top\_k en local, en secuencia.
+\item Las llamadas a OpenAI (Partes 1, 2.a, 2.b, 3 y 4) se mandaron con 12 peticiones en paralelo (\texttt{scripts/ejecutar\_partes.py}); las de Ollama en la Parte 1 y las sondas 2.a, con 4 (\texttt{scripts/ejecutar\_local.py}); el barrido de top\_k en local, en secuencia. Que $T=0$ no dé estabilidad 1,0 podría deberse a la agrupación de peticiones en el servidor; no lo comprobamos.
 \item Los tokens de razonamiento de qwen3 se miden en tokens: \texttt{eval\_count} de Ollama (todo lo generado) menos los tokens de la respuesta visible contados con el tokenizador de Qwen3. Los de gpt-5.6-luna salen del contador \texttt{reasoning\_tokens} de la API.
 \end{itemize}
 

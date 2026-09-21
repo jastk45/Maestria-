@@ -163,7 +163,7 @@ probadas y aceptó top\_p=1, pero rechazó 0.1. En Ollama observamos contenido e
 thinking sin pedirlo, contrario al valor predeterminado indicado en la tabla.
 
 \subsection{Barrido de temperature y top-p}
-Estimación previa con el supuesto del enunciado (1\,000 tokens de entrada y 600 de salida por llamada) al precio de gpt-4o-mini verificado el 2026-08-26: 750 llamadas $\approx$ 0.38\,USD. Se corrieron las 750 (15 celdas $\times$ 5 corridas $\times$ 10 casos); costo real 0.033\,USD, porque la salida media fue de 1--2 tokens y no de 600.
+Estimación previa con el supuesto del enunciado (1\,000 tokens de entrada y 600 de salida por llamada) al precio de gpt-4o-mini verificado el 2026-08-26: 750 llamadas $\approx$ 0.38\,USD. Se corrieron las 750 (15 celdas $\times$ 5 corridas $\times$ 10 casos); costo real 0.033\,USD. Catorce configuraciones promediaron entre 1,18 y 1,36 tokens de salida; la restante (T=1,5, top\_p=1) promedió 771,14. La media global fue de 52,6 tokens por llamada, frente a los 600 del supuesto.
 \input{tablas/p2b}\begin{figure}[H]\centering\includegraphics[width=0.6\textwidth]{figuras/parte2b_rejilla.png}\caption{Exactitud por celda de la rejilla (gpt-4o-mini).}\label{fig:p2b}\end{figure}
 \input{tablas/p2bk}La temperatura divide los logits antes del softmax: con T<1 amplía la
 distancia entre el token más probable y el resto y concentra la masa; con T>1
@@ -178,10 +178,10 @@ top\_p=0,5 la misma T=1,5 vuelve a 1,26 tokens. Que T=0 no dé 1,0 es un hallazg
 reproducibilidad en una API. Para esta tarea elegiríamos T=0 y
 top\_p=1, por estabilidad, ya que ninguna celda mejora la exactitud: la única palanca que la mueve es el prompt (Parte 3) o el modelo.
 Para generar tres titulares alternativos elegiríamos T=1 con top\_p=0,9: hay
-dispersión entre corridas y el núcleo excluye continuaciones absurdas. En local, top\_k=1 dio la misma salida en
+dispersión y el núcleo excluye continuaciones absurdas. En local, top\_k=1 dio la misma salida en
 ocho de diez casos en cinco corridas secuenciales, no en los diez, y la
-dispersión creció con k (estabilidad 0,96 → 0,86 de top\_k=1 a 40) sin cambiar
-la exactitud (92-98 \%).
+dispersión creció con k (estabilidad 0,96 → 0,86 de top\_k=1 a 40) y la exactitud
+observada pasó de 92 \% a 98 \%.
 
 \section{Parte 3 --- Prompting estructurado}
 Las cuatro plantillas están en \texttt{src/prompts.py}. Los ejemplos del few-shot son problemas inventados, no los diez casos. La variante estructurada usa el modo JSON del proveedor (\texttt{response\_format} con tipo \texttt{json\_object}), sin esquema estricto.
@@ -244,9 +244,8 @@ Respuesta: 311
 \begin{verbatim}
 {"respuesta": 71}
 \end{verbatim}
-Zero-shot acertó un caso y few-shot ninguno. Las dos piden un número directo y
-gpt-4o-mini no puede encadenar dos o tres operaciones en un solo token; los
-ejemplos duplican los tokens de entrada (1 842 frente a 793 en los diez casos)
+Zero-shot acertó un caso y few-shot ninguno. En estos casos, pedir directamente un número produjo menor exactitud que
+solicitar pasos intermedios; los ejemplos duplican los tokens de entrada (1 842 frente a 793 en los diez casos)
 sin ganar nada, porque enseñan el formato, no el procedimiento.
 Chain-of-Thought pasó a diez de diez a cambio de 3 160 tokens de salida, casi
 300 veces los 11 de zero-shot, y un costo 16 veces mayor (0,00204 frente a
@@ -270,18 +269,17 @@ Modelo gpt-5.6-luna. El dial es \texttt{reasoning\_effort}. El contador de token
 \input{tablas/p4a}\begin{figure}[H]\centering\includegraphics[width=0.62\textwidth]{figuras/parte4a_exactitud_vs_tokens.png}\caption{Exactitud frente a tokens de razonamiento medidos.}\label{fig:p4a1}\end{figure}
 \begin{figure}[H]\centering\includegraphics[width=0.62\textwidth]{figuras/parte4a_costo_vs_exactitud.png}\caption{Costo en USD frente a exactitud.}\label{fig:p4a2}\end{figure}
 La curva es plana: diez de diez en low, medium y high. Los tokens de
-razonamiento medidos fueron 287, 288 y 375 en los diez casos. Low y medium son
-indistinguibles en el contador, así que entre esos dos niveles el dial se
-comporta como «aceptado y no actúa», el mismo estado del medio de la Parte
-2.a, diagnosticado con el contador y no con la prosa de la respuesta. High sí
+razonamiento medidos fueron 287, 288 y 375 en los diez casos. Low y medium tuvieron consumos casi iguales en esta ejecución. No
+encontramos una mejora de exactitud al aumentar el esfuerzo, pero
+necesitaríamos más repeticiones para evaluar su efecto. High sí
 mueve el contador (+30 \%) y el costo, de 0,00062 a 0,00073 USD, sin ganar un
 punto de exactitud: pagamos 0,0001 USD adicionales por cero puntos, así que no
-podemos calcular un costo por punto. El punto de rendimientos decrecientes
-está por debajo de low para este conjunto, y no podemos ubicarlo con precisión
-porque no evaluamos niveles inferiores. Las cifras también corrigen el
+podemos calcular un costo por punto. Low fue suficiente entre los niveles probados; no evaluamos niveles
+inferiores. Las cifras también corrigen el
 supuesto del presupuesto: 38,8 tokens de salida totales por llamada en low
-frente a los 1 500 que supone el enunciado, por lo que el costo real fue unas
-40 veces menor. La lección no es que el dial no sirva, sino que el nivel se
+frente a los 1 500 que supone el enunciado, 38,7 veces menos; el costo
+estimado con ese supuesto era 0,020 USD y el real fue 0,00062 USD, 32,1
+veces menos. La lección no es que el dial no sirva, sino que el nivel se
 elige por tarea y se mide: estos diez casos están por debajo del umbral de
 dificultad donde el esfuerzo empieza a pagar. Con casos más difíciles y varias
 corridas por nivel esperaríamos ver la curva.
@@ -331,7 +329,7 @@ de verificar las respuestas.
 En nuestros resultados, CoT pasó de un acierto a diez frente a zero-shot, con
 los tokens de salida de 11 a 3 160 y el costo de 0,00013 a 0,00204 USD por los
 diez casos. Pagaríamos esa diferencia cuando la respuesta dependa de pasos
-intermedios que el modelo no resuelve en un solo token, cuando el costo de un
+intermedios que una instrucción directa no resolvió, cuando el costo de un
 error supere con mucho el de los tokens y cuando la latencia adicional sea
 aceptable. No la pagaríamos para extraer un dato explícito o devolver una
 etiqueta, donde primero probaríamos una instrucción corta; ni en aplicaciones
@@ -375,7 +373,7 @@ ejecución.
 \begin{itemize}
 \item Código, casos, \texttt{requirements.txt} y \texttt{datos/resultados.csv} (1159 filas, una por llamada, las locales con costo cero) en \url{https://github.com/jastk45/Maestria-}.\newline Carpeta: \path{IA-Generativa-y-Agentes/semana1/taller01_foundation_models}
 \item Las claves se leen de un \texttt{.env} excluido por \texttt{.gitignore}; ninguna aparece en el informe, el notebook ni el repositorio.
-\item Las sondas de 2.a y la rejilla de 2.b se mandaron con 4 peticiones en paralelo (por eso $T=0$ no da estabilidad 1,0); el barrido de top\_k en local, en secuencia.
+\item Las llamadas a OpenAI (Partes 1, 2.a, 2.b, 3 y 4) se mandaron con 12 peticiones en paralelo (\texttt{scripts/ejecutar\_partes.py}); las de Ollama en la Parte 1 y las sondas 2.a, con 4 (\texttt{scripts/ejecutar\_local.py}); el barrido de top\_k en local, en secuencia. Que $T=0$ no dé estabilidad 1,0 podría deberse a la agrupación de peticiones en el servidor; no lo comprobamos.
 \item Los tokens de razonamiento de qwen3 se miden en tokens: \texttt{eval\_count} de Ollama (todo lo generado) menos los tokens de la respuesta visible contados con el tokenizador de Qwen3. Los de gpt-5.6-luna salen del contador \texttt{reasoning\_tokens} de la API.
 \end{itemize}
 

@@ -60,10 +60,12 @@ Cada ejecución **añade** filas a `datos/resultados.csv`; no borra las anterior
 
 ## Notas de medición
 
-- Las sondas de 2.a y la rejilla de 2.b (750 llamadas) se mandaron con 4
-  peticiones en paralelo; el barrido de `top_k` en local, en secuencia.
+- Llamadas a OpenAI con 12 peticiones en paralelo (`ejecutar_partes.py`,
+  `HILOS = 12`); a Ollama con 4 (`ejecutar_local.py`); el barrido de `top_k`
+  en local, en secuencia.
 - Los tokens de razonamiento de qwen3 se miden en tokens: `eval_count` de
-  Ollama menos los tokens de la respuesta visible (tokenizador de Qwen3).
+  Ollama menos los tokens de la respuesta visible (tokenizador de Qwen3). Si el
+  tokenizador no carga, la columna queda vacía; nunca se cuentan palabras.
 - `ollama pull qwen3:1.7b` y la descarga de GPT-2 (~550 MB) y del tokenizador
   de Qwen3 necesitan red la primera vez.
 
