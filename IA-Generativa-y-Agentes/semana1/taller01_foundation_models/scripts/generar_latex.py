@@ -23,7 +23,8 @@ for f in ("llncs.cls", "splncs04.bst"):
 for p in (RAIZ / "figuras").glob("*.png"):
     shutil.copy(p, OUT / "figuras" / p.name)
 
-AUTOR = "Roberth Chachalo"
+AUTOR = r"Jaime Astudillo \and Roberth Chachalo"
+AUTOR_CORTO = "J. Astudillo y R. Chachalo"
 REPO = "https://github.com/jastk45/Maestria-"
 
 
@@ -205,15 +206,9 @@ tex = r"""\documentclass[runningheads]{llncs}
 \title{Taller 01 --- Foundation Models: Comparación, Decodificación y Razonamiento}
 \titlerunning{Taller 01 --- Foundation Models}
 \author{""" + AUTOR + r"""}
-\authorrunning{""" + AUTOR + r"""}
-\institute{MMIA 6013 --- IA Generativa y Agentes, Universidad San Francisco de Quito\\
-Semana 1, Sesión 05 \quad $\cdot$ \quad Repositorio: \url{""" + REPO + r"""}}
+\authorrunning{""" + AUTOR_CORTO + r"""}
+\institute{MMIA 6013 --- IA Generativa y Agentes, Universidad San Francisco de Quito}
 \maketitle
-
-\begin{abstract}
-Mido las cinco palancas de inferencia (muestreo, prompt, formato de salida, costo y esfuerzo de razonamiento) sobre una sola tarea con diez casos de respuesta verificable. Todas las tablas se derivan del archivo crudo \texttt{datos/resultados.csv} (850 llamadas). No aparece ninguna credencial en el informe ni en el repositorio.
-\keywords{muestreo \and temperatura \and top-p \and prompting \and modelos de razonamiento}
-\end{abstract}
 
 \section{Tarea elegida}
 """ + tarea + r"""
