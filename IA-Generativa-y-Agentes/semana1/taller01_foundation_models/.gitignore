@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Credenciales — política del curso: ninguna clave en el repo
+.env
+*.env
+!.env.example
+
+# Salidas del taller (el CSV crudo SÍ se versiona, las figuras no)
+figuras/
+.jupyter_runtime/

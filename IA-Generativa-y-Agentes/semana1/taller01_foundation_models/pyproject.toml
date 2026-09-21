@@ -1,0 +1,18 @@
+[project]
+name = "mmia-6013-ia-generativa-y-agentes"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "nbclient>=0.11.0",
+    "nbconvert>=7.17.1",
+    "nbformat>=5.11.1",
+    "openai>=3.16.2",
+    "pandas>=3.0.6",
+    "python-dotenv>=1.2.3",
+    "tabulate>=0.10.0",
+    "torch>=2.14.0",
+    "transformers>=5.17.0",
+]

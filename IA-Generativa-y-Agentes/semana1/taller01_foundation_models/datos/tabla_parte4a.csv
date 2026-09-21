@@ -1,0 +1,4 @@
+esfuerzo,exactitud,tokens_razonamiento,tokens_salida,latencia_s,costo_usd,tokens_visibles
+low,1.0,287.0,388.0,1.23172,0.00062,101.0
+medium,1.0,288.0,389.0,0.95785,0.00062,101.0
+high,1.0,375.0,476.0,1.01251,0.00073,101.0

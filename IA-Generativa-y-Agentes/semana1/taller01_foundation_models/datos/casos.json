@@ -1,0 +1,80 @@
+[
+  {
+    "id": "c01",
+    "pregunta": "Un taller compra 17 cajas de 36 tornillos cada una. Usa 7 tornillos por cada una de 43 sillas. ¿Cuántos tornillos le sobran?",
+    "respuesta": 311,
+    "tipo": "limpio"
+  },
+  {
+    "id": "c02",
+    "pregunta": "Una cooperativa recoge 936 huevos. Reserva exactamente una sexta parte para sus socios y empaca todos los restantes en cajas de 12 huevos. ¿Cuántas cajas llena?",
+    "respuesta": 65,
+    "tipo": "limpio"
+  },
+  {
+    "id": "c03",
+    "pregunta": "Una tienda vende 48 mochilas. El precio de lista de cada mochila es de 175 pesos, pero aplica un descuento del 20 % a todas. El costo total de las 48 mochilas para la tienda fue de 3850 pesos. Sin otros gastos, ¿cuántos pesos de ganancia obtiene?",
+    "respuesta": 2870,
+    "tipo": "limpio"
+  },
+  {
+    "id": "c04",
+    "pregunta": "Un tanque contiene 1250 litros de agua. Primero se extraen 38 litros por minuto durante 17 minutos. Después se agregan 24 litros por minuto durante 9 minutos. No hay otras entradas ni salidas de agua. ¿Cuántos litros contiene al final?",
+    "respuesta": 820,
+    "tipo": "limpio"
+  },
+  {
+    "id": "c05",
+    "pregunta": "Una fábrica recibe 23 cajas con 48 piezas cada una. Del total recibido descarta 144 piezas defectuosas y distribuye todas las piezas restantes en paquetes de 16. ¿Cuántos paquetes obtiene?",
+    "respuesta": 60,
+    "tipo": "limpio"
+  },
+  {
+    "id": "c06",
+    "pregunta": "Un museo recauda 2375 pesos por entradas. Vendió 29 entradas infantiles a 35 pesos cada una y el resto de la recaudación corresponde a entradas de adulto a 80 pesos cada una. ¿Cuántas entradas de adulto vendió?",
+    "respuesta": 17,
+    "tipo": "limpio"
+  },
+  {
+    "id": "c07",
+    "pregunta": "Hay que transportar 1487 kilogramos de material en un vehículo que admite como máximo 64 kilogramos por viaje. Ya se completaron 9 viajes, cada uno con 64 kilogramos. El material se puede dividir libremente y el último viaje puede llevar menos de 64 kilogramos. ¿Cuántos viajes adicionales se necesitan como mínimo?",
+    "respuesta": 15,
+    "tipo": "limpio"
+  },
+  {
+    "id": "c08",
+    "pregunta": "Un almacén tiene 2400 cuadernos. Recibe una entrega que aumenta esa cantidad en un 15 %. Luego vende el 20 % de la cantidad que tiene después de la entrega. Empaca todos los cuadernos restantes en cajas de 24. ¿Cuántas cajas llena?",
+    "respuesta": 92,
+    "tipo": "limpio"
+  },
+  {
+    "id": "c09",
+    "pregunta": "Tres máquinas producen, cada una, 17 piezas por hora y funcionan durante 8 horas completas. Al terminar, se descartan 39 piezas defectuosas del total producido. ¿Cuántas piezas utilizables quedan?",
+    "respuesta": 369,
+    "tipo": "limpio"
+  },
+  {
+    "id": "c10",
+    "pregunta": "Cinco personas tenían 300 pesos cada una. Cada persona aportó la misma cantidad a un fondo común. Después de gastar 138 pesos de ese fondo, quedaron 942 pesos en él. ¿Cuántos pesos conservó cada persona de sus 300 pesos originales, fuera del fondo?",
+    "respuesta": 84,
+    "tipo": "limpio"
+  },
+  {
+    "id": "c11",
+    "pregunta": "Ana tiene 12 manzanas. Su hermano mide 170 centímetros. Ana regala 5 de sus manzanas. ¿Cuántas manzanas le quedan a Ana?",
+    "respuesta": 7,
+    "tipo": "contaminado"
+  },
+  {
+    "id": "c12",
+    "pregunta": "Un bate y una pelota cuestan 11 dólares en total. El precio del bate es de 10 dólares. ¿Cuántos dólares cuesta la pelota?",
+    "respuesta": 1,
+    "tipo": "contaminado"
+  },
+  {
+    "id": "c13",
+    "pregunta": "En una tienda, 8 de cada 10 clientes que compraron paraguas el mes pasado lo hicieron en un día lluvioso. Hoy entraron 30 clientes y 6 compraron paraguas. ¿Cuántos clientes entraron hoy en la tienda?",
+    "respuesta": 30,
+    "tipo": "contaminado"
+  }
+]

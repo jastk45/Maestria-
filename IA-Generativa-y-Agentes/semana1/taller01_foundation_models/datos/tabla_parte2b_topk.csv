@@ -1,0 +1,4 @@
+top_k,modelo,temperature,exactitud,tokens_out,estabilidad_salida,casos_identicos_x5
+1.0,qwen3:1.7b,1.0,0.92,1080.32,0.96,8
+5.0,qwen3:1.7b,1.0,0.96,947.78,0.88,7
+40.0,qwen3:1.7b,1.0,0.98,931.12,0.86,7

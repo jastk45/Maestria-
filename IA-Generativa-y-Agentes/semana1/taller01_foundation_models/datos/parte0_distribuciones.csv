@@ -1,0 +1,11 @@
+prefijo_id,prefijo,temperature,entropia_bits,nucleo_09,probabilidad_maxima
+seguro,"As easy as one, two,",0.1,3.444105820449837e-05,1,0.999998330960224
+seguro,"As easy as one, two,",0.7,0.8857891968046296,2,0.8364858907711138
+seguro,"As easy as one, two,",1.0,2.322775747775023,5,0.648168915645091
+seguro,"As easy as one, two,",1.5,9.068162587943643,7659,0.21550043342965533
+seguro,"As easy as one, two,",2.0,13.22897789042678,20702,0.04256088268799552
+abierto,"To calculate the total, we need to",0.1,0.06839975187190528,1,0.9936934817193313
+abierto,"To calculate the total, we need to",0.7,5.128708279816417,40,0.17553912949796877
+abierto,"To calculate the total, we need to",1.0,7.100098337087097,241,0.08293482052972118
+abierto,"To calculate the total, we need to",1.5,9.894403033894575,1735,0.026240734099681275
+abierto,"To calculate the total, we need to",2.0,11.816833865975124,6464,0.009824120618774258

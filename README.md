@@ -37,3 +37,10 @@ uv run pytest -q
 
 - Los entornos virtuales (`.venv/`), cachés y archivos `.zip` de entrega no se versionan.
 - Cada ejercicio conserva su `git_history.txt` con el historial de commits pedido por el enunciado.
+
+## IA Generativa y Agentes
+
+### Semana 1
+| Trabajo | Carpeta |
+|---|---|
+| Taller 01 — Foundation Models: comparación, decodificación y razonamiento | `semana1/taller01_foundation_models/` |

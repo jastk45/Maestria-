@@ -1,0 +1,7 @@
+esfuerzo,caso_id,acierto,tokens_razonamiento
+high,c11,1.0,0.0
+high,c12,1.0,24.0
+high,c13,1.0,26.0
+low,c11,1.0,0.0
+low,c12,1.0,0.0
+low,c13,1.0,21.0
