@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál fue el importe vendido en marzo de 2026 expresado en euros?",
+  "answer": "No puedo responder a esta pregunta con la información disponible: no se ha indicado ningún origen de datos (archivo, tabla o base de datos) que contenga las ventas de marzo de 2026, y no debo inventar cifras. Para calcular el importe vendido en euros necesito que indiques la fuente de datos (por ejemplo, un archivo CSV/Excel con columnas como fecha, importe y moneda) o que pegues los datos directamente. Si los importes están en otra moneda, indícame también el tipo de cambio o la columna de conversión a aplicar. Limitación: sin evidencia de datos, cualquier cifra que diera sería una invención.",
+  "trace": [],
+  "status": "completed"
+}

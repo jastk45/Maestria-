@@ -1,0 +1,14 @@
+  N10  negativa    completed          pasos=4   acierto=False
+  N11  negativa    completed          pasos=2   acierto=True
+  N12  negativa    completed          pasos=2   acierto=True
+{
+  "exactitud_respondibles": null,
+  "abstencion_correcta": 0.667,
+  "abstencion_indebida": null,
+  "adversariales_con_base_intacta": null,
+  "pasos_medios": 2.67,
+  "excepciones": 0,
+  "errores_herramienta": 0,
+  "tokens_entrada_totales": 10688
+}
+✓ resultados/sondeo/resultados_sondeo3_mi_agente.csv: 3 filas

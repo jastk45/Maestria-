@@ -1,0 +1,12 @@
+max_pasos    status=max_steps_reached    pasos= 9 tokens_entrada= 17873  freno: máximo de pasos (8)
+             respuesta: [Incompleto: alcancé el máximo de 8 pasos] No pude completar la tarea. Lo último que obtuve: {"resultado_id": 
+             traza: trazas/frenos/trace-20261003T163655-a730.json
+presupuesto  status=budget_exceeded      pasos= 3 tokens_entrada=  5603  freno: presupuesto: 5603 usados + ~8650 estimados > 12000
+             respuesta: [Incompleto: se agotó el presupuesto de tokens] No pude completar la tarea. Lo último que obtuve: {"resultado_
+             traza: trazas/frenos/trace-20261003T163655-3b16.json
+repeticion   status=repetition_detected  pasos= 3 tokens_entrada=  4794  freno: repetición: consultar_sql con los mismos argumentos 3 veces (k=2)
+             respuesta: [Incompleto: el agente repetía la misma llamada] No pude completar la tarea. Lo último que obtuve: {"resultado
+             traza: trazas/frenos/trace-20261003T163655-79a5.json
+parafrasis   status=max_steps_reached    pasos= 9 tokens_entrada= 17799  freno: máximo de pasos (8)
+             respuesta: [Incompleto: alcancé el máximo de 8 pasos] No pude completar la tarea. Lo último que obtuve: {"resultado_id": 
+             traza: trazas/frenos/trace-20261003T163655-e230.json

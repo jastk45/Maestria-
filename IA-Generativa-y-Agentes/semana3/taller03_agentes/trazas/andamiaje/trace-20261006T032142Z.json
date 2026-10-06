@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál fue el importe medio por unidad vendida de la categoría soporte en 2025?",
+  "answer": "No puedo calcular el importe medio por unidad vendida de la categoría 'soporte' en 2025 porque no dispongo de los datos necesarios: no tengo acceso a ningún conjunto de datos de ventas ni herramientas cargadas en esta sesión, y no debo inventar cifras.\n\nPara responder a tu pregunta necesitaría al menos uno de estos insumos:\n- Importe total facturado de la categoría 'soporte' en 2025 y unidades totales vendidas en ese periodo (importe medio = facturación total / unidades vendidas), o\n- El detalle transaccional (fecha, categoría, unidades e importe por venta) para filtrar 2025 y la categoría 'soporte' y calcular el promedio directamente.\n\nSi me proporcionas el archivo o la fuente de datos (por ejemplo, un CSV con esas columnas), podré realizar el cálculo e indicarte también supuestos y limitaciones del resultado (por ejemplo, si hay devoluciones, descuentos o impuestos incluidos en el importe).",
+  "trace": [],
+  "status": "completed"
+}

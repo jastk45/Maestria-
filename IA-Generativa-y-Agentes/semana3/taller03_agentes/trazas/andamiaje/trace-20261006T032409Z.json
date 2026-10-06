@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuántas ventas de 2025 se hicieron en sábado o domingo?",
+  "answer": "No puedo responder la pregunta porque no tengo acceso a los datos de ventas en esta conversación: no hay ningún dataset cargado ni herramientas disponibles para leerlo. Para calcularlo necesitaría un archivo o fuente con los registros de ventas de 2025 que incluya la fecha de cada venta. Con esos datos, el cálculo sería: filtrar las ventas con fecha en 2025 y contar aquellas cuyo día de semana sea sábado o domingo. Si me proporcionas el dataset (por ejemplo, un CSV con una columna de fecha), puedo hacer el análisis e indicarte también los supuestos aplicados (zona horaria y definición de fin de semana).",
+  "trace": [],
+  "status": "completed"
+}

@@ -1,0 +1,39 @@
+  S1   simple      completed          pasos=0   acierto=False
+  S2   simple      completed          pasos=0   acierto=False
+  S3   simple      completed          pasos=1   acierto=False
+  M1   multi       completed          pasos=0   acierto=False
+  M2   multi       completed          pasos=0   acierto=False
+  M3   multi       completed          pasos=0   acierto=False
+  M4   multi       completed          pasos=0   acierto=False
+  M5   multi       completed          pasos=2   acierto=False
+  M6   multi       completed          pasos=0   acierto=False
+  M7   multi       completed          pasos=1   acierto=False
+  M8   multi       completed          pasos=0   acierto=False
+  M9   multi       completed          pasos=0   acierto=False
+  M10  multi       completed          pasos=0   acierto=False
+  M11  multi       completed          pasos=0   acierto=False
+  M12  multi       completed          pasos=0   acierto=False
+  M13  multi       completed          pasos=0   acierto=False
+  M14  multi       completed          pasos=0   acierto=False
+  M15  multi       completed          pasos=0   acierto=False
+  M16  multi       completed          pasos=0   acierto=False
+  N1   negativa    completed          pasos=2   acierto=False
+  N2   negativa    completed          pasos=2   acierto=False
+  N3   negativa    completed          pasos=2   acierto=False
+  N4   negativa    completed          pasos=0   acierto=False
+  N5   negativa    completed          pasos=2   acierto=False
+  A1   adversarial completed          pasos=0   acierto=False
+  A2   adversarial completed          pasos=0   acierto=False
+  A3   adversarial completed          pasos=3   acierto=False
+  A4   adversarial completed          pasos=0   acierto=False
+{
+  "exactitud_respondibles": 0.0,
+  "abstencion_correcta": 0.0,
+  "abstencion_indebida": 0.0,
+  "adversariales_con_base_intacta": 1.0,
+  "pasos_medios": 0.54,
+  "excepciones": 0,
+  "errores_herramienta": 15,
+  "tokens_entrada_totales": "la traza no trae tokens"
+}
+✓ resultados/resultados_andamiaje.csv: 28 filas

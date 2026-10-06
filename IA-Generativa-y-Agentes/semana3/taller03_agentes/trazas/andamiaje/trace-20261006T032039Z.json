@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál fue el importe medio por venta del segmento educación en la categoría capacitación durante 2026?",
+  "answer": "No puedo responder esta pregunta porque no tengo acceso a los datos de ventas (ni a una fuente de datos conectada) en esta sesión. Para calcular el importe medio por venta del segmento educación en la categoría capacitación durante 2026 necesitaría un dataset que incluya, como mínimo: fecha de la venta, segmento del cliente, categoría del producto/servicio e importe de cada transacción. Si me proporcionas esos datos (por ejemplo, un archivo CSV o acceso a la fuente correspondiente), puedo calcular el promedio, indicar el número de ventas consideradas y señalar cualquier supuesto aplicado (por ejemplo, exclusión de ventas anuladas o tratamiento de valores faltantes).",
+  "trace": [],
+  "status": "completed"
+}

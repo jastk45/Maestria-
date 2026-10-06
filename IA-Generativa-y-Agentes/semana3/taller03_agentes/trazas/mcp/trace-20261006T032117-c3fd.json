@@ -1,0 +1,399 @@
+{
+  "question": "¿Qué producto tuvo la mediana del importe por venta más alta en 2025, y cuál fue esa mediana?",
+  "answer": "**Licencia Analítica Enterprise** tuvo la mediana del importe por venta más alta en 2025, con **7749.63**.\n\nDetalles:\n- La mediana se calculó sobre las 261 ventas de ese producto en 2025 (del 2025-01-01 al 2025-12-31), usando importe = cantidad × precio_unitario × (1 − descuento).\n- Para comparar, el segundo lugar fue \"Soporte Dedicado (mes)\" con mediana 3454.77, y el tercero \"Taller in situ (día)\" con 3228.42.\n- Como referencia adicional, ese producto tuvo una media de 8600.97 por venta en 2025, con importes que van desde 3332.20 hasta 21996.85.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 988,
+      "tokens_salida": 44,
+      "latencia_s": 0.6,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1299,
+      "tokens_salida": 911,
+      "latencia_s": 8.62,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"WITH v AS (\\n  SELECT p.producto_id, p.nombre,\\n         v.cantidad * v.precio_unitario * (1 - v.descuento) AS importe,\\n         ROW_NUMBER() OVER (PARTITION BY p.producto_id ORDER BY v.cantidad * v.precio_unitario * (1 - v.descuento)) AS rn,\\n         COUNT(*) OVER (PARTITION BY p.producto_id) AS n\\n  FROM ventas v\\n  JOIN productos p ON p.producto_id = v.producto_id\\n  WHERE v.fecha >= '2025-01-01' AND v.fecha < '2026-01-01'\\n)\\nSELECT nombre, ROUND(AVG(importe), 2) AS mediana_importe, COUNT(*) AS n_ventas\\nFROM v\\nWHERE rn IN ((n + 1) / 2, (n + 2) / 2)\\nGROUP BY producto_id, nombre\\nORDER BY mediana_importe DESC\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "nombre",
+          "mediana_importe",
+          "n_ventas"
+        ],
+        "total_filas": 13,
+        "filas": [
+          {
+            "nombre": "Licencia Analítica Enterprise",
+            "mediana_importe": 7749.63,
+            "n_ventas": 1
+          },
+          {
+            "nombre": "Soporte Dedicado (mes)",
+            "mediana_importe": 3454.77,
+            "n_ventas": 2
+          },
+          {
+            "nombre": "Taller in situ (día)",
+            "mediana_importe": 3228.42,
+            "n_ventas": 1
+          },
+          {
+            "nombre": "Licencia Analítica Pro",
+            "mediana_importe": 2157.5,
+            "n_ventas": 1
+          },
+          {
+            "nombre": "Soporte Prioritario (mes)",
+            "mediana_importe": 1925.84,
+            "n_ventas": 2
+          },
+          {
+            "nombre": "Licencia Integración API",
+            "mediana_importe": 1716.98,
+            "n_ventas": 1
+          },
+          {
+            "nombre": "Certificación de analistas",
+            "mediana_importe": 1294.91,
+            "n_ventas": 1
+          },
+          {
+            "nombre": "Licencia Visualización",
+            "mediana_importe": 1216.41,
+            "n_ventas": 2
+          },
+          {
+            "nombre": "Capacitación Avanzada",
+            "mediana_importe": 936.04,
+            "n_ventas": 1
+          },
+          {
+            "nombre": "Licencia Analítica Básica",
+            "mediana_importe": 881.93,
+            "n_ventas": 2
+          },
+          {
+            "nombre": "Soporte Estándar (mes)",
+            "mediana_importe": 775.82,
+            "n_ventas": 1
+          },
+          {
+            "nombre": "Bolsa de horas de consultoría",
+            "mediana_importe": 411.01,
+            "n_ventas": 1
+          },
+          {
+            "nombre": "Capacitación Fundamentos",
+            "mediana_importe": 332.72,
+            "n_ventas": 2
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 13 de 13 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2000,
+      "tokens_salida": 411,
+      "latencia_s": 4.64,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT v.cantidad * v.precio_unitario * (1 - v.descuento) AS importe\\nFROM ventas v\\nJOIN productos p ON p.producto_id = v.producto_id\\nWHERE p.nombre = 'Licencia Analítica Enterprise'\\n  AND v.fecha >= '2025-01-01' AND v.fecha < '2026-01-01'\"}"
+      },
+      "observation": {
+        "resultado_id": "r2",
+        "columnas": [
+          "importe"
+        ],
+        "total_filas": 261,
+        "filas": [
+          {
+            "importe": 11546.928
+          },
+          {
+            "importe": 12062.64
+          },
+          {
+            "importe": 7126.672
+          },
+          {
+            "importe": 12133.65
+          },
+          {
+            "importe": 17988.55
+          },
+          {
+            "importe": 8642.98
+          },
+          {
+            "importe": 8279.02
+          },
+          {
+            "importe": 4181.52
+          },
+          {
+            "importe": 8001.26
+          },
+          {
+            "importe": 7914.078
+          },
+          {
+            "importe": 6978.959
+          },
+          {
+            "importe": 4352.54
+          },
+          {
+            "importe": 7739.424
+          },
+          {
+            "importe": 3935.17
+          },
+          {
+            "importe": 3821.454
+          },
+          {
+            "importe": 4112.56
+          },
+          {
+            "importe": 4353.94
+          },
+          {
+            "importe": 21996.85
+          },
+          {
+            "importe": 4310.54
+          },
+          {
+            "importe": 19488.85
+          },
+          {
+            "importe": 18707.5425
+          },
+          {
+            "importe": 19378.15
+          },
+          {
+            "importe": 8299.105
+          },
+          {
+            "importe": 18920.925
+          },
+          {
+            "importe": 3679.5225
+          },
+          {
+            "importe": 8355.42
+          },
+          {
+            "importe": 4326.27
+          },
+          {
+            "importe": 4283.76
+          },
+          {
+            "importe": 4046.582
+          },
+          {
+            "importe": 17433.4575
+          },
+          {
+            "importe": 8532.92
+          },
+          {
+            "importe": 6624.322
+          },
+          {
+            "importe": 3629.682
+          },
+          {
+            "importe": 7395.48
+          },
+          {
+            "importe": 3939.03
+          },
+          {
+            "importe": 3844.584
+          },
+          {
+            "importe": 6870.108
+          },
+          {
+            "importe": 3921.102
+          },
+          {
+            "importe": 3543.667
+          },
+          {
+            "importe": 12416.19
+          },
+          {
+            "importe": 4160.03
+          },
+          {
+            "importe": 18554.225
+          },
+          {
+            "importe": 13013.64
+          },
+          {
+            "importe": 8305.56
+          },
+          {
+            "importe": 3899.82
+          },
+          {
+            "importe": 7729.8
+          },
+          {
+            "importe": 18620.095
+          },
+          {
+            "importe": 8279.04
+          },
+          {
+            "importe": 12060.6015
+          },
+          {
+            "importe": 4266.93
+          }
+        ],
+        "vista_truncada": true,
+        "nota": "Ves 50 de 261 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r2'."
+      }
+    },
+    {
+      "paso": 4,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2673,
+      "tokens_salida": 23,
+      "latencia_s": 0.73,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "estadisticas",
+        "args": "{\"columna\": \"importe\", \"resultado_id\": \"r2\"}"
+      },
+      "observation": {
+        "resultado_id": "r2",
+        "columna": "importe",
+        "n": 261,
+        "media": 8600.969,
+        "mediana": 7749.625,
+        "desviacion_estandar_muestral": 5346.8631,
+        "minimo": 3332.2039999999997,
+        "maximo": 21996.85,
+        "p25": 4030.86,
+        "p75": 11617.344,
+        "suma": 2244852.9095
+      }
+    },
+    {
+      "paso": 5,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2826,
+      "tokens_salida": 255,
+      "latencia_s": 2.39,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true,
+      "respuesta_modelo": "**Licencia Analítica Enterprise** tuvo la mediana del importe por venta más alta en 2025, con **7749.63**.\n\nDetalles:\n- La mediana se calculó sobre las 261 ventas de ese producto en 2025 (del 2025-01-01 al 2025-12-31), usando importe = cantidad × precio_unitario × (1 − descuento).\n- Para comparar, el segundo lugar fue \"Soporte Dedicado (mes)\" con mediana 3454.77, y el tercero \"Taller in situ (día)\" con 3228.42.\n- Como referencia adicional, ese producto tuvo una media de 8600.97 por venta en 2025, con importes que van desde 3332.20 hasta 21996.85."
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 9786,
+    "tokens_salida": 1644
+  },
+  "error": null,
+  "abstencion_por_codigo": false,
+  "segundos": 17.02
+}

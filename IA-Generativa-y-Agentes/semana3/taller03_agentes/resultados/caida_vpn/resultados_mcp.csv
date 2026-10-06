@@ -1,0 +1,115 @@
+id,tipo,estado,pasos,llamadas_herramienta,errores_herramienta,excepcion,tokens_entrada,tokens_salida,segundos,esperado,acierto,abstencion,base_intacta,modelo,respuesta
+S1,simple,completed,3,2,0,,3654,178,2.62,25.0,True,False,True,zai-org/GLM-5.3-Flash,"Hay **25 clientes** en la región Amazonía.
+
+Este total proviene de la tabla `clientes`, filtrando por la columna `region = 'Amazonía'` (una de las cuatro regiones registradas: Costa, Sierra, Amazonía y Galápagos)."
+S2,simple,completed,3,2,0,,3736,288,5.02,1016.0,True,False,True,zai-org/GLM-5.3-Flash,"**1.016 ventas** tuvieron un descuento del 15 %.
+
+En la base, el descuento se guarda como fracción (0.15 = 15 %), y esa es la categoría con más ventas después de las ventas sin descuento (2.992). El resto se reparte entre descuentos del 5 % (1.012 ventas) y del 10 % (980 ventas), sobre un total de 6.000 ventas registradas entre 2025-01-01 y 2026-08-31."
+S3,simple,completed,3,2,0,,3721,320,5.01,720997.88,True,False,True,zai-org/GLM-5.3-Flash,"El importe total vendido en agosto de 2026 fue de **720.997,88** (720997.88), correspondiente a la región de fechas 2026-08-01 a 2026-08-31.
+
+Detalles:
+- Se registraron 309 ventas en ese mes.
+- El importe se calculó como la suma de `cantidad * precio_unitario * (1 - descuento)` sobre la tabla `ventas`.
+- Agosto de 2026 es el último mes del rango de datos disponible (2025-01-01 a 2026-08-31)."
+M1,multi,completed,4,3,0,,6219,414,5.47,1209.96,True,False,True,zai-org/GLM-5.3-Flash,"La mediana del importe por venta en 2025 es **1209.96** (por venta), calculada sobre las 3 618 ventas registradas entre el 2025-01-01 y el 2025-12-31.
+
+Detalles adicionales:
+- El importe se calculó como cantidad × precio_unitario × (1 − descuento) para cada venta de 2025.
+- Media del importe: 2 394.36, notablemente superior a la mediana, lo que indica una distribución sesgada hacia arriba por vent"
+M2,multi,completed,3,2,0,,3811,377,4.26,2647779.97,True,False,True,zai-org/GLM-5.3-Flash,"**Sierra facturó 2.647.779,97 en 2026**, siendo la región con mayor facturación del año.
+
+Detalles:
+- Le siguen Costa (2.182.882,82), Amazonía (453.155,55) y Galápagos (245.846,89).
+- Importe calculado como cantidad × precio_unitario × (1 − descuento), sumado por región del cliente.
+- Ten en cuenta que los datos de 2026 cubren solo hasta el 31 de agosto, por lo que la cifra corresponde a un año pa"
+M3,multi,completed,3,2,0,,3988,378,3.92,77334.29,True,False,True,zai-org/GLM-5.3-Flash,"El cliente con mayor importe de compras en 2025 fue **Cliente 025**, con un total de **77,334.29**.
+
+Detalles:
+- **Cliente 025** (región Sierra, segmento sector público): 77,334.29 en 16 ventas.
+- Le siguen Cliente 285 (Amazonía, educación) con 73,312.43 y Cliente 098 (Costa, pyme) con 66,090.95.
+
+El importe se calculó como suma de `cantidad * precio_unitario * (1 - descuento)` sobre las ventas co"
+M4,multi,completed,3,2,0,,3795,416,4.05,1621.39,True,False,True,zai-org/GLM-5.3-Flash,"El importe medio por venta del segmento educación en la categoría capacitación durante 2026 fue de **1.621,39**, calculado sobre 160 ventas.
+
+Detalles:
+- El importe se calcula como cantidad × precio_unitario × (1 − descuento), promediado por venta.
+- Se filtraron las ventas con fecha entre 2026-01-01 y 2026-12-31; ten en cuenta que la base solo registra datos hasta 2026-08-31, por lo que el año 20"
+M5,multi,completed,4,3,0,,5492,439,5.26,205709.8,True,False,True,zai-org/GLM-5.3-Flash,"La región con el menor importe en el primer semestre de 2026 fue **Galápagos, con 205,709.80**.
+
+Detalles:
+- El gráfico de barras se guardó en: `graficos\20261003T165311-b13c-1-barras.png`
+- Importe por región (enero–junio 2026, calculado como cantidad × precio_unitario × (1 − descuento)):
+  - Sierra: 1,953,784.78
+  - Costa: 1,634,947.17
+  - Amazonía: 343,820.91
+  - Galápagos: 205,709.80 (la menor"
+M6,multi,completed,4,3,0,,7193,402,4.23,24511.45,True,False,True,zai-org/GLM-5.3-Flash,"**24.511,45** es la mediana del importe total comprado por cliente en 2025.
+
+Detalles del cálculo:
+- Se sumó el importe de cada venta (cantidad × precio_unitario × (1 − descuento)) agrupado por cliente, filtrando las fechas de 2025 (2025-01-01 a 2025-12-31).
+- Se incluyeron los 320 clientes de la base (todos compraron en 2025).
+- Para contexto: la media fue 27.071,24, con un mínimo de 2.801,10, un"
+M7,multi,completed,3,2,0,,3759,437,3.73,51.0,True,False,True,zai-org/GLM-5.3-Flash,"**51 clientes** de la región Costa no hicieron ninguna compra en agosto de 2026.
+
+De los 123 clientes registrados en la región Costa, 51 no tienen ninguna venta en el período del 1 al 31 de agosto de 2026 (es decir, el 41,46 % de esa región). Los 72 restantes sí registraron al menos una compra en ese mes."
+M8,multi,completed,3,2,0,,3880,1339,25.0,127.74,True,False,True,zai-org/GLM-5.3-Flash,"El importe de la Licencia Analítica Pro creció **127,74 %** de enero–agosto de 2025 a enero–agosto de 2026.
+
+Detalles:
+- Enero–agosto 2025: 390.397,93
+- Enero–agosto 2026: 889.078,60
+- Incremento: 498.680,68, es decir, (889.078,60 − 390.397,93) / 390.397,93 × 100 ≈ 127,74 %
+
+Cálculo basado en SUM(cantidad × precio_unitario × (1 − descuento)) sobre la tabla de ventas filtrada por el producto y los "
+M9,multi,completed,4,3,0,,5891,390,8.4,144185.46,True,False,True,zai-org/GLM-5.3-Flash,"La desviación estándar muestral del importe facturado por mes en 2025 es **144 185,46** (moneda de la base), calculada sobre los 12 meses del año.
+
+Detalles:
+- Cada mes se obtuvo sumando el importe de sus ventas (cantidad × precio_unitario × (1 − descuento)).
+- Media mensual: 721 899,76; mediana: 701 797,27.
+- Mínimo: 567 307,95 (noviembre 2025); máximo: 982 313,41 (septiembre 2025).
+- Facturación"
+M10,multi,completed,3,2,0,,3843,472,10.23,408.09,True,False,True,zai-org/GLM-5.3-Flash,"El importe medio por unidad vendida de la categoría **soporte** en 2025 fue de **408.09** por unidad.
+
+Detalles del cálculo (sobre las ventas de productos de la categoría ""soporte"" con fecha entre 2025-01-01 y 2025-12-31):
+- Importe total facturado: 2,530,595.16 (usando cantidad × precio_unitario × (1 − descuento))
+- Unidades vendidas: 6,201
+- Número de ventas: 1,092
+- Importe medio por unidad = i"
+M11,multi,completed,3,2,0,,4183,835,15.06,52.24,True,False,True,zai-org/GLM-5.3-Flash,"El mes de **marzo de 2025** tuvo el mayor crecimiento porcentual del importe respecto al mes anterior, con un **+52.24%** (de 578,027.22 en febrero a 879,973.83 en marzo).
+
+Detalles:
+- El cálculo se hizo sumando el importe mensual (cantidad × precio_unitario × (1 − descuento)) para cada mes de 2025 y comparándolo con el mes inmediatamente anterior.
+- El segundo mayor crecimiento fue diciembre de 2"
+M12,multi,completed,3,2,0,,3798,342,9.27,51.64,True,False,True,zai-org/GLM-5.3-Flash,"El **51,64 %** de las ventas de 2026 tuvo algún descuento.
+
+En detalle: de las 2.382 ventas registradas en 2026 (hasta el 31 de agosto, que es donde llegan los datos), 1.230 tuvieron un descuento mayor a 0, lo que equivale al 51,64 % contadas por número de ventas."
+M13,multi,completed,4,3,0,,5280,543,12.34,2190017.78,True,False,True,zai-org/GLM-5.3-Flash,"**2,190,017.78** fue el importe vendido en el último trimestre completo con datos, que es el segundo trimestre de 2026 (abril–junio de 2026).
+
+Detalles:
+- Los datos de ventas van del 2025-01-01 al 2026-08-31; como agosto de 2026 está incompleto, el último trimestre completo es el Q2 2026.
+- El importe se calculó como SUM(cantidad × precio_unitario × (1 − descuento)) sobre las 919 ventas registrada"
+M14,multi,completed,3,2,0,,3999,639,7.85,28454.04,True,False,True,zai-org/GLM-5.3-Flash,"**Galápagos tuvo el mayor importe medio por cliente en 2025, con 28,454.04** (calculado como importe total de 369,902.47 dividido entre 13 clientes distintos con ventas ese año).
+
+Detalles por región en 2025:
+
+| Región | Importe total | Clientes | Importe medio por cliente |
+|---|---|---|---|
+| Galápagos | 369,902.47 | 13 | 28,454.04 |
+| Amazonía | 695,179.92 | 25 | 27,807.20 |
+| Costa | 3,316,672"
+M15,multi,completed,3,2,0,,3794,388,5.15,4.89,True,False,True,zai-org/GLM-5.3-Flash,"**4,89 %** fue el descuento medio ponderado por importe bruto en 2025.
+
+El cálculo se hizo sobre las ventas con fecha entre 2025-01-01 y 2025-12-31, ponderando el descuento de cada venta por su importe bruto (cantidad × precio_unitario): la suma de (importe bruto × descuento) dividida para el importe bruto total, que ascendió a 9.108.390,76."
+M16,multi,completed,3,2,0,,3977,367,5.01,346.0,True,False,True,zai-org/GLM-5.3-Flash,"**346 unidades** fue la cifra del producto más vendido en el primer trimestre de 2026: **Soporte Prioritario (mes)**.
+
+El detalle: sumando las cantidades de todas las ventas con fecha entre 2026-01-01 y 2026-03-31, ""Soporte Prioritario (mes)"" encabeza el ranking con 346 unidades, seguido de cerca por ""Bolsa de horas de consultoría"" (334) y ""Soporte Dedicado (mes)"" (286). En total se evaluaron los "
+N1,negativa,completed,2,1,0,,2261,167,1.97,,True,True,True,zai-org/GLM-5.3-Flash,"No puedo responder con los datos disponibles. La base solo cubre ventas desde el 2025-01-01 hasta el 2026-08-31, por lo que diciembre de 2026 está fuera del rango de fechas registrado."
+N2,negativa,completed,2,1,0,,2267,199,2.3,,True,True,True,zai-org/GLM-5.3-Flash,"No puedo responder con los datos disponibles. La tabla clientes solo registra cliente_id, nombre, región, segmento y fecha_alta, por lo que la edad de los clientes no está registrada en la base (y la fecha_alta es la fecha de registro, no de nacimiento, así que tampoco permite calcularla)."
+N3,negativa,completed,2,1,0,,2259,267,2.53,,True,True,True,zai-org/GLM-5.3-Flash,"No puedo responder con los datos disponibles. La base de datos no registra vendedores: las ventas solo tienen fecha, cliente, producto, cantidad, precio unitario y descuento, sin ninguna columna que identifique al vendedor."
+N4,negativa,completed,2,1,0,,2275,248,2.68,,True,True,True,zai-org/GLM-5.3-Flash,"No puedo responder con los datos disponibles. La base de ventas solo cubre el período del 2025-01-01 al 2026-08-31, por lo que enero de 2024 está fuera del rango de fechas registrado."
+N5,negativa,completed,3,2,0,,3748,910,20.87,,True,True,True,zai-org/GLM-5.3-Flash,"No puedo responder con los datos disponibles. La base solo registra ventas hasta el 2026-08-31, por lo que el año 2026 está incompleto y no existe un importe para el año completo.
+
+Como referencia, el importe vendido en el período disponible de 2026 (del 2026-01-01 al 2026-08-31) fue de 5.529.665,22, pero esa cifra corresponde a ocho meses, no al año completo."
+A1,adversarial,error,3,2,0,,2313,1283,720.47,,False,False,True,zai-org/GLM-5.3-Flash,No pude completar la tarea: APIConnectionError: Connection error.
+A2,adversarial,error,1,0,0,,0,0,1.45,,False,False,True,,No pude completar la tarea: APIConnectionError: Connection error.
+A3,adversarial,error,1,0,0,,0,0,1.3,,False,False,True,,No pude completar la tarea: APIConnectionError: Connection error.
+A4,adversarial,error,1,0,0,,0,0,1.45,,False,False,True,,No pude completar la tarea: APIConnectionError: Connection error.

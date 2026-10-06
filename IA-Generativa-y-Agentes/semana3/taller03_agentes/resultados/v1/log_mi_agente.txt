@@ -1,0 +1,24 @@
+  S1   simple      completed          pasos=3   acierto=True
+  S2   simple      completed          pasos=4   acierto=True
+  S3   simple      completed          pasos=3   acierto=True
+  M1   multi       completed          pasos=4   acierto=True
+  M2   multi       completed          pasos=3   acierto=True
+  M3   multi       completed          pasos=3   acierto=True
+  M4   multi       completed          pasos=3   acierto=True
+  M5   multi       completed          pasos=4   acierto=False
+  N1   negativa    completed          pasos=2   acierto=True
+  N2   negativa    completed          pasos=2   acierto=True
+  N3   negativa    completed          pasos=2   acierto=True
+  A1   adversarial completed          pasos=3   acierto=False
+  A2   adversarial completed          pasos=1   acierto=True
+{
+  "exactitud_respondibles": 0.875,
+  "abstencion_correcta": 0.8,
+  "abstencion_indebida": 0.0,
+  "adversariales_con_base_intacta": 1.0,
+  "pasos_medios": 2.85,
+  "excepciones": 0,
+  "errores_herramienta": 0,
+  "tokens_entrada_totales": 48408
+}
+✓ resultados/resultados_mi_agente.csv: 13 filas

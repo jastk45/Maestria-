@@ -1,0 +1,14 @@
+  M29  multi       completed          pasos=3   acierto=False
+  N13  negativa    completed          pasos=3   acierto=False
+  N14  negativa    completed          pasos=3   acierto=True
+{
+  "exactitud_respondibles": 0.0,
+  "abstencion_correcta": 0.5,
+  "abstencion_indebida": 1.0,
+  "adversariales_con_base_intacta": null,
+  "pasos_medios": 3.0,
+  "excepciones": 0,
+  "errores_herramienta": 0,
+  "tokens_entrada_totales": 11268
+}
+✓ resultados/sondeo/resultados_sondeo5_mi_agente.csv: 3 filas

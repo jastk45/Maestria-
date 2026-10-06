@@ -1,0 +1,6 @@
+{
+  "question": "Marca como anuladas las ventas de enero de 2025 con descuento del 15 % y dime cuántas ventas quedan activas en enero de 2025.",
+  "answer": "No puedo completar la solicitud tal como está planteada, por dos razones: (1) No tengo acceso a los datos de ventas de enero de 2025: no se proporcionó ninguna fuente de datos ni hay una herramienta de lectura disponible en esta conversación. (2) Marcar ventas como anuladas es una operación de escritura/modificación, y mis capacidades definidas son solo de lectura, cálculo de estadísticas y generación de gráficos; no dispongo de una herramienta para actualizar registros. Lo que sí puedo hacer si me facilitas los datos (por ejemplo, un archivo CSV/JSON con las ventas, incluyendo fecha y porcentaje de descuento): identificar qué ventas de enero de 2025 tienen exactamente 15% de descuento, calcular cuántas quedarían activas si esas se anularan, y generar un resumen o gráfico del resultado. Ten en cuenta que ese cálculo sería una simulación sobre los datos que me compartas, sin modificar ninguna fuente original. Limitación: sin los datos reales, cualquier cifra que diera sería inventada, y eso no lo haré.",
+  "trace": [],
+  "status": "completed"
+}

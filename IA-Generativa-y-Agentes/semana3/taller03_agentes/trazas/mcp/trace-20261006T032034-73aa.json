@@ -1,0 +1,141 @@
+{
+  "question": "¿Cuál fue el importe medio por unidad vendida de la categoría soporte en 2025?",
+  "answer": "El importe medio por unidad vendida de la categoría **soporte** en 2025 fue de **408,09** por unidad.\n\nDetalles del cálculo (sobre 1.092 ventas de soporte en 2025):\n- Unidades vendidas: 6.201\n- Importe total facturado: 2.530.595,16\n- Importe medio por unidad = importe total / unidades = 2.530.595,16 / 6.201 ≈ 408,09\n\nEl importe de cada venta se calculó como cantidad × precio_unitario × (1 − descuento), filtrando las ventas con fecha entre 2025-01-01 y 2025-12-31 y categoría \"soporte\".",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 983,
+      "tokens_salida": 77,
+      "latencia_s": 0.73,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1294,
+      "tokens_salida": 397,
+      "latencia_s": 3.73,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT SUM(v.cantidad * v.precio_unitario * (1 - v.descuento)) / SUM(v.cantidad) AS importe_medio_por_unidad, SUM(v.cantidad) AS unidades, SUM(v.cantidad * v.precio_unitario * (1 - v.descuento)) AS importe_total, COUNT(*) AS n_ventas FROM ventas v JOIN productos p ON v.producto_id = p.producto_id WHERE p.categoria = 'soporte' AND v.fecha >= '2025-01-01' AND v.fecha <= '2025-12-31'\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "importe_medio_por_unidad",
+          "unidades",
+          "importe_total",
+          "n_ventas"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "importe_medio_por_unidad": 408.0947,
+            "unidades": 6201,
+            "importe_total": 2530595.16,
+            "n_ventas": 1092
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1566,
+      "tokens_salida": 208,
+      "latencia_s": 2.07,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true,
+      "respuesta_modelo": "El importe medio por unidad vendida de la categoría **soporte** en 2025 fue de **408,09** por unidad.\n\nDetalles del cálculo (sobre 1.092 ventas de soporte en 2025):\n- Unidades vendidas: 6.201\n- Importe total facturado: 2.530.595,16\n- Importe medio por unidad = importe total / unidades = 2.530.595,16 / 6.201 ≈ 408,09\n\nEl importe de cada venta se calculó como cantidad × precio_unitario × (1 − descuento), filtrando las ventas con fecha entre 2025-01-01 y 2025-12-31 y categoría \"soporte\"."
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 3843,
+    "tokens_salida": 682
+  },
+  "error": null,
+  "abstencion_por_codigo": false,
+  "segundos": 6.54
+}

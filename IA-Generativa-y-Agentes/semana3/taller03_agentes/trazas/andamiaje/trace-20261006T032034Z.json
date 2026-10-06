@@ -1,0 +1,6 @@
+{
+  "question": "¿Qué cliente tuvo el mayor importe de compras en 2025, y cuánto compró?",
+  "answer": "No puedo responder esta pregunta porque no tengo acceso a datos de compras ni a una fuente de datos conectada en esta conversación. No se ha proporcionado ningún archivo, base de datos o herramienta con información de clientes o transacciones de 2025, y no debo inventar datos.\n\nPara poder responder, necesitaría que compartas:\n- Un archivo con las transacciones (por ejemplo, CSV o Excel) que incluya al menos: identificador/nombre del cliente, fecha de la compra e importe.\n- O acceso a la herramienta/fuente de datos donde están registradas las ventas.\n\nLimitaciones: sin evidencia de datos reales, cualquier cifra que diera sería una invención. Si me proporcionas los datos, puedo calcular el cliente con mayor importe total de compras en 2025 y el monto exacto.",
+  "trace": [],
+  "status": "completed"
+}

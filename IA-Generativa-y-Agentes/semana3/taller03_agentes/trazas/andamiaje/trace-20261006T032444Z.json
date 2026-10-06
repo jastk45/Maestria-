@@ -1,0 +1,26 @@
+{
+  "question": "¿Cuál es la edad promedio de los clientes del segmento pyme?",
+  "answer": "No puedo calcular la edad promedio de los clientes del segmento pyme porque no tengo acceso a los datos: la herramienta de lectura de datos no está disponible en este entorno (error: 'Tool no registrada'). No inventaré un valor. Para obtener la respuesta, necesito que me proporciones los datos de edad de ese segmento (por ejemplo, un archivo CSV o una lista de valores) o que indiques el nombre correcto de la herramienta disponible para consultar la base de clientes. Limitación: sin acceso a la fuente de datos, cualquier cifra sería una invención.",
+  "trace": [
+    {
+      "step": 1,
+      "thought": "Necesito los datos de edad de los clientes del segmento pyme para calcular el promedio. Intentaré leerlos de la fuente de datos.",
+      "action": {
+        "name": "leer_datos",
+        "args": {
+          "tabla": "clientes",
+          "filtro": {
+            "segmento": "pyme"
+          },
+          "campos": [
+            "edad"
+          ]
+        }
+      },
+      "observation": {
+        "error": "Tool no registrada: leer_datos"
+      }
+    }
+  ],
+  "status": "completed"
+}

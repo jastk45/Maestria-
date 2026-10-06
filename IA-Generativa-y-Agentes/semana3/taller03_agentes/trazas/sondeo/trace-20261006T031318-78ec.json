@@ -1,0 +1,232 @@
+{
+  "question": "¿Qué producto tuvo la mediana del importe por venta más alta en 2025, y cuál fue esa mediana?",
+  "answer": "**La mediana del importe por venta más alta en 2025 fue de 7,749.63, correspondiente a \"Licencia Analítica Enterprise\".**\n\nDetalles:\n\n- El cálculo se hizo sobre las 3,618 ventas registradas en 2025, usando el importe por venta (cantidad × precio_unitario × (1 − descuento)) y la mediana por producto.\n- Ranking de medianas por producto en 2025 (top 5):\n  1. Licencia Analítica Enterprise — 7,749.63\n  2. Soporte Dedicado (mes) — 3,454.77\n  3. Taller in situ (día) — 3,228.42\n  4. Licencia Analítica Pro — 2,157.50\n  5. Soporte Prioritario (mes) — 1,925.84\n\nNota: algunas medianas se basan en muy pocas ventas (por ejemplo, \"Licencia Analítica Enterprise\" tiene solo 1 venta en 2025), por lo que conviene interpretarlas con cautela.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 988,
+      "tokens_salida": 207,
+      "latencia_s": 3.36,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1299,
+      "tokens_salida": 703,
+      "latencia_s": 9.74,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"WITH base AS (\\n  SELECT p.nombre AS producto,\\n         v.cantidad * v.precio_unitario * (1 - v.descuento) AS importe\\n  FROM ventas v\\n  JOIN productos p ON p.producto_id = v.producto_id\\n  WHERE v.fecha >= '2025-01-01' AND v.fecha <= '2025-12-31'\\n),\\nord AS (\\n  SELECT producto, importe,\\n         ROW_NUMBER() OVER (PARTITION BY producto ORDER BY importe) AS rn,\\n         COUNT(*) OVER (PARTITION BY producto) AS n\\n  FROM base\\n)\\nSELECT producto, ROUND(AVG(importe), 2) AS mediana_importe, COUNT(*) AS num_ventas\\nFROM ord\\nWHERE rn IN ((n + 1) / 2, (n + 2) / 2)\\nGROUP BY producto\\nORDER BY mediana_importe DESC\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "producto",
+          "mediana_importe",
+          "num_ventas"
+        ],
+        "total_filas": 13,
+        "filas": [
+          {
+            "producto": "Licencia Analítica Enterprise",
+            "mediana_importe": 7749.63,
+            "num_ventas": 1
+          },
+          {
+            "producto": "Soporte Dedicado (mes)",
+            "mediana_importe": 3454.77,
+            "num_ventas": 2
+          },
+          {
+            "producto": "Taller in situ (día)",
+            "mediana_importe": 3228.42,
+            "num_ventas": 1
+          },
+          {
+            "producto": "Licencia Analítica Pro",
+            "mediana_importe": 2157.5,
+            "num_ventas": 1
+          },
+          {
+            "producto": "Soporte Prioritario (mes)",
+            "mediana_importe": 1925.84,
+            "num_ventas": 2
+          },
+          {
+            "producto": "Licencia Integración API",
+            "mediana_importe": 1716.98,
+            "num_ventas": 1
+          },
+          {
+            "producto": "Certificación de analistas",
+            "mediana_importe": 1294.91,
+            "num_ventas": 1
+          },
+          {
+            "producto": "Licencia Visualización",
+            "mediana_importe": 1216.41,
+            "num_ventas": 2
+          },
+          {
+            "producto": "Capacitación Avanzada",
+            "mediana_importe": 936.04,
+            "num_ventas": 1
+          },
+          {
+            "producto": "Licencia Analítica Básica",
+            "mediana_importe": 881.93,
+            "num_ventas": 2
+          },
+          {
+            "producto": "Soporte Estándar (mes)",
+            "mediana_importe": 775.82,
+            "num_ventas": 1
+          },
+          {
+            "producto": "Bolsa de horas de consultoría",
+            "mediana_importe": 411.01,
+            "num_ventas": 1
+          },
+          {
+            "producto": "Capacitación Fundamentos",
+            "mediana_importe": 332.72,
+            "num_ventas": 2
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 13 de 13 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1989,
+      "tokens_salida": 187,
+      "latencia_s": 2.76,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT SUBSTR(fecha, 1, 4) AS anio, COUNT(*) AS ventas\\nFROM ventas\\nGROUP BY anio\\nORDER BY anio\"}"
+      },
+      "observation": {
+        "resultado_id": "r2",
+        "columnas": [
+          "anio",
+          "ventas"
+        ],
+        "total_filas": 2,
+        "filas": [
+          {
+            "anio": "2025",
+            "ventas": 3618
+          },
+          {
+            "anio": "2026",
+            "ventas": 2382
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 2 de 2 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r2'."
+      }
+    },
+    {
+      "paso": 4,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2142,
+      "tokens_salida": 245,
+      "latencia_s": 3.58,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true,
+      "respuesta_modelo": "**La mediana del importe por venta más alta en 2025 fue de 7,749.63, correspondiente a \"Licencia Analítica Enterprise\".**\n\nDetalles:\n\n- El cálculo se hizo sobre las 3,618 ventas registradas en 2025, usando el importe por venta (cantidad × precio_unitario × (1 − descuento)) y la mediana por producto.\n- Ranking de medianas por producto en 2025 (top 5):\n  1. Licencia Analítica Enterprise — 7,749.63\n  2. Soporte Dedicado (mes) — 3,454.77\n  3. Taller in situ (día) — 3,228.42\n  4. Licencia Analítica Pro — 2,157.50\n  5. Soporte Prioritario (mes) — 1,925.84\n\nNota: algunas medianas se basan en muy pocas ventas (por ejemplo, \"Licencia Analítica Enterprise\" tiene solo 1 venta en 2025), por lo que conviene interpretarlas con cautela."
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 6418,
+    "tokens_salida": 1342
+  },
+  "error": null,
+  "abstencion_por_codigo": false,
+  "segundos": 19.46
+}

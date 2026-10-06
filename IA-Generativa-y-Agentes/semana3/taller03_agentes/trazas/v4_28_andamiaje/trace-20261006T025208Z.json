@@ -1,0 +1,6 @@
+{
+  "question": "¿Qué región facturó más en 2026 y cuánto facturó?",
+  "answer": "No puedo responder a esta pregunta porque no tengo acceso a ningún conjunto de datos de facturación por región. No se ha proporcionado ninguna fuente de datos (archivo, base de datos o tabla) y no dispongo de herramientas conectadas en esta conversación para consultarla. Para poder responder, necesitaría que compartas los datos de ventas/facturación (por ejemplo, un CSV o tabla con columnas como región, fecha e importe). Limitaciones: no inventaré cifras ni regiones; cualquier respuesta sin datos sería especulativa.",
+  "trace": [],
+  "status": "completed"
+}

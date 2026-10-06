@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuántas ventas se hicieron en diciembre de 2026?",
+  "answer": "No puedo responder cuántas ventas se hicieron en diciembre de 2026 porque no tengo acceso a ningún conjunto de datos de ventas ni a una fuente de datos especificada (archivo, base de datos o tabla). No inventaré cifras. Para calcularlo, indícame la fuente de datos (por ejemplo, la ruta de un CSV/Excel o la consulta a realizar). Una vez con los datos, filtraré los registros con fecha entre 2026-12-01 y 2026-12-31 y los contaré. Limitaciones: asumiré que cada fila corresponde a una venta salvo que indiques lo contrario (por ejemplo, si hay que agrupar por ticket u orden), y aclararé cualquier ambigüedad en el formato de fecha.",
+  "trace": [],
+  "status": "completed"
+}

@@ -1,0 +1,157 @@
+{
+  "question": "¿Qué región tuvo el mayor importe medio por cliente en 2025, y cuánto fue ese importe medio por cliente?",
+  "answer": "**Galápagos tuvo el mayor importe medio por cliente en 2025, con 28.454,04 por cliente.**\n\nDetalles del cálculo (importe = cantidad × precio_unitario × (1 − descuento), ventas de 2025-01-01 a 2025-12-31):\n\n| Región | Importe total | Clientes con ventas | Importe medio por cliente |\n|---|---|---|---|\n| **Galápagos** | 369.902,47 | 13 | **28.454,04** |\n| Amazonía | 695.179,92 | 25 | 27.807,20 |\n| Costa | 3.316.672,33 | 123 | 26.964,82 |\n| Sierra | 4.281.042,45 | 159 | 26.924,80 |\n\nAunque Sierra es la región con mayor facturación total, Galápagos lidera en importe medio por cliente, con una base pequeña de solo 13 clientes con compras en el año. La diferencia entre la primera y la última región es de apenas unos 1.529 por cliente, así que las cuatro regiones están bastante parejas en este indicador.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 989,
+      "tokens_salida": 72,
+      "latencia_s": 0.84,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1300,
+      "tokens_salida": 302,
+      "latencia_s": 2.62,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT c.region, SUM(v.cantidad * v.precio_unitario * (1 - v.descuento)) AS importe_total, COUNT(DISTINCT v.cliente_id) AS clientes_con_ventas, SUM(v.cantidad * v.precio_unitario * (1 - v.descuento)) / COUNT(DISTINCT v.cliente_id) AS importe_medio_por_cliente FROM ventas v JOIN clientes c ON v.cliente_id = c.cliente_id WHERE v.fecha >= '2025-01-01' AND v.fecha <= '2025-12-31' GROUP BY c.region ORDER BY importe_medio_por_cliente DESC\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "region",
+          "importe_total",
+          "clientes_con_ventas",
+          "importe_medio_por_cliente"
+        ],
+        "total_filas": 4,
+        "filas": [
+          {
+            "region": "Galápagos",
+            "importe_total": 369902.471,
+            "clientes_con_ventas": 13,
+            "importe_medio_por_cliente": 28454.0362
+          },
+          {
+            "region": "Amazonía",
+            "importe_total": 695179.9195,
+            "clientes_con_ventas": 25,
+            "importe_medio_por_cliente": 27807.1968
+          },
+          {
+            "region": "Costa",
+            "importe_total": 3316672.33,
+            "clientes_con_ventas": 123,
+            "importe_medio_por_cliente": 26964.8157
+          },
+          {
+            "region": "Sierra",
+            "importe_total": 4281042.4525,
+            "clientes_con_ventas": 159,
+            "importe_medio_por_cliente": 26924.7953
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 4 de 4 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1716,
+      "tokens_salida": 314,
+      "latencia_s": 2.92,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 4005,
+    "tokens_salida": 688
+  },
+  "error": null,
+  "segundos": 6.4
+}

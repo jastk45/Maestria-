@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuántas ventas tuvieron un descuento del 15 %?",
+  "answer": "No puedo responder cuántas ventas tuvieron un descuento del 15 % porque no tengo acceso a ningún conjunto de datos de ventas en esta conversación. No inventaré una cifra. Para poder calcularlo, necesito que proporciones los datos, por ejemplo: un archivo (CSV/Excel) con las ventas y su columna de descuento, o los datos pegados directamente en el chat. Supuestos que usaré al recibirlos: contaré cada fila/registro como una venta y filtraré aquellos cuyo descuento sea exactamente 15 % (o 0.15, según cómo esté codificado). Limitación: sin los datos, la evidencia es insuficiente para dar un número.",
+  "trace": [],
+  "status": "completed"
+}

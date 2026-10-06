@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál es la mediana del importe por venta en 2025?",
+  "answer": "No puedo calcular la mediana del importe por venta en 2025 porque no tengo acceso a los datos de ventas: no se ha proporcionado ningún archivo, tabla o fuente de datos en esta conversación. Para poder responder, necesito que indiques la fuente de datos (por ejemplo, un archivo CSV/Excel con las ventas de 2025, incluyendo al menos las columnas 'fecha' e 'importe'). Una vez disponible, calcularé la mediana de los importes correspondientes a ventas fechadas en 2025. Limitación: sin los datos reales, cualquier cifra que diera sería inventada, y no haré eso.",
+  "trace": [],
+  "status": "completed"
+}

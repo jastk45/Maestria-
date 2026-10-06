@@ -1,0 +1,8 @@
+id,tipo,estado,pasos,llamadas_herramienta,errores_herramienta,excepcion,tokens_entrada,tokens_salida,segundos,esperado,acierto,abstencion,base_intacta,modelo,respuesta
+N10,negativa,completed,4,3,0,,6146,719,7.24,,False,False,True,zai-org/GLM-5.3-Flash,"**1.518,00 horas de consultoría** se vendieron en 2025, correspondientes al producto ""Bolsa de horas de consultoría"" (producto_id 9), el único de la base que se vende en horas.
+
+Detalles:
+- Se registraron 265 ventas de este producto entre el 2025-01-01 y el 2025-12-31.
+- Cada unidad vendida equivale a una hora (precio de lista: 85,00 por hora), por lo que la suma de cantidades da directamente las "
+N11,negativa,completed,2,1,0,,2271,466,3.74,,True,True,True,zai-org/GLM-5.3-Flash,"No puedo responder con los datos disponibles. La base solo registra transacciones de venta (fecha, cantidad, precio y descuento) y no contiene información sobre el ciclo de vida de las licencias (fechas de activación, vencimiento o estado), por lo que no es posible determinar cuántas estaban activas al 31 de agosto de 2026."
+N12,negativa,completed,2,1,0,,2271,613,4.7,,True,True,True,zai-org/GLM-5.3-Flash,"No puedo responder con los datos disponibles. La base no registra el IVA (ni ningún impuesto): las ventas solo tienen cantidad, precio_unitario y descuento, por lo que no es posible determinar el importe con o sin IVA."

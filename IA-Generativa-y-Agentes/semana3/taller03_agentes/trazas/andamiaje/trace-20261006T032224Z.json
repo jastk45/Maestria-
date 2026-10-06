@@ -1,0 +1,6 @@
+{
+  "question": "¿Qué producto se vendió en más unidades en el primer trimestre de 2026, y cuántas unidades fueron?",
+  "answer": "No puedo responder con certeza: actualmente no tengo acceso a ninguna fuente de datos de ventas conectada, por lo que no existe evidencia sobre las unidades vendidas por producto en el primer trimestre de 2026 (enero–marzo). Para poder responder, necesito que proporciones el dataset (por ejemplo, un archivo CSV/Excel con columnas como producto, fecha y unidades vendidas) o que indiques la fuente de datos a consultar. Limitación importante: sin esos datos, cualquier cifra sería inventada, y no invento datos.",
+  "trace": [],
+  "status": "completed"
+}

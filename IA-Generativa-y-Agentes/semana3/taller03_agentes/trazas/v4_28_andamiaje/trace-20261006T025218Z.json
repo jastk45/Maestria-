@@ -1,0 +1,6 @@
+{
+  "question": "¿Qué cliente tuvo el mayor importe de compras en 2025, y cuánto compró?",
+  "answer": "No puedo responder esta pregunta porque no tengo acceso a los datos de compras: no hay ninguna fuente de datos cargada ni herramientas disponibles en esta sesión para consultar transacciones. Sin evidencia, no puedo indicar qué cliente tuvo el mayor importe en 2025 ni el monto, y no voy a inventar cifras. Para poder analizarlo, necesito que proporciones los datos (por ejemplo, un archivo con las transacciones que incluya al menos: cliente/ID de cliente, fecha e importe) o que indiques dónde están almacenados. Supuestos y limitaciones: una vez con los datos, filtraría el período 2025-01-01 a 2025-12-31, sumaría el importe por cliente y devolvería el de mayor total, indicando además los supuestos sobre moneda y tratamiento de devoluciones si aplican.",
+  "trace": [],
+  "status": "completed"
+}

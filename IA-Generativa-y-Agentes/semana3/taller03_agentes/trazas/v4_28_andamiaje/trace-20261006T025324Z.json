@@ -1,0 +1,6 @@
+{
+  "question": "¿Qué mes de 2025 tuvo el mayor crecimiento porcentual del importe respecto al mes anterior, y de cuánto fue ese crecimiento?",
+  "answer": "No puedo responder aún: no tengo acceso a los datos mensuales de 2025 (importe por mes) ni se indicó una fuente o archivo de datos. Para calcular el crecimiento porcentual mes a mes necesito que proporciones el dataset (por ejemplo, un CSV/Excel con columnas 'mes' e 'importe') o la ruta/fuente donde están los datos. Limitación: sin esa evidencia no puedo determinar qué mes tuvo el mayor crecimiento ni su magnitud, y no inventaré valores.",
+  "trace": [],
+  "status": "completed"
+}

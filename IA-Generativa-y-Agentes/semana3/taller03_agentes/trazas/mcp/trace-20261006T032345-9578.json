@@ -1,0 +1,244 @@
+{
+  "question": "¿Cuántas horas de consultoría se vendieron en 2025?",
+  "answer": "Se vendieron **1.518 horas de consultoría en 2025**, correspondientes al producto \"Bolsa de horas de consultoría\" (categoría soporte).\n\nDetalles:\n- Las horas se miden como la suma de la columna `cantidad` de las 265 ventas de ese producto entre el 2025-01-01 y el 2025-12-31.\n- El importe facturado por esas ventas fue de 122.018,34 (calculado como cantidad × precio_unitario × (1 − descuento)).\n- Es el único producto del catálogo que representa horas de consultoría; los demás son licencias, soportes por mes o capacitaciones, por lo que no se suman horas adicionales de otras líneas.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 977,
+      "tokens_salida": 59,
+      "latencia_s": 0.63,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1288,
+      "tokens_salida": 182,
+      "latencia_s": 1.79,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT producto_id, nombre, categoria, precio_lista FROM productos ORDER BY producto_id\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "producto_id",
+          "nombre",
+          "categoria",
+          "precio_lista"
+        ],
+        "total_filas": 13,
+        "filas": [
+          {
+            "producto_id": 1,
+            "nombre": "Licencia Analítica Básica",
+            "categoria": "licencia",
+            "precio_lista": 480.0
+          },
+          {
+            "producto_id": 2,
+            "nombre": "Licencia Analítica Pro",
+            "categoria": "licencia",
+            "precio_lista": 1250.0
+          },
+          {
+            "producto_id": 3,
+            "nombre": "Licencia Analítica Enterprise",
+            "categoria": "licencia",
+            "precio_lista": 4200.0
+          },
+          {
+            "producto_id": 4,
+            "nombre": "Licencia Visualización",
+            "categoria": "licencia",
+            "precio_lista": 690.0
+          },
+          {
+            "producto_id": 5,
+            "nombre": "Licencia Integración API",
+            "categoria": "licencia",
+            "precio_lista": 980.0
+          },
+          {
+            "producto_id": 6,
+            "nombre": "Soporte Estándar (mes)",
+            "categoria": "soporte",
+            "precio_lista": 150.0
+          },
+          {
+            "producto_id": 7,
+            "nombre": "Soporte Prioritario (mes)",
+            "categoria": "soporte",
+            "precio_lista": 390.0
+          },
+          {
+            "producto_id": 8,
+            "nombre": "Soporte Dedicado (mes)",
+            "categoria": "soporte",
+            "precio_lista": 1100.0
+          },
+          {
+            "producto_id": 9,
+            "nombre": "Bolsa de horas de consultoría",
+            "categoria": "soporte",
+            "precio_lista": 85.0
+          },
+          {
+            "producto_id": 10,
+            "nombre": "Capacitación Fundamentos",
+            "categoria": "capacitación",
+            "precio_lista": 320.0
+          },
+          {
+            "producto_id": 11,
+            "nombre": "Capacitación Avanzada",
+            "categoria": "capacitación",
+            "precio_lista": 560.0
+          },
+          {
+            "producto_id": 12,
+            "nombre": "Taller in situ (día)",
+            "categoria": "capacitación",
+            "precio_lista": 1800.0
+          },
+          {
+            "producto_id": 13,
+            "nombre": "Certificación de analistas",
+            "categoria": "capacitación",
+            "precio_lista": 740.0
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 13 de 13 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1856,
+      "tokens_salida": 250,
+      "latencia_s": 2.46,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT SUM(v.cantidad) AS horas_2025, COUNT(*) AS num_ventas, SUM(v.cantidad * v.precio_unitario * (1 - v.descuento)) AS importe_total FROM ventas v JOIN productos p ON p.producto_id = v.producto_id WHERE p.nombre = 'Bolsa de horas de consultoría' AND v.fecha >= '2025-01-01' AND v.fecha <= '2025-12-31'\"}"
+      },
+      "observation": {
+        "resultado_id": "r2",
+        "columnas": [
+          "horas_2025",
+          "num_ventas",
+          "importe_total"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "horas_2025": 1518,
+            "num_ventas": 265,
+            "importe_total": 122018.338
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r2'."
+      }
+    },
+    {
+      "paso": 4,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2083,
+      "tokens_salida": 213,
+      "latencia_s": 2.39,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true,
+      "respuesta_modelo": "Se vendieron **1.518 horas de consultoría en 2025**, correspondientes al producto \"Bolsa de horas de consultoría\" (categoría soporte).\n\nDetalles:\n- Las horas se miden como la suma de la columna `cantidad` de las 265 ventas de ese producto entre el 2025-01-01 y el 2025-12-31.\n- El importe facturado por esas ventas fue de 122.018,34 (calculado como cantidad × precio_unitario × (1 − descuento)).\n- Es el único producto del catálogo que representa horas de consultoría; los demás son licencias, soportes por mes o capacitaciones, por lo que no se suman horas adicionales de otras líneas."
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 6204,
+    "tokens_salida": 704
+  },
+  "error": null,
+  "abstencion_por_codigo": false,
+  "segundos": 7.29
+}

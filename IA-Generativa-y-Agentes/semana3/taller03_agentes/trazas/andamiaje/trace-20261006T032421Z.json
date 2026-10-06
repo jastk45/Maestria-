@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuántos meses de soporte se vendieron en 2025?",
+  "answer": "No puedo responder cuántos meses de soporte se vendieron en 2025 porque no tengo acceso a ninguna fuente de datos en esta conversación: no hay archivos, bases de datos ni herramientas disponibles para consultar registros de ventas. No inventaré cifras.\n\nPara poder responder necesitaría:\n- Un archivo o tabla con los registros de ventas (por ejemplo, CSV o base de datos) que incluya fecha de venta, producto/servicio y cantidad de meses de soporte por transacción.\n- Confirmación del criterio: si 'meses de soporte vendidos' se refiere a la suma de meses contratados en cada venta, o al número de contratos vendidos.\n\nLimitaciones: incluso con datos, la respuesta dependería de la calidad y cobertura del registro (ventas canceladas, renovaciones y devoluciones podrían requerir un tratamiento específico). Si me proporcionas el archivo o la herramienta de acceso a datos, puedo calcular el total y desglosarlo por mes, cliente o producto.",
+  "trace": [],
+  "status": "completed"
+}

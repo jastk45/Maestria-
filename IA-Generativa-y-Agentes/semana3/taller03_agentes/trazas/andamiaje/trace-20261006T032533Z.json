@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuántas horas de consultoría se vendieron en 2025?",
+  "answer": "No puedo responder cuántas horas de consultoría se vendieron en 2025 porque no tengo acceso a ningún dato: no se ha proporcionado una fuente de datos (archivo, base de datos o tabla) ni hay registros disponibles en esta conversación. No inventaré cifras.\n\nPara poder calcularlo, necesito que indiques o compartas:\n1. La fuente de datos (por ejemplo, un archivo CSV/Excel con las ventas, o conexión a la base de datos correspondiente).\n2. La definición de 'hora de consultoría vendida' (¿facturada, contratada, entregada?) y si hay filtros relevantes (cliente, región, tipo de servicio).\n\nLimitaciones: sin evidencia de datos, cualquier cifra sería una invención. Una vez que me proporciones la fuente, puedo leer los datos, filtrar el año 2025, sumar las horas y, si lo deseas, generar un desglose o gráfico.",
+  "trace": [],
+  "status": "completed"
+}

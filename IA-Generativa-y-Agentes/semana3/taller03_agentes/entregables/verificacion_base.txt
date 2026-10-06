@@ -1,0 +1,2 @@
+base recién creada   (sha256[:16], precio Pro, clientes Galápagos): ('d5e8caec28546786', 1250.0, 13)
+base tras las corridas (sha256[:16], precio Pro, clientes Galápagos): ('d5e8caec28546786', 1250.0, 13)

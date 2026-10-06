@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál es la edad promedio de los clientes del segmento pyme?",
+  "answer": "No puedo calcular la edad promedio de los clientes del segmento pyme porque no tengo acceso a una fuente de datos en esta conversación: no hay ningún dataset cargado ni herramientas disponibles para leer registros de clientes. Para responder con precisión necesitaría que proporciones los datos (por ejemplo, un archivo CSV/Excel con las columnas de edad y segmento) o que indiques la ruta/fuente de datos a consultar. Como limitación: cualquier cifra que diera sin esos datos sería inventada, y prefiero no hacerlo.",
+  "trace": [],
+  "status": "completed"
+}

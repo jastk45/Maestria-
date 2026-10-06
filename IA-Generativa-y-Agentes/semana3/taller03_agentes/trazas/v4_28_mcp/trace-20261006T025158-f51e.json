@@ -1,0 +1,357 @@
+{
+  "question": "¿Cuál es la mediana del importe total comprado por cliente en 2025?",
+  "answer": "La mediana del importe total comprado por cliente en 2025 es **24.511,45** por cliente.\n\nDetalles del cálculo:\n- Se sumó el importe de cada venta (cantidad × precio_unitario × (1 − descuento)) agrupado por cliente, filtrando las fechas de 2025 (2025-01-01 a 2025-12-31).\n- Se calcularon estadísticas sobre los 320 clientes con compras en ese año.\n- Contexto de la distribución: media de 27.071,24, desviación estándar de 13.190,38, mínimo de 2.801,10, máximo de 77.334,29 y cuartiles en 17.008,11 (p25) y 34.465,05 (p75).",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 981,
+      "tokens_salida": 76,
+      "latencia_s": 1.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1292,
+      "tokens_salida": 115,
+      "latencia_s": 1.4,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT v.cliente_id, SUM(v.cantidad * v.precio_unitario * (1 - v.descuento)) AS importe_total FROM ventas v WHERE v.fecha >= '2025-01-01' AND v.fecha <= '2025-12-31' GROUP BY v.cliente_id\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "cliente_id",
+          "importe_total"
+        ],
+        "total_filas": 320,
+        "filas": [
+          {
+            "cliente_id": 1,
+            "importe_total": 19671.0455
+          },
+          {
+            "cliente_id": 2,
+            "importe_total": 40938.321
+          },
+          {
+            "cliente_id": 3,
+            "importe_total": 20537.219
+          },
+          {
+            "cliente_id": 4,
+            "importe_total": 51689.4395
+          },
+          {
+            "cliente_id": 5,
+            "importe_total": 13968.921
+          },
+          {
+            "cliente_id": 6,
+            "importe_total": 47405.8875
+          },
+          {
+            "cliente_id": 7,
+            "importe_total": 15342.133
+          },
+          {
+            "cliente_id": 8,
+            "importe_total": 32002.0045
+          },
+          {
+            "cliente_id": 9,
+            "importe_total": 26448.155
+          },
+          {
+            "cliente_id": 10,
+            "importe_total": 23082.9425
+          },
+          {
+            "cliente_id": 11,
+            "importe_total": 9505.2635
+          },
+          {
+            "cliente_id": 12,
+            "importe_total": 16410.329
+          },
+          {
+            "cliente_id": 13,
+            "importe_total": 11123.8735
+          },
+          {
+            "cliente_id": 14,
+            "importe_total": 25916.5675
+          },
+          {
+            "cliente_id": 15,
+            "importe_total": 45539.643
+          },
+          {
+            "cliente_id": 16,
+            "importe_total": 10946.142
+          },
+          {
+            "cliente_id": 17,
+            "importe_total": 17601.5905
+          },
+          {
+            "cliente_id": 18,
+            "importe_total": 18580.685
+          },
+          {
+            "cliente_id": 19,
+            "importe_total": 11615.0605
+          },
+          {
+            "cliente_id": 20,
+            "importe_total": 11813.705
+          },
+          {
+            "cliente_id": 21,
+            "importe_total": 10912.793
+          },
+          {
+            "cliente_id": 22,
+            "importe_total": 29445.154
+          },
+          {
+            "cliente_id": 23,
+            "importe_total": 31777.938
+          },
+          {
+            "cliente_id": 24,
+            "importe_total": 26236.5445
+          },
+          {
+            "cliente_id": 25,
+            "importe_total": 77334.287
+          },
+          {
+            "cliente_id": 26,
+            "importe_total": 23311.3825
+          },
+          {
+            "cliente_id": 27,
+            "importe_total": 40881.2785
+          },
+          {
+            "cliente_id": 28,
+            "importe_total": 23415.163
+          },
+          {
+            "cliente_id": 29,
+            "importe_total": 26408.9025
+          },
+          {
+            "cliente_id": 30,
+            "importe_total": 25268.7195
+          },
+          {
+            "cliente_id": 31,
+            "importe_total": 24327.2725
+          },
+          {
+            "cliente_id": 32,
+            "importe_total": 46455.489
+          },
+          {
+            "cliente_id": 33,
+            "importe_total": 16428.8045
+          },
+          {
+            "cliente_id": 34,
+            "importe_total": 24846.853
+          },
+          {
+            "cliente_id": 35,
+            "importe_total": 19930.5205
+          },
+          {
+            "cliente_id": 36,
+            "importe_total": 26319.916
+          },
+          {
+            "cliente_id": 37,
+            "importe_total": 21923.1335
+          },
+          {
+            "cliente_id": 38,
+            "importe_total": 17034.8475
+          },
+          {
+            "cliente_id": 39,
+            "importe_total": 18377.522
+          },
+          {
+            "cliente_id": 40,
+            "importe_total": 16917.432
+          },
+          {
+            "cliente_id": 41,
+            "importe_total": 36433.387
+          },
+          {
+            "cliente_id": 42,
+            "importe_total": 19944.2815
+          },
+          {
+            "cliente_id": 43,
+            "importe_total": 23119.431
+          },
+          {
+            "cliente_id": 44,
+            "importe_total": 31229.0745
+          },
+          {
+            "cliente_id": 45,
+            "importe_total": 39519.7665
+          },
+          {
+            "cliente_id": 46,
+            "importe_total": 26847.797
+          },
+          {
+            "cliente_id": 47,
+            "importe_total": 16490.81
+          },
+          {
+            "cliente_id": 48,
+            "importe_total": 16294.181
+          },
+          {
+            "cliente_id": 49,
+            "importe_total": 31593.664
+          },
+          {
+            "cliente_id": 50,
+            "importe_total": 14658.719
+          }
+        ],
+        "vista_truncada": true,
+        "nota": "Ves 50 de 320 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2383,
+      "tokens_salida": 24,
+      "latencia_s": 0.4,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "estadisticas",
+        "args": "{\"columna\": \"importe_total\", \"resultado_id\": \"r1\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columna": "importe_total",
+        "n": 320,
+        "media": 27071.2412,
+        "mediana": 24511.4535,
+        "desviacion_estandar_muestral": 13190.378,
+        "minimo": 2801.1014999999998,
+        "maximo": 77334.287,
+        "p25": 17008.1146,
+        "p75": 34465.0461,
+        "suma": 8662797.173
+      }
+    },
+    {
+      "paso": 4,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2537,
+      "tokens_salida": 214,
+      "latencia_s": 2.54,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 7193,
+    "tokens_salida": 429
+  },
+  "error": null,
+  "segundos": 5.35
+}

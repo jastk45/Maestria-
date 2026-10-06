@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuánto se vendió de la Licencia Analítica Premium en 2025?",
+  "answer": "No puedo responder cuánto se vendió de la Licencia Analítica Premium en 2025 porque no tengo acceso a ninguna fuente de datos en esta sesión: no hay datasets cargados ni herramientas de lectura de datos disponibles, y no debo inventar cifras.\n\nPara poder darte el número, necesito que:\n1. Proporciones los datos de ventas (por ejemplo, un archivo CSV/Excel con columnas como producto, fecha y monto o unidades vendidas), o\n2. Indiques la fuente o consulta exacta desde donde debo leer los datos.\n\nLimitaciones: sin evidencia, cualquier cifra que diera sería una invención. Una vez que tenga los datos, puedo calcular el total vendido (en unidades y/o facturación), desglosarlo por mes y generar un gráfico si lo deseas.",
+  "trace": [],
+  "status": "completed"
+}

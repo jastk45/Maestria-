@@ -1,0 +1,357 @@
+{
+  "question": "¿Cuál es la mediana del importe por venta en 2025?",
+  "answer": "La **mediana del importe por venta en 2025 es 1.209,96** (calculada sobre 3.618 ventas de ese año, con importe = cantidad × precio_unitario × (1 − descuento)).\n\nComo referencia adicional: la media fue 2.394,36, notablemente mayor que la mediana, lo que indica una distribución sesgada por ventas grandes (máximo de 21.996,85).",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 957,
+      "tokens_salida": 86,
+      "latencia_s": 0.67,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        },
+        "no_existe": "costos, márgenes, vendedores, edades ni datos fuera del rango de fechas"
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1297,
+      "tokens_salida": 85,
+      "latencia_s": 0.73,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT venta_id, cantidad * precio_unitario * (1 - descuento) AS importe FROM ventas WHERE fecha >= '2025-01-01' AND fecha <= '2025-12-31'\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "venta_id",
+          "importe"
+        ],
+        "total_filas": 3618,
+        "filas": [
+          {
+            "venta_id": 1,
+            "importe": 1988.0459999999998
+          },
+          {
+            "venta_id": 2,
+            "importe": 1485.5279999999998
+          },
+          {
+            "venta_id": 3,
+            "importe": 11546.928000000002
+          },
+          {
+            "venta_id": 4,
+            "importe": 4342.08
+          },
+          {
+            "venta_id": 5,
+            "importe": 3178.3959999999997
+          },
+          {
+            "venta_id": 6,
+            "importe": 3229.95
+          },
+          {
+            "venta_id": 7,
+            "importe": 2992.7225
+          },
+          {
+            "venta_id": 8,
+            "importe": 737.029
+          },
+          {
+            "venta_id": 9,
+            "importe": 12062.64
+          },
+          {
+            "venta_id": 10,
+            "importe": 323.784
+          },
+          {
+            "venta_id": 11,
+            "importe": 1552.831
+          },
+          {
+            "venta_id": 12,
+            "importe": 1189.76
+          },
+          {
+            "venta_id": 13,
+            "importe": 327.88
+          },
+          {
+            "venta_id": 14,
+            "importe": 1856.51
+          },
+          {
+            "venta_id": 15,
+            "importe": 423.57
+          },
+          {
+            "venta_id": 16,
+            "importe": 1585.791
+          },
+          {
+            "venta_id": 17,
+            "importe": 976.28
+          },
+          {
+            "venta_id": 18,
+            "importe": 4456.07
+          },
+          {
+            "venta_id": 19,
+            "importe": 700.68
+          },
+          {
+            "venta_id": 20,
+            "importe": 757.17
+          },
+          {
+            "venta_id": 21,
+            "importe": 825.18
+          },
+          {
+            "venta_id": 22,
+            "importe": 862.98
+          },
+          {
+            "venta_id": 23,
+            "importe": 7126.672
+          },
+          {
+            "venta_id": 24,
+            "importe": 1166.32
+          },
+          {
+            "venta_id": 25,
+            "importe": 927.48
+          },
+          {
+            "venta_id": 26,
+            "importe": 1439.016
+          },
+          {
+            "venta_id": 27,
+            "importe": 12133.650000000001
+          },
+          {
+            "venta_id": 28,
+            "importe": 604.162
+          },
+          {
+            "venta_id": 29,
+            "importe": 2384.595
+          },
+          {
+            "venta_id": 30,
+            "importe": 615.339
+          },
+          {
+            "venta_id": 31,
+            "importe": 1809.6
+          },
+          {
+            "venta_id": 32,
+            "importe": 134.64900000000003
+          },
+          {
+            "venta_id": 33,
+            "importe": 2548.044
+          },
+          {
+            "venta_id": 34,
+            "importe": 2128.8644999999997
+          },
+          {
+            "venta_id": 35,
+            "importe": 1021.6574999999998
+          },
+          {
+            "venta_id": 36,
+            "importe": 11321.796
+          },
+          {
+            "venta_id": 37,
+            "importe": 1117.8600000000001
+          },
+          {
+            "venta_id": 38,
+            "importe": 924.06
+          },
+          {
+            "venta_id": 39,
+            "importe": 456.09000000000003
+          },
+          {
+            "venta_id": 40,
+            "importe": 12634.800000000001
+          },
+          {
+            "venta_id": 41,
+            "importe": 428.01
+          },
+          {
+            "venta_id": 42,
+            "importe": 3506.7599999999998
+          },
+          {
+            "venta_id": 43,
+            "importe": 4409.4
+          },
+          {
+            "venta_id": 44,
+            "importe": 1264.05
+          },
+          {
+            "venta_id": 45,
+            "importe": 9009.3
+          },
+          {
+            "venta_id": 46,
+            "importe": 398.65500000000003
+          },
+          {
+            "venta_id": 47,
+            "importe": 17988.55
+          },
+          {
+            "venta_id": 48,
+            "importe": 771.4259999999999
+          },
+          {
+            "venta_id": 49,
+            "importe": 156.06
+          },
+          {
+            "venta_id": 50,
+            "importe": 397.69
+          }
+        ],
+        "vista_truncada": true,
+        "nota": "Ves 50 de 3618 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2320,
+      "tokens_salida": 23,
+      "latencia_s": 0.49,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "estadisticas",
+        "args": "{\"columna\": \"importe\", \"resultado_id\": \"r1\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columna": "importe",
+        "n": 3618,
+        "media": 2394.3607,
+        "mediana": 1209.9608,
+        "desviacion_estandar_muestral": 3125.0061,
+        "minimo": 66.55499999999999,
+        "maximo": 21996.85,
+        "p25": 639.009,
+        "p75": 2967.3023,
+        "suma": 8662797.173
+      }
+    },
+    {
+      "paso": 4,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2474,
+      "tokens_salida": 137,
+      "latencia_s": 0.99,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 7048,
+    "tokens_salida": 331
+  },
+  "segundos": 2.89
+}

@@ -44,3 +44,8 @@ uv run pytest -q
 | Trabajo | Carpeta |
 |---|---|
 | Taller 01 — Foundation Models: comparación, decodificación y razonamiento | `semana1/taller01_foundation_models/` |
+
+### Semana 3
+| Trabajo | Carpeta |
+|---|---|
+| Taller 03 — Agente analítico con herramientas: baseline medible, frenos y extensión MCP | `semana3/taller03_agentes/` |

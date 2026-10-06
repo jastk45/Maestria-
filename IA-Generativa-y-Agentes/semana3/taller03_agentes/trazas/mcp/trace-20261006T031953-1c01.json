@@ -1,0 +1,308 @@
+{
+  "question": "¿Cuál es la mediana del importe por venta en 2025?",
+  "answer": "La mediana del importe por venta en 2025 es **1209.96** (por venta).\n\nDetalles: se calcularon 3.618 ventas con fecha entre 2025-01-01 y 2025-12-31, usando el importe cantidad × precio_unitario × (1 − descuento). Además de la mediana de 1209.96, la media fue 2394.36, con un mínimo de 66.55, un máximo de 21,996.85 y un rango intercuartílico de 639.01 (p25) a 2,967.30 (p75). La diferencia entre media y mediana indica una distribución con cola derecha: unas pocas ventas de importe alto elevan el promedio por encima del valor típico.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 978,
+      "tokens_salida": 79,
+      "latencia_s": 1.12,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1289,
+      "tokens_salida": 92,
+      "latencia_s": 0.82,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT cantidad * precio_unitario * (1 - descuento) AS importe FROM ventas WHERE fecha >= '2025-01-01' AND fecha <= '2025-12-31'\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "importe"
+        ],
+        "total_filas": 3618,
+        "filas": [
+          {
+            "importe": 1988.046
+          },
+          {
+            "importe": 1485.528
+          },
+          {
+            "importe": 11546.928
+          },
+          {
+            "importe": 4342.08
+          },
+          {
+            "importe": 3178.396
+          },
+          {
+            "importe": 3229.95
+          },
+          {
+            "importe": 2992.7225
+          },
+          {
+            "importe": 737.029
+          },
+          {
+            "importe": 12062.64
+          },
+          {
+            "importe": 323.784
+          },
+          {
+            "importe": 1552.831
+          },
+          {
+            "importe": 1189.76
+          },
+          {
+            "importe": 327.88
+          },
+          {
+            "importe": 1856.51
+          },
+          {
+            "importe": 423.57
+          },
+          {
+            "importe": 1585.791
+          },
+          {
+            "importe": 976.28
+          },
+          {
+            "importe": 4456.07
+          },
+          {
+            "importe": 700.68
+          },
+          {
+            "importe": 757.17
+          },
+          {
+            "importe": 825.18
+          },
+          {
+            "importe": 862.98
+          },
+          {
+            "importe": 7126.672
+          },
+          {
+            "importe": 1166.32
+          },
+          {
+            "importe": 927.48
+          },
+          {
+            "importe": 1439.016
+          },
+          {
+            "importe": 12133.65
+          },
+          {
+            "importe": 604.162
+          },
+          {
+            "importe": 2384.595
+          },
+          {
+            "importe": 615.339
+          },
+          {
+            "importe": 1809.6
+          },
+          {
+            "importe": 134.649
+          },
+          {
+            "importe": 2548.044
+          },
+          {
+            "importe": 2128.8645
+          },
+          {
+            "importe": 1021.6575
+          },
+          {
+            "importe": 11321.796
+          },
+          {
+            "importe": 1117.86
+          },
+          {
+            "importe": 924.06
+          },
+          {
+            "importe": 456.09
+          },
+          {
+            "importe": 12634.8
+          },
+          {
+            "importe": 428.01
+          },
+          {
+            "importe": 3506.76
+          },
+          {
+            "importe": 4409.4
+          },
+          {
+            "importe": 1264.05
+          },
+          {
+            "importe": 9009.3
+          },
+          {
+            "importe": 398.655
+          },
+          {
+            "importe": 17988.55
+          },
+          {
+            "importe": 771.426
+          },
+          {
+            "importe": 156.06
+          },
+          {
+            "importe": 397.69
+          }
+        ],
+        "vista_truncada": true,
+        "nota": "Ves 50 de 3618 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1899,
+      "tokens_salida": 23,
+      "latencia_s": 0.51,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "estadisticas",
+        "args": "{\"columna\": \"importe\", \"resultado_id\": \"r1\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columna": "importe",
+        "n": 3618,
+        "media": 2394.3607,
+        "mediana": 1209.9608,
+        "desviacion_estandar_muestral": 3125.0061,
+        "minimo": 66.55499999999999,
+        "maximo": 21996.85,
+        "p25": 639.009,
+        "p75": 2967.3023,
+        "suma": 8662797.173
+      }
+    },
+    {
+      "paso": 4,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2053,
+      "tokens_salida": 217,
+      "latencia_s": 1.85,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true,
+      "respuesta_modelo": "La mediana del importe por venta en 2025 es **1209.96** (por venta).\n\nDetalles: se calcularon 3.618 ventas con fecha entre 2025-01-01 y 2025-12-31, usando el importe cantidad × precio_unitario × (1 − descuento). Además de la mediana de 1209.96, la media fue 2394.36, con un mínimo de 66.55, un máximo de 21,996.85 y un rango intercuartílico de 639.01 (p25) a 2,967.30 (p75). La diferencia entre media y mediana indica una distribución con cola derecha: unas pocas ventas de importe alto elevan el promedio por encima del valor típico."
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 6219,
+    "tokens_salida": 411
+  },
+  "error": null,
+  "abstencion_por_codigo": false,
+  "segundos": 4.31
+}

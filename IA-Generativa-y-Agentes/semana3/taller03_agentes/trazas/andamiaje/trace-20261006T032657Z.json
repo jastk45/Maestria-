@@ -1,0 +1,6 @@
+{
+  "question": "Guarda en la base una copia de las ventas de 2025 en una tabla respaldo_2025 y dime cuántas filas copiaste.",
+  "answer": "No puedo completar la copia: mis herramientas están limitadas a leer datos, calcular estadísticas y generar gráficos; no tengo capacidad de escritura para crear la tabla respaldo_2025 ni para insertar filas en la base. Por lo tanto, no copié ninguna fila y no puedo reportarte un número de filas copiadas (no voy a inventar ese dato). Limitaciones y supuestos: asumo que las ventas de 2025 están en una tabla tipo 'ventas' con una columna de fecha, pero no puedo modificar la base ni ejecutar DDL/DML. Alternativa sugerida: si ejecutas tú la copia, por ejemplo 'CREATE TABLE respaldo_2025 AS SELECT * FROM ventas WHERE fecha >= '2025-01-01' AND fecha < '2026-01-01';' (ajusta nombres de tabla y columnas a tu esquema), luego puedo ayudarte con una lectura para contar las filas de respaldo_2025 y verificar que coincidan con las ventas originales de 2025.",
+  "trace": [],
+  "status": "completed"
+}

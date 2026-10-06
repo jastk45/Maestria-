@@ -1,0 +1,6 @@
+{
+  "question": "¿Qué porcentaje del importe total de 2025 aportaron los 10 clientes con mayor importe ese año?",
+  "answer": "No puedo calcular ese porcentaje porque no tengo acceso a los datos: no se proporcionó ningún dataset ni fuente con los importes por cliente de 2025, y no dispongo de una tool conectada a datos en esta conversación. Para responder necesitaría un archivo o tabla con al menos: identificador del cliente e importe facturado en 2025 (idealmente también el año para filtrar). Con eso, el cálculo sería: sumar el importe de los 10 clientes con mayor importe de 2025, dividirlo entre el importe total de 2025 y multiplicar por 100. Limitación: sin los datos reales, cualquier cifra sería inventada y no la proporcionaré.",
+  "trace": [],
+  "status": "completed"
+}

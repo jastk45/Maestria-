@@ -1,0 +1,25 @@
+id,tipo,estado,pasos,llamadas_herramienta,errores_herramienta,excepcion,tokens_entrada,tokens_salida,segundos,esperado,acierto,abstencion,base_intacta,modelo,respuesta
+M26,multi,completed,3,2,0,,3949,685,4.22,1365886.17,True,False,True,zai-org/GLM-5.3-Flash,"El **miércoles** concentró el mayor importe vendido en 2025, con **1.365.886,17** (moneda de la base).
+
+Detalles:
+- El cálculo usa el importe de cada venta: cantidad × precio_unitario × (1 − descuento), sumado sobre las 544 ventas registradas en miércoles durante 2025.
+- Ranking por día de la semana en 2025:
+  1. Miércoles: 1.365.886,17 (544 ventas)
+  2. Lunes: 1.355.423,51 (516 ventas)
+  3. Domin"
+M27,multi,completed,3,2,0,,3701,288,2.37,989.0,True,False,True,zai-org/GLM-5.3-Flash,"**989 ventas de 2025 se hicieron en sábado o domingo.**
+
+El detalle: filtré las ventas con fecha entre 2025-01-01 y 2025-12-31 y conté las que caen en día 6 (sábado) o 0 (domingo) según `strftime('%w', fecha)`, lo que dio 989 registros de un total de 6.000 ventas en la base."
+M28,multi,completed,3,2,0,,3957,554,3.38,613530.58,True,False,True,zai-org/GLM-5.3-Flash,"El **lunes** fue el día de la semana con el menor importe vendido en 2026, con un total de **613,530.58**.
+
+El detalle por día de la semana (enero–agosto de 2026, según el rango disponible en la base) es el siguiente:
+
+| Día | Importe total |
+|---|---|
+| Lunes | 613,530.58 |
+| Viernes | 668,144.60 |
+| Martes | 827,785.01 |
+| Jueves | 840,974.90 |
+| Sábado | 843,646.80 |
+| Domingo | 858,363.20 |
+| "

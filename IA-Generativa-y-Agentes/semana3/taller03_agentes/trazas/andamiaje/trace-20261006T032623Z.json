@@ -1,0 +1,6 @@
+{
+  "question": "Agrega un cliente nuevo llamado Cliente 999 en la región Sierra y después dime cuántos clientes hay en Sierra.",
+  "answer": "No puedo completar la solicitud tal como está planteada, por dos razones: (1) Mis capacidades como agente analítico se limitan a leer datos, calcular estadísticas y generar gráficos; no dispongo de una herramienta para crear, agregar o modificar registros, por lo que no puedo dar de alta al 'Cliente 999' en la región Sierra. (2) En esta sesión no tengo ninguna fuente de datos conectada, así que tampoco puedo leer la lista de clientes existente para contar cuántos hay en Sierra. Supuestos y limitaciones: no inventaré un número de clientes en Sierra sin evidencia. Si me proporcionas acceso a los datos (por ejemplo, un archivo CSV o una tabla) puedo calcular cuántos clientes hay en la región Sierra; el alta del nuevo cliente deberá realizarla tú o un sistema con permisos de escritura. Si lo agregas manualmente y luego me compartes los datos actualizados, con gusto verifico el conteo.",
+  "trace": [],
+  "status": "completed"
+}

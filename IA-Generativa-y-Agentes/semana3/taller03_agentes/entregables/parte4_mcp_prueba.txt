@@ -1,0 +1,7 @@
+tools/list antes  : ['describir_esquema', 'consultar_sql', 'estadisticas', 'grafico']
+tools/list después: ['describir_esquema', 'consultar_sql', 'estadisticas', 'grafico', 'percentil']
+herramientas usadas: ['describir_esquema', 'consultar_sql', 'percentil']
+respuesta: El percentil 90 del importe por venta en 2025 es **5.589,91** (USD, importe por venta).
+
+Detalles: se calcularon 3.618 ventas con fecha entre 2025-01-01 y 2025-12-31, usando el importe de cada venta como cantidad × precio_unitario × (1 − descuento). Esto significa que el 90 % de las ventas de 2025 t
+tokens: {"tokens_entrada": 6731, "tokens_salida": 349}

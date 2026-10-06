@@ -1,0 +1,56 @@
+id,tipo,estado,pasos,llamadas_herramienta,errores_herramienta,excepcion,tokens_entrada,tokens_salida,segundos,esperado,acierto,abstencion,base_intacta,modelo,respuesta
+M17,multi,completed,4,3,0,,6418,1342,19.52,7749.63,True,False,True,zai-org/GLM-5.3-Flash,"**La mediana del importe por venta más alta en 2025 fue de 7,749.63, correspondiente a ""Licencia Analítica Enterprise"".**
+
+Detalles:
+
+- El cálculo se hizo sobre las 3,618 ventas registradas en 2025, usando el importe por venta (cantidad × precio_unitario × (1 − descuento)) y la mediana por producto.
+- Ranking de medianas por producto en 2025 (top 5):
+  1. Licencia Analítica Enterprise — 7,749.63
+ "
+M18,multi,completed,7,6,0,,11713,661,9.15,29.38,True,False,True,zai-org/GLM-5.3-Flash,"La mediana del importe por venta de 2026 fue **29,38 mayor** que la de 2025 (1.239,34 en 2026 frente a 1.209,96 en 2025).
+
+Detalles:
+- **2025**: mediana de 1.209,96 sobre 3.618 ventas (media de 2.394,36).
+- **2026**: mediana de 1.239,34 sobre 2.382 ventas (media de 2.321,44), con datos hasta el 31/08/2026.
+- El importe se calculó como cantidad × precio_unitario × (1 − descuento) para cada venta, a"
+M19,multi,completed,3,2,0,,3872,583,7.1,1.29,True,False,True,zai-org/GLM-5.3-Flash,"En 2025, el importe medio por venta de licencia fue **1.29 veces** el de soporte.
+
+Detalles: el importe medio por venta de licencia fue de 2,978.54 (1,413 ventas), mientras que el de soporte fue de 2,317.39 (1,092 ventas). El cociente 2,978.54 / 2,317.39 ≈ 1.29, calculado sobre el importe de cada venta (cantidad × precio_unitario × (1 − descuento)) filtrando las fechas de 2025."
+M20,multi,completed,11,10,0,,11219,2085,23.93,1032.16,True,False,True,zai-org/GLM-5.3-Flash,"**Amazonía tuvo la mediana del importe por venta más baja en 2025, con 1032.16.**
+
+Detalles de la comparación entre regiones (importe = cantidad × precio_unitario × (1 − descuento), ventas del 01-01-2025 al 31-12-2025):
+
+| Región | Mediana | N° de ventas |
+|---|---|---|
+| Amazonía | 1032.16 | 276 |
+| Sierra | 1214.21 | 1782 |
+| Costa | 1217.52 | 1407 |
+| Galápagos | 1358.37 | 153 |
+
+Aunque Amazoní"
+M21,multi,completed,4,3,0,,4422,2332,25.27,5589.91,True,False,True,zai-org/GLM-5.3-Flash,"**El percentil 90 del importe por venta en 2025 es 5 590,23.**
+
+Detalles del cálculo:
+- Se consideraron las 3 618 ventas con fecha entre 2025-01-01 y 2025-12-31 (la base cubre hasta 2026-08-31, así que se filtró solo el año 2025).
+- El importe de cada venta se calculó como cantidad × precio_unitario × (1 − descuento).
+- Usando el método de rango más cercano (posición ⌈0,9 × 3 618⌉ = 3 257 sobre lo"
+M22,multi,completed,3,2,0,,3807,567,6.23,795290.35,True,False,True,zai-org/GLM-5.3-Flash,"Los clientes que se dieron de alta durante 2025 compraron **795.290,35** en 2026.
+
+Detalles:
+- Se trata de 52 clientes con fecha de alta entre 2025-01-01 y 2025-12-31 que registraron compras en 2026.
+- Esas compras corresponden a 377 ventas, con importe calculado como cantidad × precio_unitario × (1 − descuento).
+- El rango de fechas de la base llega hasta 2026-08-31, por lo que la cifra cubre lo "
+M23,multi,completed,3,2,0,,3880,589,6.23,7.5,True,False,True,zai-org/GLM-5.3-Flash,"Los 10 clientes con mayor importe de 2025 aportaron el **7.50%** del importe total de ese año.
+
+Detalles:
+- Importe total de 2025: 8,662,797.17
+- Importe de los 10 principales clientes: 649,589.25
+- Porcentaje: 649,589.25 / 8,662,797.17 = 7.50%
+
+Es decir, la facturación de 2025 está bastante repartida entre la base de clientes: incluso los 10 mayores clientes concentran menos de una décima parte d"
+N6,negativa,completed,3,2,0,,3753,736,8.53,,True,True,True,zai-org/GLM-5.3-Flash,"No puedo responder con los datos disponibles. La columna `fecha` de la tabla `ventas` solo registra la fecha en formato YYYY-MM-DD, sin hora del día, por lo que no es posible filtrar las ventas entre las 15:00 y las 18:00.
+
+Como referencia, el importe total vendido ese día completo (2026-08-31) fue de 25,837.97, correspondiente a 9 ventas."
+N7,negativa,completed,3,2,0,,3709,720,7.53,,False,False,True,zai-org/GLM-5.3-Flash,"El importe vendido en marzo de 2026 fue de **845.520,02 €**.
+
+Este total corresponde a la suma de todas las ventas registradas entre el 2026-03-01 y el 2026-03-31, calculada como cantidad × precio_unitario × (1 − descuento) para cada venta. La base registra las fechas desde el 2025-01-01 hasta el 2026-08-31, por lo que marzo de 2026 está dentro del rango disponible."

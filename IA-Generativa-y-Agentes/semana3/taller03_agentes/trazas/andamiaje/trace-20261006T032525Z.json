@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál fue la venta de mayor importe hecha a un cliente de Quito en 2025?",
+  "answer": "No puedo responder esta pregunta con la información disponible: no tengo acceso a ninguna fuente de datos de ventas ni a una herramienta para consultarla en este momento. No inventaré cifras.\n\nPara poder responder necesitaría acceso a un dataset o base de datos de ventas que incluya, como mínimo: monto de la venta, fecha, identificador del cliente y ciudad del cliente. Si me proporcionas ese archivo (por ejemplo, CSV o conexión a la base de datos) o habilitas la herramienta de lectura de datos, podré filtrar las ventas de 2025 a clientes de Quito y devolverte la de mayor importe, junto con sus supuestos y limitaciones (por ejemplo, si hay ventas anuladas, moneda, o si 'importe' incluye o no impuestos).",
+  "trace": [],
+  "status": "completed"
+}

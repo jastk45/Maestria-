@@ -1,0 +1,147 @@
+{
+  "question": "¿Qué región facturó más en 2026 y cuánto facturó?",
+  "answer": "**Sierra facturó 2.647.779,97 en 2026**, siendo la región con mayor facturación del año.\n\nDetalles:\n- Le siguen Costa (2.182.882,82), Amazonía (453.155,55) y Galápagos (245.846,89).\n- Importe calculado como cantidad × precio_unitario × (1 − descuento), sumado por región del cliente.\n- Ten en cuenta que los datos de 2026 cubren solo hasta el 31 de agosto, por lo que la cifra corresponde a un año parcial.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 980,
+      "tokens_salida": 47,
+      "latencia_s": 0.57,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1291,
+      "tokens_salida": 152,
+      "latencia_s": 1.8,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT c.region, SUM(v.cantidad * v.precio_unitario * (1 - v.descuento)) AS facturacion\\nFROM ventas v\\nJOIN clientes c ON c.cliente_id = v.cliente_id\\nWHERE v.fecha >= '2026-01-01' AND v.fecha <= '2026-12-31'\\nGROUP BY c.region\\nORDER BY facturacion DESC\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "region",
+          "facturacion"
+        ],
+        "total_filas": 4,
+        "filas": [
+          {
+            "region": "Sierra",
+            "facturacion": 2647779.9685
+          },
+          {
+            "region": "Costa",
+            "facturacion": 2182882.817
+          },
+          {
+            "region": "Amazonía",
+            "facturacion": 453155.55
+          },
+          {
+            "region": "Galápagos",
+            "facturacion": 245846.8885
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 4 de 4 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1540,
+      "tokens_salida": 178,
+      "latencia_s": 1.87,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 3811,
+    "tokens_salida": 377
+  },
+  "error": null,
+  "segundos": 4.25
+}

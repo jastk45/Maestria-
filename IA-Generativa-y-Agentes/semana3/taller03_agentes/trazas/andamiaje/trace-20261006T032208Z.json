@@ -1,0 +1,6 @@
+{
+  "question": "¿Qué región tuvo el mayor importe medio por cliente en 2025, y cuánto fue ese importe medio por cliente?",
+  "answer": "No puedo responder a esta pregunta porque no tengo acceso a los datos necesarios. En esta conversación no hay ninguna fuente de datos disponible (no se ha proporcionado un archivo, base de datos ni herramientas conectadas) que contenga información de importes y clientes por región para 2025.\n\nPara poder responder necesitaría:\n- Un dataset con al menos: región, importe (ventas/facturación), cliente (identificador) y fecha/año.\n- Confirmación de cómo definir 'importe medio por cliente' (por ejemplo: total facturado en 2025 dividido por número de clientes únicos de esa región).\n\nSi me proporcionas los datos, podré calcular el importe medio por cliente de cada región en 2025, identificar la región con el mayor valor e indicar el importe exacto, junto con los supuestos y limitaciones del cálculo.",
+  "trace": [],
+  "status": "completed"
+}

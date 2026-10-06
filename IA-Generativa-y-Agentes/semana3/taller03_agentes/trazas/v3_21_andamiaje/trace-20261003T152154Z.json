@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál es la mediana del importe total comprado por cliente en 2025?",
+  "answer": "No puedo calcular la mediana porque no tengo acceso a los datos de compras: no hay ningún dataset cargado ni fuente de datos disponible en esta conversación, y no debo inventar cifras. Para poder responder necesito que me proporciones: (1) un archivo o tabla con las transacciones de 2025 que incluya al menos identificador de cliente, fecha e importe, o (2) los importes totales ya agregados por cliente. Con esos datos el procedimiento sería: filtrar las compras de 2025, sumar el importe total por cliente, ordenar esos totales y tomar el valor central (o el promedio de los dos valores centrales si la cantidad de clientes es par). Limitación: sin la evidencia de los datos reales, cualquier número que diera sería inventado.",
+  "trace": [],
+  "status": "completed"
+}

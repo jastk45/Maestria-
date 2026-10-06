@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál fue el importe total de los descuentos otorgados en 2025, es decir, lo que se dejó de cobrar respecto del importe bruto?",
+  "answer": "No puedo responder con un importe concreto porque no tengo acceso a los datos de ventas o facturación de 2025 en esta conversación, y no debo inventar cifras. Para calcular el total de descuentos otorgados (importe bruto − importe neto cobrado) necesito que me proporciones la fuente de datos, por ejemplo: un archivo con columnas como fecha, importe_bruto, descuento e importe_neto, o bien los totales agregados del período. Con esa información puedo sumar los descuentos de 2025, verificar su consistencia (que bruto − descuento = neto) y, si lo deseas, desglosarlos por mes, cliente o producto. Limitación: sin los datos, cualquier cifra que diera sería una invención.",
+  "trace": [],
+  "status": "completed"
+}

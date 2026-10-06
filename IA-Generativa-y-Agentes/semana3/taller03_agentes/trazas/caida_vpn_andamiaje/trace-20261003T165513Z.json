@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuántos clientes de la región Costa no hicieron ninguna compra en agosto de 2026?",
+  "answer": "No puedo dar un número: en esta conversación no tengo acceso a los datos de clientes ni de compras, y no hay herramientas disponibles para consultarlos. No inventaré cifras. Para calcularlo necesitaría: (1) el listado de clientes con su región, para filtrar los de 'Costa', y (2) el registro de transacciones con fecha, para identificar compras entre 2026-08-01 y 2026-08-31. El cálculo sería: total de clientes de región Costa menos los que tengan al menos una compra en ese período. Supuestos a confirmar: si las compras anuladas o devueltas cuentan como compras, y si la región se define por la dirección actual del cliente o la vigente en agosto de 2026. Si me proporcionas los datos o habilitas el acceso, ejecuto el análisis.",
+  "trace": [],
+  "status": "completed"
+}

@@ -1,0 +1,53 @@
+{
+  "question": "¿Cuál fue el importe medio por unidad vendida de la categoría soporte en 2025?",
+  "answer": "No puedo calcular el importe medio por unidad vendida de la categoría 'soporte' en 2025 porque no he logrado acceder a los datos: las herramientas de lectura de datos no están registradas en este entorno (probé 'leer_datos' y 'read_data' y ambas fueron rechazadas).\n\nLo que haría con los datos sería: importe medio por unidad = suma(importe) / suma(unidades) para las ventas de la categoría 'soporte' entre el 2025-01-01 y el 2025-12-31.\n\nLimitaciones: no tengo evidencia de los importes ni de las unidades vendidas, y no voy a inventar cifras. Para continuar, indícame el nombre exacto de la herramienta disponible para leer datos o proporciona directamente los datos de ventas (importe y unidades por operación de la categoría 'soporte' en 2025).",
+  "trace": [
+    {
+      "step": 1,
+      "thought": "No dispongo de los datos de ventas en el contexto, así que necesito leerlos antes de calcular el importe medio por unidad (importe total / unidades vendidas) de la categoría 'soporte' en 2025.",
+      "action": {
+        "name": "leer_datos",
+        "args": {
+          "fuente": "ventas",
+          "filtros": {
+            "categoria": "soporte",
+            "fecha_desde": "2025-01-01",
+            "fecha_hasta": "2025-12-31"
+          },
+          "campos": [
+            "fecha",
+            "importe",
+            "unidades"
+          ]
+        }
+      },
+      "observation": {
+        "error": "Tool no registrada: leer_datos"
+      }
+    },
+    {
+      "step": 2,
+      "thought": "La tool 'leer_datos' no está registrada. Intentaré con el nombre en inglés 'read_data', que es una convención habitual. Si tampoco existe, informaré de que no puedo acceder a los datos.",
+      "action": {
+        "name": "read_data",
+        "args": {
+          "source": "ventas",
+          "filters": {
+            "categoria": "soporte",
+            "fecha_desde": "2025-01-01",
+            "fecha_hasta": "2025-12-31"
+          },
+          "fields": [
+            "fecha",
+            "importe",
+            "unidades"
+          ]
+        }
+      },
+      "observation": {
+        "error": "Tool no registrada: read_data"
+      }
+    }
+  ],
+  "status": "completed"
+}

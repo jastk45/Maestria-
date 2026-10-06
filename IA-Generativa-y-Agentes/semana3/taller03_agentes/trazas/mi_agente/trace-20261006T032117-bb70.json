@@ -1,0 +1,232 @@
+{
+  "question": "¿Qué producto tuvo la mediana del importe por venta más alta en 2025, y cuál fue esa mediana?",
+  "answer": "**La mediana del importe por venta más alta en 2025 fue de 7 749,63, correspondiente a \"Licencia Analítica Enterprise\".**\n\nDetalles:\n- El cálculo se hizo sobre las 3 618 ventas de 2025, con importe = cantidad × precio_unitario × (1 − descuento).\n- Sin embargo, ese producto registró **solo 1 venta** en todo 2025, por lo que su \"mediana\" es simplemente ese único importe y no es un indicador robusto.\n- Los siguientes con más de una venta fueron \"Soporte Dedicado (mes)\" (mediana 3 454,77, n=2) y \"Soporte Prioritario (mes)\" (mediana 1 925,84, n=2), también con muestras muy pequeñas.\n- Si te interesa un ranking más representativo (por ejemplo, productos con al menos 10 ventas en 2025), puedo recalcularlo con ese filtro.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 988,
+      "tokens_salida": 44,
+      "latencia_s": 0.8,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1299,
+      "tokens_salida": 628,
+      "latencia_s": 5.64,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"WITH base AS (\\n  SELECT v.producto_id, p.nombre,\\n         v.cantidad * v.precio_unitario * (1 - v.descuento) AS importe\\n  FROM ventas v\\n  JOIN productos p ON p.producto_id = v.producto_id\\n  WHERE v.fecha >= '2025-01-01' AND v.fecha <= '2025-12-31'\\n),\\nord AS (\\n  SELECT producto_id, nombre, importe,\\n         ROW_NUMBER() OVER (PARTITION BY producto_id ORDER BY importe) AS rn,\\n         COUNT(*) OVER (PARTITION BY producto_id) AS n\\n  FROM base\\n)\\nSELECT nombre,\\n       COUNT(*) AS ventas_2025,\\n       AVG(importe) AS mediana_importe\\nFROM ord\\nWHERE rn IN ((n + 1) / 2, (n + 2) / 2)\\nGROUP BY producto_id, nombre\\nORDER BY mediana_importe DESC\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "nombre",
+          "ventas_2025",
+          "mediana_importe"
+        ],
+        "total_filas": 13,
+        "filas": [
+          {
+            "nombre": "Licencia Analítica Enterprise",
+            "ventas_2025": 1,
+            "mediana_importe": 7749.625
+          },
+          {
+            "nombre": "Soporte Dedicado (mes)",
+            "ventas_2025": 2,
+            "mediana_importe": 3454.77
+          },
+          {
+            "nombre": "Taller in situ (día)",
+            "ventas_2025": 1,
+            "mediana_importe": 3228.423
+          },
+          {
+            "nombre": "Licencia Analítica Pro",
+            "ventas_2025": 1,
+            "mediana_importe": 2157.504
+          },
+          {
+            "nombre": "Soporte Prioritario (mes)",
+            "ventas_2025": 2,
+            "mediana_importe": 1925.8365
+          },
+          {
+            "nombre": "Licencia Integración API",
+            "ventas_2025": 1,
+            "mediana_importe": 1716.983
+          },
+          {
+            "nombre": "Certificación de analistas",
+            "ventas_2025": 1,
+            "mediana_importe": 1294.907
+          },
+          {
+            "nombre": "Licencia Visualización",
+            "ventas_2025": 2,
+            "mediana_importe": 1216.4085
+          },
+          {
+            "nombre": "Capacitación Avanzada",
+            "ventas_2025": 1,
+            "mediana_importe": 936.037
+          },
+          {
+            "nombre": "Licencia Analítica Básica",
+            "ventas_2025": 2,
+            "mediana_importe": 881.927
+          },
+          {
+            "nombre": "Soporte Estándar (mes)",
+            "ventas_2025": 1,
+            "mediana_importe": 775.818
+          },
+          {
+            "nombre": "Bolsa de horas de consultoría",
+            "ventas_2025": 1,
+            "mediana_importe": 411.009
+          },
+          {
+            "nombre": "Capacitación Fundamentos",
+            "ventas_2025": 2,
+            "mediana_importe": 332.715
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 13 de 13 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2026,
+      "tokens_salida": 213,
+      "latencia_s": 2.28,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT substr(fecha, 1, 4) AS anio, COUNT(*) AS ventas\\nFROM ventas\\nGROUP BY anio\\nORDER BY anio\"}"
+      },
+      "observation": {
+        "resultado_id": "r2",
+        "columnas": [
+          "anio",
+          "ventas"
+        ],
+        "total_filas": 2,
+        "filas": [
+          {
+            "anio": "2025",
+            "ventas": 3618
+          },
+          {
+            "anio": "2026",
+            "ventas": 2382
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 2 de 2 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r2'."
+      }
+    },
+    {
+      "paso": 4,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2178,
+      "tokens_salida": 218,
+      "latencia_s": 2.58,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true,
+      "respuesta_modelo": "**La mediana del importe por venta más alta en 2025 fue de 7 749,63, correspondiente a \"Licencia Analítica Enterprise\".**\n\nDetalles:\n- El cálculo se hizo sobre las 3 618 ventas de 2025, con importe = cantidad × precio_unitario × (1 − descuento).\n- Sin embargo, ese producto registró **solo 1 venta** en todo 2025, por lo que su \"mediana\" es simplemente ese único importe y no es un indicador robusto.\n- Los siguientes con más de una venta fueron \"Soporte Dedicado (mes)\" (mediana 3 454,77, n=2) y \"Soporte Prioritario (mes)\" (mediana 1 925,84, n=2), también con muestras muy pequeñas.\n- Si te interesa un ranking más representativo (por ejemplo, productos con al menos 10 ventas en 2025), puedo recalcularlo con ese filtro."
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 6491,
+    "tokens_salida": 1103
+  },
+  "error": null,
+  "abstencion_por_codigo": false,
+  "segundos": 11.33
+}

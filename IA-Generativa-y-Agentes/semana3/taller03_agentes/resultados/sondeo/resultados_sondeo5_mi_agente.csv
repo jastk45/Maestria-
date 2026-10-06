@@ -1,0 +1,10 @@
+id,tipo,estado,pasos,llamadas_herramienta,errores_herramienta,excepcion,tokens_entrada,tokens_salida,segundos,esperado,acierto,abstencion,base_intacta,modelo,respuesta
+M29,multi,completed,3,2,0,,3825,1206,8.19,4683.0,False,True,True,zai-org/GLM-5.3-Flash,"No puedo responder con los datos disponibles. La base no registra duración en meses de los productos de soporte (solo cantidad de unidades por venta), por lo que ""meses de soporte"" no es un concepto medible aquí.
+
+Como métrica más cercana, en 2025 se vendieron **6.201 unidades** de productos de la categoría ""soporte"", repartidas en 1.092 ventas. Si te interesa, puedo calcular también la facturació"
+N13,negativa,completed,3,2,0,,3723,438,3.24,,False,False,True,zai-org/GLM-5.3-Flash,"El precio de lista de la **Licencia Analítica Pro** era **1250.00** en enero de 2025.
+
+La base registra un único precio de lista por producto en la tabla `productos` (no hay historial de precios por fecha), por lo que ese valor de 1250.00 es el vigente para todo el período cubierto por los datos (2025-01-01 a 2026-08-31), incluido enero de 2025. El producto es de la categoría ""licencia"" (producto_"
+N14,negativa,completed,3,2,0,,3720,1144,7.89,,True,True,True,zai-org/GLM-5.3-Flash,"No puedo responder con los datos disponibles. La base registra ventas de productos (incluida la categoría ""licencia""), pero no distingue si una venta es una renovación o una licencia nueva, por lo que no existe forma de contar renovaciones específicamente.
+
+Como referencia, en 2026 (hasta el 31 de agosto, fin del rango de datos) se registraron 1.076 ventas de licencias con 2.150 unidades, pero no "

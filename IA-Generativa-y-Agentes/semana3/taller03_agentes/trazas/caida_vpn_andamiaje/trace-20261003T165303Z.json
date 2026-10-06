@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuántas ventas tuvieron un descuento del 15 %?",
+  "answer": "No puedo responder todavía: no tengo acceso a ningún dataset de ventas en esta conversación, y no debo inventar datos. Para contar cuántas ventas tuvieron un descuento del 15 % necesito que compartas la fuente de datos (por ejemplo, un archivo CSV/Excel con una columna de descuento) o que indiques qué datos hay disponibles. Supuestos y limitaciones: una vez con los datos, contaría las filas donde el descuento sea exactamente 15 %; si el descuento estuviera registrado como monto en lugar de porcentaje, necesitaría también el precio original para calcularlo. Sin evidencia, cualquier cifra sería una invención.",
+  "trace": [],
+  "status": "completed"
+}

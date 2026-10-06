@@ -1,0 +1,6 @@
+{
+  "question": "¿En qué porcentaje creció el importe de la Licencia Analítica Pro de enero–agosto de 2025 a enero–agosto de 2026?",
+  "answer": "No puedo calcular ese porcentaje: no tengo acceso a los datos de importaciones/ventas de 'Licencia Analítica Pro' ni a ninguna fuente que los contenga, y no debo inventar cifras. Para responder necesitaría el importe correspondiente a enero–agosto de 2025 y a enero–agosto de 2026 (por ejemplo, un archivo CSV/Excel con las ventas por mes o por período). Si me proporcionas esos datos, puedo calcular el crecimiento porcentual con la fórmula: ((importe 2026 − importe 2025) / importe 2025) × 100. Limitación: sin la evidencia, cualquier cifra sería una invención.",
+  "trace": [],
+  "status": "completed"
+}

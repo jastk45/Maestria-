@@ -1,0 +1,139 @@
+{
+  "question": "¿Cuál fue el importe medio por unidad vendida de la categoría soporte en 2025?",
+  "answer": "El importe medio por unidad vendida de la categoría **soporte** en 2025 fue de **408,09** por unidad.\n\nDetalles del cálculo (sobre las ventas de soporte entre 2025-01-01 y 2025-12-31):\n- Importe total facturado: 2.530.595,16 (usando importe = cantidad × precio_unitario × (1 − descuento))\n- Unidades vendidas: 6.201\n- Importe medio por unidad: 2.530.595,16 / 6.201 = 408,09\n\nNota: si en lugar del promedio ponderado por unidades se tomara el promedio simple del importe por unidad de cada venta, el valor sería 407,05; la cifra principal (408,09) es la ponderada por unidades vendidas.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 983,
+      "tokens_salida": 77,
+      "latencia_s": 0.92,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1294,
+      "tokens_salida": 415,
+      "latencia_s": 3.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT SUM(cantidad * precio_unitario * (1 - descuento)) AS importe_total, SUM(cantidad) AS unidades, SUM(cantidad * precio_unitario * (1 - descuento)) / SUM(cantidad) AS importe_medio_por_unidad, AVG(cantidad * precio_unitario * (1 - descuento) / cantidad) AS media_por_venta FROM ventas v JOIN productos p ON v.producto_id = p.producto_id WHERE p.categoria = 'soporte' AND v.fecha >= '2025-01-01' AND v.fecha <= '2025-12-31'\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "importe_total",
+          "unidades",
+          "importe_medio_por_unidad",
+          "media_por_venta"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "importe_total": 2530595.16,
+            "unidades": 6201,
+            "importe_medio_por_unidad": 408.0947,
+            "media_por_venta": 407.0544
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1575,
+      "tokens_salida": 233,
+      "latencia_s": 1.94,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 3852,
+    "tokens_salida": 725
+  },
+  "error": null,
+  "segundos": 5.87
+}

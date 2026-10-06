@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuántos clientes compraron productos de las tres categorías (licencia, soporte y capacitación) durante 2026?",
+  "answer": "No puedo responder esta pregunta con la información disponible: no tengo acceso a una fuente de datos de ventas ni a herramientas conectadas en esta sesión, y no debo inventar cifras. Para calcularlo necesitaría un dataset de transacciones con al menos estos campos: identificador del cliente, categoría del producto (licencia, soporte, capacitación) y fecha de compra. El método sería: filtrar las ventas al año 2026, agrupar por cliente contando las categorías distintas con compras, y contar cuántos clientes tienen las tres categorías. Si me proporcionas el archivo o la conexión a los datos (por ejemplo, un CSV o una tabla con esas columnas), puedo ejecutar el análisis y darte el número exacto, con sus supuestos y limitaciones.",
+  "trace": [],
+  "status": "completed"
+}

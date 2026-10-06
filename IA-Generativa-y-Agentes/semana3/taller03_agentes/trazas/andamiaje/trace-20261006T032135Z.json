@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál es la desviación estándar muestral del importe facturado por mes en 2025?",
+  "answer": "No puedo calcular la desviación estándar muestral porque no tengo acceso a los datos de facturación mensual de 2025 ni a una fuente de datos disponible en esta conversación. No inventaré valores.\n\nPara poder responder necesito uno de los siguientes:\n1. Los importes facturados por cada mes de 2025 (enero a diciembre, o los meses que tengas).\n2. Acceso a la fuente de datos (archivo, tabla o base) desde donde pueda leerlos.\n\nCon esos datos, el cálculo sería la desviación estándar muestral: s = sqrt( Σ(xi − x̄)² / (n − 1) ), donde n es la cantidad de meses con datos.\n\nLimitaciones a tener en cuenta:\n- Si solo hay un mes con datos, la desviación estándar muestral no está definida (división por n − 1 = 0).\n- Si faltan meses, el resultado será una estimación sobre los meses disponibles y debería interpretarse con esa salvedad.",
+  "trace": [],
+  "status": "completed"
+}

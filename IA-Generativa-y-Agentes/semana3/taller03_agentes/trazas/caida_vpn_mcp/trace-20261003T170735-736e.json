@@ -1,0 +1,25 @@
+{
+  "question": "Agrega un cliente nuevo llamado Cliente 999 en la región Sierra y después dime cuántos clientes hay en Sierra.",
+  "answer": "No pude completar la tarea: APIConnectionError: Connection error.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": null,
+      "tokens_entrada": 0,
+      "tokens_salida": 0,
+      "latencia_s": 1.3,
+      "error": "APIConnectionError: Connection error.",
+      "thought": null,
+      "action": null,
+      "observation": null
+    }
+  ],
+  "status": "error",
+  "model": null,
+  "usage": {
+    "tokens_entrada": 0,
+    "tokens_salida": 0
+  },
+  "error": "APIConnectionError: Connection error.",
+  "segundos": 1.3
+}

@@ -1,0 +1,733 @@
+{
+  "question": "¿Cuánto mayor fue la mediana del importe por venta de 2026 que la de 2025?",
+  "answer": "La mediana del importe por venta de 2026 fue **29.38 mayor** que la de 2025 (1,239.34 en 2026 frente a 1,209.96 en 2025).\n\nDetalles:\n- **2025**: mediana de 1,209.96 sobre 3,618 ventas (media de 2,394.36, desviación estándar de 3,125.01).\n- **2026**: mediana de 1,239.34 sobre 2,382 ventas (media de 2,321.44, desviación estándar de 2,905.00), con datos hasta el 2026-08-31.\n- La diferencia es de 29.38 a favor de 2026, es decir, un aumento de aproximadamente el 2.43% en la mediana, aunque la media de 2026 es algo menor que la de 2025.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 986,
+      "tokens_salida": 95,
+      "latencia_s": 0.89,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1297,
+      "tokens_salida": 71,
+      "latencia_s": 0.75,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT strftime('%Y', fecha) AS anio, cantidad * precio_unitario * (1 - descuento) AS importe FROM ventas\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "anio",
+          "importe"
+        ],
+        "total_filas": 6000,
+        "filas": [
+          {
+            "anio": "2025",
+            "importe": 1988.046
+          },
+          {
+            "anio": "2025",
+            "importe": 1485.528
+          },
+          {
+            "anio": "2025",
+            "importe": 11546.928
+          },
+          {
+            "anio": "2025",
+            "importe": 4342.08
+          },
+          {
+            "anio": "2025",
+            "importe": 3178.396
+          },
+          {
+            "anio": "2025",
+            "importe": 3229.95
+          },
+          {
+            "anio": "2025",
+            "importe": 2992.7225
+          },
+          {
+            "anio": "2025",
+            "importe": 737.029
+          },
+          {
+            "anio": "2025",
+            "importe": 12062.64
+          },
+          {
+            "anio": "2025",
+            "importe": 323.784
+          },
+          {
+            "anio": "2025",
+            "importe": 1552.831
+          },
+          {
+            "anio": "2025",
+            "importe": 1189.76
+          },
+          {
+            "anio": "2025",
+            "importe": 327.88
+          },
+          {
+            "anio": "2025",
+            "importe": 1856.51
+          },
+          {
+            "anio": "2025",
+            "importe": 423.57
+          },
+          {
+            "anio": "2025",
+            "importe": 1585.791
+          },
+          {
+            "anio": "2025",
+            "importe": 976.28
+          },
+          {
+            "anio": "2025",
+            "importe": 4456.07
+          },
+          {
+            "anio": "2025",
+            "importe": 700.68
+          },
+          {
+            "anio": "2025",
+            "importe": 757.17
+          },
+          {
+            "anio": "2025",
+            "importe": 825.18
+          },
+          {
+            "anio": "2025",
+            "importe": 862.98
+          },
+          {
+            "anio": "2025",
+            "importe": 7126.672
+          },
+          {
+            "anio": "2025",
+            "importe": 1166.32
+          },
+          {
+            "anio": "2025",
+            "importe": 927.48
+          },
+          {
+            "anio": "2025",
+            "importe": 1439.016
+          },
+          {
+            "anio": "2025",
+            "importe": 12133.65
+          },
+          {
+            "anio": "2025",
+            "importe": 604.162
+          },
+          {
+            "anio": "2025",
+            "importe": 2384.595
+          },
+          {
+            "anio": "2025",
+            "importe": 615.339
+          },
+          {
+            "anio": "2025",
+            "importe": 1809.6
+          },
+          {
+            "anio": "2025",
+            "importe": 134.649
+          },
+          {
+            "anio": "2025",
+            "importe": 2548.044
+          },
+          {
+            "anio": "2025",
+            "importe": 2128.8645
+          },
+          {
+            "anio": "2025",
+            "importe": 1021.6575
+          },
+          {
+            "anio": "2025",
+            "importe": 11321.796
+          },
+          {
+            "anio": "2025",
+            "importe": 1117.86
+          },
+          {
+            "anio": "2025",
+            "importe": 924.06
+          },
+          {
+            "anio": "2025",
+            "importe": 456.09
+          },
+          {
+            "anio": "2025",
+            "importe": 12634.8
+          },
+          {
+            "anio": "2025",
+            "importe": 428.01
+          },
+          {
+            "anio": "2025",
+            "importe": 3506.76
+          },
+          {
+            "anio": "2025",
+            "importe": 4409.4
+          },
+          {
+            "anio": "2025",
+            "importe": 1264.05
+          },
+          {
+            "anio": "2025",
+            "importe": 9009.3
+          },
+          {
+            "anio": "2025",
+            "importe": 398.655
+          },
+          {
+            "anio": "2025",
+            "importe": 17988.55
+          },
+          {
+            "anio": "2025",
+            "importe": 771.426
+          },
+          {
+            "anio": "2025",
+            "importe": 156.06
+          },
+          {
+            "anio": "2025",
+            "importe": 397.69
+          }
+        ],
+        "vista_truncada": true,
+        "nota": "Ves 50 de 6000 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2246,
+      "tokens_salida": 135,
+      "latencia_s": 1.44,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT cantidad * precio_unitario * (1 - descuento) AS importe FROM ventas WHERE strftime('%Y', fecha) = '2025'\"}"
+      },
+      "observation": {
+        "resultado_id": "r2",
+        "columnas": [
+          "importe"
+        ],
+        "total_filas": 3618,
+        "filas": [
+          {
+            "importe": 1988.046
+          },
+          {
+            "importe": 1485.528
+          },
+          {
+            "importe": 11546.928
+          },
+          {
+            "importe": 4342.08
+          },
+          {
+            "importe": 3178.396
+          },
+          {
+            "importe": 3229.95
+          },
+          {
+            "importe": 2992.7225
+          },
+          {
+            "importe": 737.029
+          },
+          {
+            "importe": 12062.64
+          },
+          {
+            "importe": 323.784
+          },
+          {
+            "importe": 1552.831
+          },
+          {
+            "importe": 1189.76
+          },
+          {
+            "importe": 327.88
+          },
+          {
+            "importe": 1856.51
+          },
+          {
+            "importe": 423.57
+          },
+          {
+            "importe": 1585.791
+          },
+          {
+            "importe": 976.28
+          },
+          {
+            "importe": 4456.07
+          },
+          {
+            "importe": 700.68
+          },
+          {
+            "importe": 757.17
+          },
+          {
+            "importe": 825.18
+          },
+          {
+            "importe": 862.98
+          },
+          {
+            "importe": 7126.672
+          },
+          {
+            "importe": 1166.32
+          },
+          {
+            "importe": 927.48
+          },
+          {
+            "importe": 1439.016
+          },
+          {
+            "importe": 12133.65
+          },
+          {
+            "importe": 604.162
+          },
+          {
+            "importe": 2384.595
+          },
+          {
+            "importe": 615.339
+          },
+          {
+            "importe": 1809.6
+          },
+          {
+            "importe": 134.649
+          },
+          {
+            "importe": 2548.044
+          },
+          {
+            "importe": 2128.8645
+          },
+          {
+            "importe": 1021.6575
+          },
+          {
+            "importe": 11321.796
+          },
+          {
+            "importe": 1117.86
+          },
+          {
+            "importe": 924.06
+          },
+          {
+            "importe": 456.09
+          },
+          {
+            "importe": 12634.8
+          },
+          {
+            "importe": 428.01
+          },
+          {
+            "importe": 3506.76
+          },
+          {
+            "importe": 4409.4
+          },
+          {
+            "importe": 1264.05
+          },
+          {
+            "importe": 9009.3
+          },
+          {
+            "importe": 398.655
+          },
+          {
+            "importe": 17988.55
+          },
+          {
+            "importe": 771.426
+          },
+          {
+            "importe": 156.06
+          },
+          {
+            "importe": 397.69
+          }
+        ],
+        "vista_truncada": true,
+        "nota": "Ves 50 de 3618 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r2'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 0,
+      "tokens_salida": 0,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT cantidad * precio_unitario * (1 - descuento) AS importe FROM ventas WHERE strftime('%Y', fecha) = '2026'\"}"
+      },
+      "observation": {
+        "resultado_id": "r3",
+        "columnas": [
+          "importe"
+        ],
+        "total_filas": 2382,
+        "filas": [
+          {
+            "importe": 1157.895
+          },
+          {
+            "importe": 945.621
+          },
+          {
+            "importe": 860.982
+          },
+          {
+            "importe": 495.11
+          },
+          {
+            "importe": 8232.51
+          },
+          {
+            "importe": 1736.58
+          },
+          {
+            "importe": 4843.68
+          },
+          {
+            "importe": 471.333
+          },
+          {
+            "importe": 1097.384
+          },
+          {
+            "importe": 408.375
+          },
+          {
+            "importe": 307.63
+          },
+          {
+            "importe": 865.944
+          },
+          {
+            "importe": 1267.43
+          },
+          {
+            "importe": 71.955
+          },
+          {
+            "importe": 399.16
+          },
+          {
+            "importe": 1158.75
+          },
+          {
+            "importe": 1119.651
+          },
+          {
+            "importe": 587.2055
+          },
+          {
+            "importe": 1276.74
+          },
+          {
+            "importe": 368.78
+          },
+          {
+            "importe": 5394.933
+          },
+          {
+            "importe": 333.2
+          },
+          {
+            "importe": 268.236
+          },
+          {
+            "importe": 2403.62
+          },
+          {
+            "importe": 662.04
+          },
+          {
+            "importe": 1633.05
+          },
+          {
+            "importe": 10540.449
+          },
+          {
+            "importe": 1159.17
+          },
+          {
+            "importe": 1078.0975
+          },
+          {
+            "importe": 1240.6715
+          },
+          {
+            "importe": 3423.477
+          },
+          {
+            "importe": 647.559
+          },
+          {
+            "importe": 1224.24
+          },
+          {
+            "importe": 3762.03
+          },
+          {
+            "importe": 1362.873
+          },
+          {
+            "importe": 2296.8
+          },
+          {
+            "importe": 3358.02
+          },
+          {
+            "importe": 3699.0
+          },
+          {
+            "importe": 1333.92
+          },
+          {
+            "importe": 1025.94
+          },
+          {
+            "importe": 908.66
+          },
+          {
+            "importe": 1767.08
+          },
+          {
+            "importe": 642.15
+          },
+          {
+            "importe": 780.624
+          },
+          {
+            "importe": 3286.069
+          },
+          {
+            "importe": 1764.87
+          },
+          {
+            "importe": 9308.55
+          },
+          {
+            "importe": 738.582
+          },
+          {
+            "importe": 885.76
+          },
+          {
+            "importe": 313.462
+          }
+        ],
+        "vista_truncada": true,
+        "nota": "Ves 50 de 2382 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r3'."
+      }
+    },
+    {
+      "paso": 4,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 3444,
+      "tokens_salida": 44,
+      "latencia_s": 0.5,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "estadisticas",
+        "args": "{\"columna\": \"importe\", \"resultado_id\": \"r2\"}"
+      },
+      "observation": {
+        "resultado_id": "r2",
+        "columna": "importe",
+        "n": 3618,
+        "media": 2394.3607,
+        "mediana": 1209.9608,
+        "desviacion_estandar_muestral": 3125.0061,
+        "minimo": 66.55499999999999,
+        "maximo": 21996.85,
+        "p25": 639.009,
+        "p75": 2967.3023,
+        "suma": 8662797.173
+      }
+    },
+    {
+      "paso": 4,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 0,
+      "tokens_salida": 0,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "estadisticas",
+        "args": "{\"columna\": \"importe\", \"resultado_id\": \"r3\"}"
+      },
+      "observation": {
+        "resultado_id": "r3",
+        "columna": "importe",
+        "n": 2382,
+        "media": 2321.438,
+        "mediana": 1239.3378,
+        "desviacion_estandar_muestral": 2905.0025,
+        "minimo": 68.527,
+        "maximo": 22016.85,
+        "p25": 674.8678,
+        "p75": 2624.59,
+        "suma": 5529665.224
+      }
+    },
+    {
+      "paso": 5,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 3740,
+      "tokens_salida": 285,
+      "latencia_s": 3.07,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true,
+      "respuesta_modelo": "La mediana del importe por venta de 2026 fue **29.38 mayor** que la de 2025 (1,239.34 en 2026 frente a 1,209.96 en 2025).\n\nDetalles:\n- **2025**: mediana de 1,209.96 sobre 3,618 ventas (media de 2,394.36, desviación estándar de 3,125.01).\n- **2026**: mediana de 1,239.34 sobre 2,382 ventas (media de 2,321.44, desviación estándar de 2,905.00), con datos hasta el 2026-08-31.\n- La diferencia es de 29.38 a favor de 2026, es decir, un aumento de aproximadamente el 2.43% en la mediana, aunque la media de 2026 es algo menor que la de 2025."
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 11713,
+    "tokens_salida": 630
+  },
+  "error": null,
+  "abstencion_por_codigo": false,
+  "segundos": 6.68
+}

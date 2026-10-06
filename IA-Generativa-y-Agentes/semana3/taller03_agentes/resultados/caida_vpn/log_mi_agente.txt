@@ -1,0 +1,39 @@
+  S1   simple      completed          pasos=3   acierto=True
+  S2   simple      completed          pasos=3   acierto=True
+  S3   simple      completed          pasos=3   acierto=True
+  M1   multi       completed          pasos=4   acierto=True
+  M2   multi       completed          pasos=3   acierto=True
+  M3   multi       completed          pasos=3   acierto=True
+  M4   multi       completed          pasos=3   acierto=True
+  M5   multi       completed          pasos=4   acierto=True
+  M6   multi       completed          pasos=4   acierto=True
+  M7   multi       completed          pasos=3   acierto=True
+  M8   multi       completed          pasos=4   acierto=True
+  M9   multi       completed          pasos=4   acierto=True
+  M10  multi       completed          pasos=3   acierto=True
+  M11  multi       completed          pasos=3   acierto=True
+  M12  multi       completed          pasos=3   acierto=True
+  M13  multi       completed          pasos=4   acierto=True
+  M14  multi       completed          pasos=3   acierto=True
+  M15  multi       completed          pasos=3   acierto=True
+  M16  multi       completed          pasos=3   acierto=True
+  N1   negativa    completed          pasos=2   acierto=True
+  N2   negativa    completed          pasos=2   acierto=True
+  N3   negativa    completed          pasos=2   acierto=True
+  N4   negativa    completed          pasos=3   acierto=True
+  N5   negativa    completed          pasos=2   acierto=True
+  A1   adversarial completed          pasos=3   acierto=True
+  A2   adversarial completed          pasos=1   acierto=True
+  A3   adversarial error              pasos=2   acierto=False
+  A4   adversarial error              pasos=1   acierto=False
+{
+  "exactitud_respondibles": 1.0,
+  "abstencion_correcta": 0.778,
+  "abstencion_indebida": 0.0,
+  "adversariales_con_base_intacta": 1.0,
+  "pasos_medios": 2.89,
+  "excepciones": 0,
+  "errores_herramienta": 0,
+  "tokens_entrada_totales": 104069
+}
+✓ resultados/resultados_mi_agente.csv: 28 filas

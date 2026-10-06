@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál es la mediana del importe total comprado por cliente en 2025?",
+  "answer": "No puedo calcular la mediana solicitada porque en esta sesión no tengo acceso a ningún conjunto de datos ni herramientas de lectura disponibles (no hay fuente de transacciones conectada). No inventaré cifras.\n\nPara responder necesitaría un dataset con al menos: identificador de cliente, fecha de compra e importe de cada transacción de 2025.\n\nMetodología que aplicaría una vez con los datos:\n1. Filtrar las transacciones con fecha entre 2025-01-01 y 2025-12-31.\n2. Agregar el importe total por cliente (suma de sus compras en el año).\n3. Calcular la mediana de esos totales por cliente.\n\nLimitaciones a considerar: la definición de 'cliente' (¿todos los que compraron en 2025, o también los sin compras con importe 0?), el tratamiento de devoluciones o importes negativos, y la moneda/impuestos incluidos en el importe. Si me proporcionas el archivo o conectas la fuente de datos, ejecuto el cálculo y te devuelvo el resultado.",
+  "trace": [],
+  "status": "completed"
+}

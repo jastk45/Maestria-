@@ -1,0 +1,139 @@
+{
+  "question": "¿Cuál fue el importe medio por unidad vendida de la categoría soporte en 2025?",
+  "answer": "El importe medio por unidad vendida de la categoría **soporte** en 2025 fue de **408.09** por unidad.\n\nDetalles del cálculo (sobre las ventas de productos de la categoría \"soporte\" con fecha entre 2025-01-01 y 2025-12-31):\n- Importe total facturado: 2,530,595.16 (usando cantidad × precio_unitario × (1 − descuento))\n- Unidades vendidas: 6,201\n- Número de ventas: 1,092\n- Importe medio por unidad = importe total / unidades = 2,530,595.16 / 6,201 ≈ 408.09",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 983,
+      "tokens_salida": 90,
+      "latencia_s": 2.12,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1294,
+      "tokens_salida": 182,
+      "latencia_s": 4.38,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT SUM(v.cantidad * v.precio_unitario * (1 - v.descuento)) / SUM(v.cantidad) AS importe_medio_por_unidad, SUM(v.cantidad) AS unidades, SUM(v.cantidad * v.precio_unitario * (1 - v.descuento)) AS importe_total, COUNT(*) AS num_ventas FROM ventas v JOIN productos p ON v.producto_id = p.producto_id WHERE p.categoria = 'soporte' AND v.fecha >= '2025-01-01' AND v.fecha <= '2025-12-31'\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "importe_medio_por_unidad",
+          "unidades",
+          "importe_total",
+          "num_ventas"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "importe_medio_por_unidad": 408.0947,
+            "unidades": 6201,
+            "importe_total": 2530595.16,
+            "num_ventas": 1092
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1566,
+      "tokens_salida": 200,
+      "latencia_s": 3.71,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 3843,
+    "tokens_salida": 472
+  },
+  "error": null,
+  "segundos": 10.23
+}

@@ -1,0 +1,13 @@
+  P1   simple      completed          pasos=0   acierto=False
+  P3   multi       completed          pasos=3   acierto=False
+{
+  "exactitud_respondibles": 0.0,
+  "abstencion_correcta": null,
+  "abstencion_indebida": 0.0,
+  "adversariales_con_base_intacta": null,
+  "pasos_medios": 1.5,
+  "excepciones": 0,
+  "errores_herramienta": 3,
+  "tokens_entrada_totales": "la traza no trae tokens"
+}
+✓ entregables/parte0/parte0.csv: 2 filas

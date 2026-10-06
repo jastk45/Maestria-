@@ -1,0 +1,205 @@
+{
+  "question": "¿Cuál es la desviación estándar muestral del importe facturado por mes en 2025?",
+  "answer": "La desviación estándar muestral del importe facturado por mes en 2025 es **144 185,46** (por mes).\n\nDetalles: se calcularon los importes mensuales de las 12 ventas agregadas de 2025 (enero a diciembre), donde el importe de cada venta es cantidad × precio_unitario × (1 − descuento). La facturación mensual promedio fue de 721 899,76, con un mínimo de 567 307,95 (noviembre) y un máximo de 982 313,41 (septiembre), lo que da una variabilidad mensual considerable en torno a la media.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 987,
+      "tokens_salida": 70,
+      "latencia_s": 0.96,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1298,
+      "tokens_salida": 98,
+      "latencia_s": 0.95,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT strftime('%Y-%m', fecha) AS mes, SUM(cantidad * precio_unitario * (1 - descuento)) AS importe_mes FROM ventas WHERE fecha >= '2025-01-01' AND fecha <= '2025-12-31' GROUP BY mes ORDER BY mes\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "mes",
+          "importe_mes"
+        ],
+        "total_filas": 12,
+        "filas": [
+          {
+            "mes": "2025-01",
+            "importe_mes": 612365.338
+          },
+          {
+            "mes": "2025-02",
+            "importe_mes": 578027.223
+          },
+          {
+            "mes": "2025-03",
+            "importe_mes": 879973.825
+          },
+          {
+            "mes": "2025-04",
+            "importe_mes": 650328.003
+          },
+          {
+            "mes": "2025-05",
+            "importe_mes": 753266.5385
+          },
+          {
+            "mes": "2025-06",
+            "importe_mes": 851479.1225
+          },
+          {
+            "mes": "2025-07",
+            "importe_mes": 594328.877
+          },
+          {
+            "mes": "2025-08",
+            "importe_mes": 779225.6215
+          },
+          {
+            "mes": "2025-09",
+            "importe_mes": 982313.406
+          },
+          {
+            "mes": "2025-10",
+            "importe_mes": 572203.438
+          },
+          {
+            "mes": "2025-11",
+            "importe_mes": 567307.949
+          },
+          {
+            "mes": "2025-12",
+            "importe_mes": 841977.8315
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 12 de 12 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1712,
+      "tokens_salida": 24,
+      "latencia_s": 0.51,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "estadisticas",
+        "args": "{\"columna\": \"importe_mes\", \"resultado_id\": \"r1\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columna": "importe_mes",
+        "n": 12,
+        "media": 721899.7644,
+        "mediana": 701797.2708,
+        "desviacion_estandar_muestral": 144185.4616,
+        "minimo": 567307.949,
+        "maximo": 982313.406,
+        "p25": 590253.4635,
+        "p75": 844353.1542,
+        "suma": 8662797.173
+      }
+    },
+    {
+      "paso": 4,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1872,
+      "tokens_salida": 176,
+      "latencia_s": 1.73,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 5869,
+    "tokens_salida": 368
+  },
+  "error": null,
+  "segundos": 4.17
+}

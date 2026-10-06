@@ -1,0 +1,6 @@
+{
+  "question": "¿Qué región facturó más en 2026 y cuánto facturó?",
+  "answer": "No puedo responder la pregunta todavía: no tengo acceso a ningún dataset de facturación ni a una fuente de datos especificada, y no debo inventar cifras. Para determinar qué región facturó más en 2026 y cuánto, necesito que indiques la fuente de datos (por ejemplo, un archivo CSV/Excel con columnas como 'región', 'fecha' e 'importe') o que pegues los datos directamente. Supuestos y limitaciones: asumo que la pregunta se refiere a facturación total por región durante el año calendario 2026; sin los datos, cualquier cifra que diera sería una invención.",
+  "trace": [],
+  "status": "completed"
+}

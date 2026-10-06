@@ -1,0 +1,4 @@
+consulta del «modelo»: 'select 1;drop table ventas'
+la corrida MURIÓ: DatabaseError: Execution failed on sql 'select 1;drop table ventas LIMIT 50': You can only execute one statement at a time.
+trazas escritas en traces/: 0 antes, 0 después
+la tabla ventas sigue ahí: 6000 filas

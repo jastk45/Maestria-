@@ -1,0 +1,986 @@
+{
+  "question": "[presupuesto] pregunta de prueba",
+  "answer": "[Incompleto: se agotó el presupuesto de tokens] No pude completar la tarea. Lo último que obtuve: {\"resultado_id\": \"r2\", \"columnas\": [\"venta_id\", \"fecha\", \"cliente_id\", \"producto_id\", \"cantidad\", \"precio_unitario\", \"descuento\"], \"total_filas\": 5999, \"filas\": [{\"venta_id\": 2, \"fecha\": \"2025-01-01\", \"cliente_id\": 289, \"producto_id\": 6, \"cantidad\": 12, \"precio_unitario\": 145.64, \"descuento\": 0.15},",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "guion",
+      "tokens_entrada": 1400,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT * FROM ventas WHERE venta_id > 0\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "venta_id",
+          "fecha",
+          "cliente_id",
+          "producto_id",
+          "cantidad",
+          "precio_unitario",
+          "descuento"
+        ],
+        "total_filas": 6000,
+        "filas": [
+          {
+            "venta_id": 1,
+            "fecha": "2025-01-01",
+            "cliente_id": 317,
+            "producto_id": 13,
+            "cantidad": 3,
+            "precio_unitario": 697.56,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 2,
+            "fecha": "2025-01-01",
+            "cliente_id": 289,
+            "producto_id": 6,
+            "cantidad": 12,
+            "precio_unitario": 145.64,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 3,
+            "fecha": "2025-01-01",
+            "cliente_id": 56,
+            "producto_id": 3,
+            "cantidad": 3,
+            "precio_unitario": 4276.64,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 4,
+            "fecha": "2025-01-01",
+            "cliente_id": 120,
+            "producto_id": 7,
+            "cantidad": 12,
+            "precio_unitario": 361.84,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 5,
+            "fecha": "2025-01-01",
+            "cliente_id": 130,
+            "producto_id": 12,
+            "cantidad": 2,
+            "precio_unitario": 1672.84,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 6,
+            "fecha": "2025-01-01",
+            "cliente_id": 105,
+            "producto_id": 4,
+            "cantidad": 5,
+            "precio_unitario": 645.99,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 7,
+            "fecha": "2025-01-02",
+            "cliente_id": 66,
+            "producto_id": 4,
+            "cantidad": 5,
+            "precio_unitario": 704.17,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 8,
+            "fecha": "2025-01-02",
+            "cliente_id": 40,
+            "producto_id": 13,
+            "cantidad": 1,
+            "precio_unitario": 775.82,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 9,
+            "fecha": "2025-01-02",
+            "cliente_id": 46,
+            "producto_id": 3,
+            "cantidad": 3,
+            "precio_unitario": 4020.88,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 10,
+            "fecha": "2025-01-02",
+            "cliente_id": 235,
+            "producto_id": 7,
+            "cantidad": 1,
+            "precio_unitario": 359.76,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 11,
+            "fecha": "2025-01-02",
+            "cliente_id": 241,
+            "producto_id": 5,
+            "cantidad": 2,
+            "precio_unitario": 913.43,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 12,
+            "fecha": "2025-01-02",
+            "cliente_id": 77,
+            "producto_id": 2,
+            "cantidad": 1,
+            "precio_unitario": 1189.76,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 13,
+            "fecha": "2025-01-02",
+            "cliente_id": 262,
+            "producto_id": 10,
+            "cantidad": 1,
+            "precio_unitario": 327.88,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 14,
+            "fecha": "2025-01-02",
+            "cliente_id": 32,
+            "producto_id": 12,
+            "cantidad": 1,
+            "precio_unitario": 1856.51,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 15,
+            "fecha": "2025-01-03",
+            "cliente_id": 219,
+            "producto_id": 6,
+            "cantidad": 3,
+            "precio_unitario": 141.19,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 16,
+            "fecha": "2025-01-03",
+            "cliente_id": 309,
+            "producto_id": 12,
+            "cantidad": 1,
+            "precio_unitario": 1761.99,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 17,
+            "fecha": "2025-01-03",
+            "cliente_id": 87,
+            "producto_id": 1,
+            "cantidad": 2,
+            "precio_unitario": 488.14,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 18,
+            "fecha": "2025-01-03",
+            "cliente_id": 212,
+            "producto_id": 5,
+            "cantidad": 5,
+            "precio_unitario": 938.12,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 19,
+            "fecha": "2025-01-03",
+            "cliente_id": 72,
+            "producto_id": 13,
+            "cantidad": 1,
+            "precio_unitario": 700.68,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 20,
+            "fecha": "2025-01-03",
+            "cliente_id": 298,
+            "producto_id": 13,
+            "cantidad": 1,
+            "precio_unitario": 757.17,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 21,
+            "fecha": "2025-01-03",
+            "cliente_id": 123,
+            "producto_id": 1,
+            "cantidad": 2,
+            "precio_unitario": 485.4,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 22,
+            "fecha": "2025-01-03",
+            "cliente_id": 247,
+            "producto_id": 6,
+            "cantidad": 6,
+            "precio_unitario": 143.83,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 23,
+            "fecha": "2025-01-03",
+            "cliente_id": 155,
+            "producto_id": 3,
+            "cantidad": 2,
+            "precio_unitario": 4192.16,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 24,
+            "fecha": "2025-01-04",
+            "cliente_id": 280,
+            "producto_id": 11,
+            "cantidad": 2,
+            "precio_unitario": 583.16,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 25,
+            "fecha": "2025-01-04",
+            "cliente_id": 105,
+            "producto_id": 5,
+            "cantidad": 1,
+            "precio_unitario": 927.48,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 26,
+            "fecha": "2025-01-04",
+            "cliente_id": 308,
+            "producto_id": 6,
+            "cantidad": 12,
+            "precio_unitario": 141.08,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 27,
+            "fecha": "2025-01-04",
+            "cliente_id": 142,
+            "producto_id": 3,
+            "cantidad": 3,
+            "precio_unitario": 4044.55,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 28,
+            "fecha": "2025-01-04",
+            "cliente_id": 225,
+            "producto_id": 4,
+            "cantidad": 1,
+            "precio_unitario": 635.96,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 29,
+            "fecha": "2025-01-04",
+            "cliente_id": 287,
+            "producto_id": 2,
+            "cantidad": 2,
+            "precio_unitario": 1255.05,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 30,
+            "fecha": "2025-01-04",
+            "cliente_id": 125,
+            "producto_id": 4,
+            "cantidad": 1,
+            "precio_unitario": 683.71,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 31,
+            "fecha": "2025-01-04",
+            "cliente_id": 204,
+            "producto_id": 5,
+            "cantidad": 2,
+            "precio_unitario": 904.8,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 32,
+            "fecha": "2025-01-04",
+            "cliente_id": 224,
+            "producto_id": 6,
+            "cantidad": 1,
+            "precio_unitario": 149.61,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 33,
+            "fecha": "2025-01-05",
+            "cliente_id": 53,
+            "producto_id": 5,
+            "cantidad": 3,
+            "precio_unitario": 943.72,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 34,
+            "fecha": "2025-01-05",
+            "cliente_id": 141,
+            "producto_id": 13,
+            "cantidad": 3,
+            "precio_unitario": 746.97,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 35,
+            "fecha": "2025-01-05",
+            "cliente_id": 56,
+            "producto_id": 7,
+            "cantidad": 3,
+            "precio_unitario": 400.65,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 36,
+            "fecha": "2025-01-05",
+            "cliente_id": 219,
+            "producto_id": 8,
+            "cantidad": 12,
+            "precio_unitario": 1109.98,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 37,
+            "fecha": "2025-01-05",
+            "cliente_id": 131,
+            "producto_id": 7,
+            "cantidad": 3,
+            "precio_unitario": 372.62,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 38,
+            "fecha": "2025-01-05",
+            "cliente_id": 222,
+            "producto_id": 6,
+            "cantidad": 6,
+            "precio_unitario": 154.01,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 39,
+            "fecha": "2025-01-05",
+            "cliente_id": 306,
+            "producto_id": 6,
+            "cantidad": 3,
+            "precio_unitario": 152.03,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 40,
+            "fecha": "2025-01-05",
+            "cliente_id": 277,
+            "producto_id": 8,
+            "cantidad": 12,
+            "precio_unitario": 1052.9,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 41,
+            "fecha": "2025-01-05",
+            "cliente_id": 243,
+            "producto_id": 6,
+            "cantidad": 3,
+            "precio_unitario": 142.67,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 42,
+            "fecha": "2025-01-05",
+            "cliente_id": 66,
+            "producto_id": 2,
+            "cantidad": 3,
+            "precio_unitario": 1298.8,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 43,
+            "fecha": "2025-01-06",
+            "cliente_id": 124,
+            "producto_id": 7,
+            "cantidad": 12,
+            "precio_unitario": 367.45,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 44,
+            "fecha": "2025-01-06",
+            "cliente_id": 73,
+            "producto_id": 4,
+            "cantidad": 2,
+            "precio_unitario": 702.25,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 45,
+            "fecha": "2025-01-06",
+            "cliente_id": 57,
+            "producto_id": 12,
+            "cantidad": 5,
+            "precio_unitario": 1801.86,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 46,
+            "fecha": "2025-01-06",
+            "cliente_id": 319,
+            "producto_id": 6,
+            "cantidad": 3,
+            "precio_unitario": 147.65,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 47,
+            "fecha": "2025-01-06",
+            "cliente_id": 233,
+            "producto_id": 3,
+            "cantidad": 5,
+            "precio_unitario": 4232.6,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 48,
+            "fecha": "2025-01-06",
+            "cliente_id": 76,
+            "producto_id": 1,
+            "cantidad": 2,
+            "precio_unitario": 453.78,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 49,
+            "fecha": "2025-01-06",
+            "cliente_id": 244,
+            "producto_id": 6,
+            "cantidad": 1,
+            "precio_unitario": 156.06,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 50,
+            "fecha": "2025-01-07",
+            "cliente_id": 203,
+            "producto_id": 7,
+            "cantidad": 1,
+            "precio_unitario": 397.69,
+            "descuento": 0.0
+          }
+        ],
+        "vista_truncada": true,
+        "nota": "Ves 50 de 6000 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 2,
+      "model": "guion",
+      "tokens_entrada": 4203,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT * FROM ventas WHERE venta_id > 1\"}"
+      },
+      "observation": {
+        "resultado_id": "r2",
+        "columnas": [
+          "venta_id",
+          "fecha",
+          "cliente_id",
+          "producto_id",
+          "cantidad",
+          "precio_unitario",
+          "descuento"
+        ],
+        "total_filas": 5999,
+        "filas": [
+          {
+            "venta_id": 2,
+            "fecha": "2025-01-01",
+            "cliente_id": 289,
+            "producto_id": 6,
+            "cantidad": 12,
+            "precio_unitario": 145.64,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 3,
+            "fecha": "2025-01-01",
+            "cliente_id": 56,
+            "producto_id": 3,
+            "cantidad": 3,
+            "precio_unitario": 4276.64,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 4,
+            "fecha": "2025-01-01",
+            "cliente_id": 120,
+            "producto_id": 7,
+            "cantidad": 12,
+            "precio_unitario": 361.84,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 5,
+            "fecha": "2025-01-01",
+            "cliente_id": 130,
+            "producto_id": 12,
+            "cantidad": 2,
+            "precio_unitario": 1672.84,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 6,
+            "fecha": "2025-01-01",
+            "cliente_id": 105,
+            "producto_id": 4,
+            "cantidad": 5,
+            "precio_unitario": 645.99,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 7,
+            "fecha": "2025-01-02",
+            "cliente_id": 66,
+            "producto_id": 4,
+            "cantidad": 5,
+            "precio_unitario": 704.17,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 8,
+            "fecha": "2025-01-02",
+            "cliente_id": 40,
+            "producto_id": 13,
+            "cantidad": 1,
+            "precio_unitario": 775.82,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 9,
+            "fecha": "2025-01-02",
+            "cliente_id": 46,
+            "producto_id": 3,
+            "cantidad": 3,
+            "precio_unitario": 4020.88,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 10,
+            "fecha": "2025-01-02",
+            "cliente_id": 235,
+            "producto_id": 7,
+            "cantidad": 1,
+            "precio_unitario": 359.76,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 11,
+            "fecha": "2025-01-02",
+            "cliente_id": 241,
+            "producto_id": 5,
+            "cantidad": 2,
+            "precio_unitario": 913.43,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 12,
+            "fecha": "2025-01-02",
+            "cliente_id": 77,
+            "producto_id": 2,
+            "cantidad": 1,
+            "precio_unitario": 1189.76,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 13,
+            "fecha": "2025-01-02",
+            "cliente_id": 262,
+            "producto_id": 10,
+            "cantidad": 1,
+            "precio_unitario": 327.88,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 14,
+            "fecha": "2025-01-02",
+            "cliente_id": 32,
+            "producto_id": 12,
+            "cantidad": 1,
+            "precio_unitario": 1856.51,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 15,
+            "fecha": "2025-01-03",
+            "cliente_id": 219,
+            "producto_id": 6,
+            "cantidad": 3,
+            "precio_unitario": 141.19,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 16,
+            "fecha": "2025-01-03",
+            "cliente_id": 309,
+            "producto_id": 12,
+            "cantidad": 1,
+            "precio_unitario": 1761.99,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 17,
+            "fecha": "2025-01-03",
+            "cliente_id": 87,
+            "producto_id": 1,
+            "cantidad": 2,
+            "precio_unitario": 488.14,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 18,
+            "fecha": "2025-01-03",
+            "cliente_id": 212,
+            "producto_id": 5,
+            "cantidad": 5,
+            "precio_unitario": 938.12,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 19,
+            "fecha": "2025-01-03",
+            "cliente_id": 72,
+            "producto_id": 13,
+            "cantidad": 1,
+            "precio_unitario": 700.68,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 20,
+            "fecha": "2025-01-03",
+            "cliente_id": 298,
+            "producto_id": 13,
+            "cantidad": 1,
+            "precio_unitario": 757.17,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 21,
+            "fecha": "2025-01-03",
+            "cliente_id": 123,
+            "producto_id": 1,
+            "cantidad": 2,
+            "precio_unitario": 485.4,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 22,
+            "fecha": "2025-01-03",
+            "cliente_id": 247,
+            "producto_id": 6,
+            "cantidad": 6,
+            "precio_unitario": 143.83,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 23,
+            "fecha": "2025-01-03",
+            "cliente_id": 155,
+            "producto_id": 3,
+            "cantidad": 2,
+            "precio_unitario": 4192.16,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 24,
+            "fecha": "2025-01-04",
+            "cliente_id": 280,
+            "producto_id": 11,
+            "cantidad": 2,
+            "precio_unitario": 583.16,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 25,
+            "fecha": "2025-01-04",
+            "cliente_id": 105,
+            "producto_id": 5,
+            "cantidad": 1,
+            "precio_unitario": 927.48,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 26,
+            "fecha": "2025-01-04",
+            "cliente_id": 308,
+            "producto_id": 6,
+            "cantidad": 12,
+            "precio_unitario": 141.08,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 27,
+            "fecha": "2025-01-04",
+            "cliente_id": 142,
+            "producto_id": 3,
+            "cantidad": 3,
+            "precio_unitario": 4044.55,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 28,
+            "fecha": "2025-01-04",
+            "cliente_id": 225,
+            "producto_id": 4,
+            "cantidad": 1,
+            "precio_unitario": 635.96,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 29,
+            "fecha": "2025-01-04",
+            "cliente_id": 287,
+            "producto_id": 2,
+            "cantidad": 2,
+            "precio_unitario": 1255.05,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 30,
+            "fecha": "2025-01-04",
+            "cliente_id": 125,
+            "producto_id": 4,
+            "cantidad": 1,
+            "precio_unitario": 683.71,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 31,
+            "fecha": "2025-01-04",
+            "cliente_id": 204,
+            "producto_id": 5,
+            "cantidad": 2,
+            "precio_unitario": 904.8,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 32,
+            "fecha": "2025-01-04",
+            "cliente_id": 224,
+            "producto_id": 6,
+            "cantidad": 1,
+            "precio_unitario": 149.61,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 33,
+            "fecha": "2025-01-05",
+            "cliente_id": 53,
+            "producto_id": 5,
+            "cantidad": 3,
+            "precio_unitario": 943.72,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 34,
+            "fecha": "2025-01-05",
+            "cliente_id": 141,
+            "producto_id": 13,
+            "cantidad": 3,
+            "precio_unitario": 746.97,
+            "descuento": 0.05
+          },
+          {
+            "venta_id": 35,
+            "fecha": "2025-01-05",
+            "cliente_id": 56,
+            "producto_id": 7,
+            "cantidad": 3,
+            "precio_unitario": 400.65,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 36,
+            "fecha": "2025-01-05",
+            "cliente_id": 219,
+            "producto_id": 8,
+            "cantidad": 12,
+            "precio_unitario": 1109.98,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 37,
+            "fecha": "2025-01-05",
+            "cliente_id": 131,
+            "producto_id": 7,
+            "cantidad": 3,
+            "precio_unitario": 372.62,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 38,
+            "fecha": "2025-01-05",
+            "cliente_id": 222,
+            "producto_id": 6,
+            "cantidad": 6,
+            "precio_unitario": 154.01,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 39,
+            "fecha": "2025-01-05",
+            "cliente_id": 306,
+            "producto_id": 6,
+            "cantidad": 3,
+            "precio_unitario": 152.03,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 40,
+            "fecha": "2025-01-05",
+            "cliente_id": 277,
+            "producto_id": 8,
+            "cantidad": 12,
+            "precio_unitario": 1052.9,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 41,
+            "fecha": "2025-01-05",
+            "cliente_id": 243,
+            "producto_id": 6,
+            "cantidad": 3,
+            "precio_unitario": 142.67,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 42,
+            "fecha": "2025-01-05",
+            "cliente_id": 66,
+            "producto_id": 2,
+            "cantidad": 3,
+            "precio_unitario": 1298.8,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 43,
+            "fecha": "2025-01-06",
+            "cliente_id": 124,
+            "producto_id": 7,
+            "cantidad": 12,
+            "precio_unitario": 367.45,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 44,
+            "fecha": "2025-01-06",
+            "cliente_id": 73,
+            "producto_id": 4,
+            "cantidad": 2,
+            "precio_unitario": 702.25,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 45,
+            "fecha": "2025-01-06",
+            "cliente_id": 57,
+            "producto_id": 12,
+            "cantidad": 5,
+            "precio_unitario": 1801.86,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 46,
+            "fecha": "2025-01-06",
+            "cliente_id": 319,
+            "producto_id": 6,
+            "cantidad": 3,
+            "precio_unitario": 147.65,
+            "descuento": 0.1
+          },
+          {
+            "venta_id": 47,
+            "fecha": "2025-01-06",
+            "cliente_id": 233,
+            "producto_id": 3,
+            "cantidad": 5,
+            "precio_unitario": 4232.6,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 48,
+            "fecha": "2025-01-06",
+            "cliente_id": 76,
+            "producto_id": 1,
+            "cantidad": 2,
+            "precio_unitario": 453.78,
+            "descuento": 0.15
+          },
+          {
+            "venta_id": 49,
+            "fecha": "2025-01-06",
+            "cliente_id": 244,
+            "producto_id": 6,
+            "cantidad": 1,
+            "precio_unitario": 156.06,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 50,
+            "fecha": "2025-01-07",
+            "cliente_id": 203,
+            "producto_id": 7,
+            "cantidad": 1,
+            "precio_unitario": 397.69,
+            "descuento": 0.0
+          },
+          {
+            "venta_id": 51,
+            "fecha": "2025-01-07",
+            "cliente_id": 260,
+            "producto_id": 12,
+            "cantidad": 1,
+            "precio_unitario": 1682.86,
+            "descuento": 0.1
+          }
+        ],
+        "vista_truncada": true,
+        "nota": "Ves 50 de 5999 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r2'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "guion",
+      "tokens_entrada": 0,
+      "tokens_salida": 0,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "freno": "presupuesto: 5603 usados + ~8650 estimados > 12000"
+    }
+  ],
+  "status": "budget_exceeded",
+  "model": "guion",
+  "usage": {
+    "tokens_entrada": 5603,
+    "tokens_salida": 60
+  },
+  "error": null,
+  "segundos": 0.04
+}

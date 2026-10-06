@@ -1,0 +1,135 @@
+{
+  "question": "¿Qué porcentaje de las ventas de 2026, contadas por número de ventas, tuvo algún descuento?",
+  "answer": "El **51.64%** de las ventas de 2026 tuvo algún descuento (1.230 de 2.382 ventas registradas en ese año).\n\nDetalles:\n- Total de ventas en 2026: 2.382\n- Ventas con descuento (descuento > 0): 1.230\n- Cálculo: 1.230 / 2.382 = 51.64%\n\nNota: los datos de 2026 cubren hasta el 31 de agosto de 2026, que es el límite del rango disponible en la base.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 985,
+      "tokens_salida": 67,
+      "latencia_s": 0.79,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1296,
+      "tokens_salida": 123,
+      "latencia_s": 1.02,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT COUNT(*) AS total_ventas, SUM(CASE WHEN descuento > 0 THEN 1 ELSE 0 END) AS con_descuento FROM ventas WHERE fecha >= '2026-01-01' AND fecha <= '2026-12-31'\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "total_ventas",
+          "con_descuento"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "total_ventas": 2382,
+            "con_descuento": 1230
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1462,
+      "tokens_salida": 149,
+      "latencia_s": 1.13,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 3743,
+    "tokens_salida": 339
+  },
+  "error": null,
+  "segundos": 2.95
+}

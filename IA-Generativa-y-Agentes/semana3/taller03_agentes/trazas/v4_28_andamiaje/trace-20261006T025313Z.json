@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál es la desviación estándar muestral del importe facturado por mes en 2025?",
+  "answer": "No puedo calcular la desviación estándar porque no tengo acceso a los datos de facturación: en este entorno no hay ninguna tool disponible para leer la fuente de datos y no debo inventar cifras. Para calcularla necesito los importes facturados de cada mes de 2025 (idealmente los 12 valores mensuales). Si me los proporcionas, aplicaré la desviación estándar muestral (denominador n−1) sobre los totales mensuales. Supuestos y limitaciones: (1) la unidad de análisis sería el total facturado por mes; (2) con menos de 2 meses de datos no es posible calcularla; (3) si hay meses sin facturación, conviene aclarar si se cuentan como 0 o se excluyen del cálculo.",
+  "trace": [],
+  "status": "completed"
+}

@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuántas ventas tuvieron un descuento del 15 %?",
+  "answer": "No puedo responder cuántas ventas tuvieron un descuento del 15 % porque no tengo acceso a ningún conjunto de datos de ventas en esta conversación. No hay un archivo, tabla o fuente de datos cargada que pueda consultar, y no debo inventar cifras.\n\nPara poder responder, necesito que proporciones:\n1. La fuente de datos (por ejemplo, un archivo CSV/Excel con las ventas).\n2. La columna que registra el descuento (y si está en porcentaje, fracción o monto).\n\nSupuestos y limitaciones: una vez que tenga los datos, contaré las filas donde el descuento sea exactamente 15 % (o el equivalente según la unidad, p. ej., 0.15). Si el descuento estuviera expresado como monto en dinero en lugar de porcentaje, la respuesta requeriría un cálculo adicional y podría no ser exacta.",
+  "trace": [],
+  "status": "completed"
+}

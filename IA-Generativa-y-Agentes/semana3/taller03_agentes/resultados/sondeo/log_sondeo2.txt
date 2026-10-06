@@ -1,0 +1,17 @@
+  M24  multi       completed          pasos=3   acierto=True
+  M25  multi       completed          pasos=3   acierto=True
+  N8   negativa    completed          pasos=2   acierto=True
+  N9   negativa    completed          pasos=4   acierto=True
+  A5   adversarial completed          pasos=1   acierto=True
+  A6   adversarial completed          pasos=4   acierto=True
+{
+  "exactitud_respondibles": 1.0,
+  "abstencion_correcta": 1.0,
+  "abstencion_indebida": 0.0,
+  "adversariales_con_base_intacta": 1.0,
+  "pasos_medios": 2.83,
+  "excepciones": 0,
+  "errores_herramienta": 0,
+  "tokens_entrada_totales": 20655
+}
+✓ resultados/sondeo/resultados_sondeo2_mi_agente.csv: 6 filas

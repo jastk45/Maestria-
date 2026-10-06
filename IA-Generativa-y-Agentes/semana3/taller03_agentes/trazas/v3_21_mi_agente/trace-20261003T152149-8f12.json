@@ -1,0 +1,224 @@
+{
+  "question": "¿Qué mes de 2025 tuvo el mayor crecimiento porcentual del importe respecto al mes anterior, y de cuánto fue ese crecimiento?",
+  "answer": "**Marzo de 2025** tuvo el mayor crecimiento porcentual del importe respecto al mes anterior, con un **+52.24%** (de 578,027.22 en febrero a 879,973.83 en marzo).\n\nDetalles:\n- El cálculo se hizo sobre el importe de las ventas (cantidad × precio_unitario × (1 − descuento)) agrupado por mes de 2025, comparando cada mes con el inmediatamente anterior mediante la función LAG.\n- Los siguientes mayores crecimientos fueron diciembre (+48.42%, de 567,307.95 a 841,977.83) y agosto (+31.11%, de 594,328.88 a 779,225.62).\n- Enero de 2025 no se evalúa como crecimiento porque no se dispone del importe de diciembre de 2024 (los datos empiezan el 2025-01-01).",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 992,
+      "tokens_salida": 89,
+      "latencia_s": 1.02,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "describir_esquema",
+        "args": "{}"
+      },
+      "observation": {
+        "tablas": {
+          "productos": {
+            "columnas": [
+              "producto_id INTEGER",
+              "nombre TEXT",
+              "categoria TEXT",
+              "precio_lista REAL"
+            ],
+            "filas": 13
+          },
+          "clientes": {
+            "columnas": [
+              "cliente_id INTEGER",
+              "nombre TEXT",
+              "region TEXT",
+              "segmento TEXT",
+              "fecha_alta TEXT"
+            ],
+            "filas": 320
+          },
+          "ventas": {
+            "columnas": [
+              "venta_id INTEGER",
+              "fecha TEXT",
+              "cliente_id INTEGER",
+              "producto_id INTEGER",
+              "cantidad INTEGER",
+              "precio_unitario REAL",
+              "descuento REAL"
+            ],
+            "filas": 6000
+          }
+        },
+        "relaciones": [
+          "ventas.cliente_id -> clientes.cliente_id",
+          "ventas.producto_id -> productos.producto_id"
+        ],
+        "metricas_derivadas": {
+          "importe de una venta": "cantidad * precio_unitario * (1 - descuento)",
+          "facturación / ventas en dinero": "SUM(importe)"
+        },
+        "fechas": {
+          "formato": "YYYY-MM-DD (texto)",
+          "desde": "2025-01-01",
+          "hasta": "2026-08-31"
+        },
+        "valores_posibles": {
+          "clientes.region": [
+            "Costa",
+            "Sierra",
+            "Amazonía",
+            "Galápagos"
+          ],
+          "clientes.segmento": [
+            "sector público",
+            "pyme",
+            "corporativo",
+            "educación"
+          ],
+          "productos.categoria": [
+            "licencia",
+            "soporte",
+            "capacitación"
+          ]
+        }
+      }
+    },
+    {
+      "paso": 2,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1303,
+      "tokens_salida": 189,
+      "latencia_s": 1.64,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT strftime('%Y-%m', fecha) AS mes, SUM(cantidad * precio_unitario * (1 - descuento)) AS importe FROM ventas WHERE fecha >= '2025-01-01' AND fecha <= '2025-12-31' GROUP BY mes ORDER BY mes\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "mes",
+          "importe"
+        ],
+        "total_filas": 12,
+        "filas": [
+          {
+            "mes": "2025-01",
+            "importe": 612365.338
+          },
+          {
+            "mes": "2025-02",
+            "importe": 578027.223
+          },
+          {
+            "mes": "2025-03",
+            "importe": 879973.825
+          },
+          {
+            "mes": "2025-04",
+            "importe": 650328.003
+          },
+          {
+            "mes": "2025-05",
+            "importe": 753266.5385
+          },
+          {
+            "mes": "2025-06",
+            "importe": 851479.1225
+          },
+          {
+            "mes": "2025-07",
+            "importe": 594328.877
+          },
+          {
+            "mes": "2025-08",
+            "importe": 779225.6215
+          },
+          {
+            "mes": "2025-09",
+            "importe": 982313.406
+          },
+          {
+            "mes": "2025-10",
+            "importe": 572203.438
+          },
+          {
+            "mes": "2025-11",
+            "importe": 567307.949
+          },
+          {
+            "mes": "2025-12",
+            "importe": 841977.8315
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 12 de 12 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 1703,
+      "tokens_salida": 839,
+      "latencia_s": 5.93,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"WITH m AS (SELECT strftime('%Y-%m', fecha) AS mes, SUM(cantidad * precio_unitario * (1 - descuento)) AS importe FROM ventas WHERE fecha >= '2025-01-01' AND fecha <= '2025-12-31' GROUP BY mes), g AS (SELECT mes, importe, LAG(importe) OVER (ORDER BY mes) AS importe_anterior, ROUND(100.0 * (importe - LAG(importe) OVER (ORDER BY mes)) / LAG(importe) OVER (ORDER BY mes), 2) AS crecimiento_pct FROM m) SELECT mes, importe, importe_anterior, crecimiento_pct FROM g WHERE importe_anterior IS NOT NULL ORDER BY crecimiento_pct DESC LIMIT 3\"}"
+      },
+      "observation": {
+        "resultado_id": "r2",
+        "columnas": [
+          "mes",
+          "importe",
+          "importe_anterior",
+          "crecimiento_pct"
+        ],
+        "total_filas": 3,
+        "filas": [
+          {
+            "mes": "2025-03",
+            "importe": 879973.825,
+            "importe_anterior": 578027.223,
+            "crecimiento_pct": 52.24
+          },
+          {
+            "mes": "2025-12",
+            "importe": 841977.8315,
+            "importe_anterior": 567307.949,
+            "crecimiento_pct": 48.42
+          },
+          {
+            "mes": "2025-08",
+            "importe": 779225.6215,
+            "importe_anterior": 594328.877,
+            "crecimiento_pct": 31.11
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 3 de 3 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r2'."
+      }
+    },
+    {
+      "paso": 4,
+      "model": "zai-org/GLM-5.3-Flash",
+      "tokens_entrada": 2098,
+      "tokens_salida": 260,
+      "latencia_s": 2.24,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "final": true
+    }
+  ],
+  "status": "completed",
+  "model": "zai-org/GLM-5.3-Flash",
+  "usage": {
+    "tokens_entrada": 6096,
+    "tokens_salida": 1377
+  },
+  "error": null,
+  "segundos": 10.86
+}

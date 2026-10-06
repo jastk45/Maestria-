@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál fue el importe total vendido en agosto de 2026?",
+  "answer": "No puedo indicar el importe total vendido en agosto de 2026 porque no tengo acceso a ninguna fuente de datos de ventas (archivo, base de datos o tool disponible) y no debo inventar cifras. Limitaciones: sin evidencia de datos, cualquier número que diera sería una invención. Para poder calcularlo, necesito que proporciones los datos de ventas (por ejemplo, un CSV/Excel con columnas de fecha e importe) o que habilites el acceso a la fuente correspondiente; con eso podría filtrar agosto de 2026 y sumar el importe total.",
+  "trace": [],
+  "status": "completed"
+}

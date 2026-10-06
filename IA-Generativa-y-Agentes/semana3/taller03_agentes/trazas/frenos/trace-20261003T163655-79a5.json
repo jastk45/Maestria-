@@ -1,0 +1,85 @@
+{
+  "question": "[repeticion] pregunta de prueba",
+  "answer": "[Incompleto: el agente repetía la misma llamada] No pude completar la tarea. Lo último que obtuve: {\"resultado_id\": \"r2\", \"columnas\": [\"COUNT(*)\"], \"total_filas\": 1, \"filas\": [{\"COUNT(*)\": 6000}], \"vista_truncada\": false, \"nota\": \"Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r2'.\"}",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "guion",
+      "tokens_entrada": 1399,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT COUNT(*) FROM ventas\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "COUNT(*)"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "COUNT(*)": 6000
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 2,
+      "model": "guion",
+      "tokens_entrada": 1598,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT COUNT(*) FROM ventas\"}"
+      },
+      "observation": {
+        "resultado_id": "r2",
+        "columnas": [
+          "COUNT(*)"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "COUNT(*)": 6000
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r2'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "guion",
+      "tokens_entrada": 1797,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": "",
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT COUNT(*) FROM ventas\"}"
+      },
+      "observation": {
+        "error": "llamada repetida demasiadas veces"
+      },
+      "freno": "repetición: consultar_sql con los mismos argumentos 3 veces (k=2)"
+    }
+  ],
+  "status": "repetition_detected",
+  "model": "guion",
+  "usage": {
+    "tokens_entrada": 4794,
+    "tokens_salida": 90
+  },
+  "error": null,
+  "segundos": 0.01
+}

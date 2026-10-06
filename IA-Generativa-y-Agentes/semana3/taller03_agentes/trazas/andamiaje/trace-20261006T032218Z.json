@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál fue en 2025 el descuento medio ponderado por el importe bruto (cantidad × precio unitario), en porcentaje?",
+  "answer": "No puedo calcular el descuento medio ponderado de 2025 porque no tengo acceso a los datos: en esta conversación no hay ninguna fuente de datos ni herramienta disponible para leerlos, y no debo inventar cifras.\n\nMetodología que aplicaría en cuanto tenga los datos (líneas de venta/facturación de 2025):\n\nDescuento medio ponderado = Σ(importe_bruto_i × descuento_i%) / Σ(importe_bruto_i)\ndonde importe_bruto_i = cantidad_i × precio_unitario_i\n\nEquivalente si se dispone de importes netos: 1 − (Σ importe_neto / Σ importe_bruto), expresado en %.\n\nDatos que necesito por línea (filtrados a fechas de 2025):\n- fecha\n- cantidad\n- precio unitario\n- descuento (%) aplicado por línea — o, alternativamente, importe bruto e importe neto\n\nLimitaciones: el resultado dependerá de si los descuentos se registran por línea o a nivel de documento (en cuyo caso habría que definir cómo prorratearlos), y de si se excluyen devoluciones, notas de crédito o líneas con precio cero. Si me proporcionas el dataset (o habilitas la herramienta de lectura de datos), devuelvo el porcentaje ponderado y, si quieres, un desglose por mes o por producto.",
+  "trace": [],
+  "status": "completed"
+}

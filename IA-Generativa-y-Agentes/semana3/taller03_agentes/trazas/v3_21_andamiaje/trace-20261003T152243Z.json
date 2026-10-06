@@ -1,0 +1,6 @@
+{
+  "question": "¿Qué porcentaje de las ventas de 2026, contadas por número de ventas, tuvo algún descuento?",
+  "answer": "No puedo calcular ese porcentaje porque en esta conversación no tengo acceso a los datos de ventas de 2026 ni a una fuente de datos conectada (no hay archivos, bases de datos ni herramientas disponibles para consultar). No quiero inventar cifras.\n\nPara responder necesitaría un dataset con al menos estos campos por transacción: identificador de venta, fecha de la venta y un campo que indique el descuento (monto, porcentaje o bandera sí/no).\n\nCon esos datos, el cálculo sería:\n(número de ventas de 2026 con descuento > 0 / número total de ventas de 2026) × 100.\n\nSupuestos que aplicaría: cada transacción cuenta como una venta (no se agrupan por cliente ni por producto) y 'algún descuento' significa cualquier descuento mayor que cero. Limitación: si el dataset no cubre todo el año 2026 o no distingue ventas con y sin descuento, el resultado sería parcial o no calculable. Si me compartes el archivo o conectas la fuente de datos, puedo hacer el cálculo de inmediato.",
+  "trace": [],
+  "status": "completed"
+}

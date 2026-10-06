@@ -1,0 +1,242 @@
+{
+  "question": "[parafrasis] pregunta de prueba",
+  "answer": "[Incompleto: alcancé el máximo de 8 pasos] No pude completar la tarea. Lo último que obtuve: {\"resultado_id\": \"r8\", \"columnas\": [\"COUNT(*)\"], \"total_filas\": 1, \"filas\": [{\"COUNT(*)\": 6000}], \"vista_truncada\": false, \"nota\": \"Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r8'.\"}",
+  "trace": [
+    {
+      "paso": 1,
+      "model": "guion",
+      "tokens_entrada": 1399,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT COUNT(*) FROM ventas WHERE 0 = 0\"}"
+      },
+      "observation": {
+        "resultado_id": "r1",
+        "columnas": [
+          "COUNT(*)"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "COUNT(*)": 6000
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."
+      }
+    },
+    {
+      "paso": 2,
+      "model": "guion",
+      "tokens_entrada": 1603,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT COUNT(*) FROM ventas WHERE 1 = 1\"}"
+      },
+      "observation": {
+        "resultado_id": "r2",
+        "columnas": [
+          "COUNT(*)"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "COUNT(*)": 6000
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r2'."
+      }
+    },
+    {
+      "paso": 3,
+      "model": "guion",
+      "tokens_entrada": 1806,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT COUNT(*) FROM ventas WHERE 2 = 2\"}"
+      },
+      "observation": {
+        "resultado_id": "r3",
+        "columnas": [
+          "COUNT(*)"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "COUNT(*)": 6000
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r3'."
+      }
+    },
+    {
+      "paso": 4,
+      "model": "guion",
+      "tokens_entrada": 2010,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT COUNT(*) FROM ventas WHERE 3 = 3\"}"
+      },
+      "observation": {
+        "resultado_id": "r4",
+        "columnas": [
+          "COUNT(*)"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "COUNT(*)": 6000
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r4'."
+      }
+    },
+    {
+      "paso": 5,
+      "model": "guion",
+      "tokens_entrada": 2214,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT COUNT(*) FROM ventas WHERE 4 = 4\"}"
+      },
+      "observation": {
+        "resultado_id": "r5",
+        "columnas": [
+          "COUNT(*)"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "COUNT(*)": 6000
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r5'."
+      }
+    },
+    {
+      "paso": 6,
+      "model": "guion",
+      "tokens_entrada": 2418,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT COUNT(*) FROM ventas WHERE 5 = 5\"}"
+      },
+      "observation": {
+        "resultado_id": "r6",
+        "columnas": [
+          "COUNT(*)"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "COUNT(*)": 6000
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r6'."
+      }
+    },
+    {
+      "paso": 7,
+      "model": "guion",
+      "tokens_entrada": 2622,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT COUNT(*) FROM ventas WHERE 6 = 6\"}"
+      },
+      "observation": {
+        "resultado_id": "r7",
+        "columnas": [
+          "COUNT(*)"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "COUNT(*)": 6000
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r7'."
+      }
+    },
+    {
+      "paso": 8,
+      "model": "guion",
+      "tokens_entrada": 2827,
+      "tokens_salida": 30,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": {
+        "name": "consultar_sql",
+        "args": "{\"consulta\": \"SELECT COUNT(*) FROM ventas WHERE 7 = 7\"}"
+      },
+      "observation": {
+        "resultado_id": "r8",
+        "columnas": [
+          "COUNT(*)"
+        ],
+        "total_filas": 1,
+        "filas": [
+          {
+            "COUNT(*)": 6000
+          }
+        ],
+        "vista_truncada": false,
+        "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r8'."
+      }
+    },
+    {
+      "paso": 9,
+      "model": "guion",
+      "tokens_entrada": 900,
+      "tokens_salida": 20,
+      "latencia_s": 0.0,
+      "error": null,
+      "thought": null,
+      "action": null,
+      "observation": null,
+      "freno": "máximo de pasos (8)"
+    }
+  ],
+  "status": "max_steps_reached",
+  "model": "guion",
+  "usage": {
+    "tokens_entrada": 17799,
+    "tokens_salida": 260
+  },
+  "error": null,
+  "segundos": 0.02
+}

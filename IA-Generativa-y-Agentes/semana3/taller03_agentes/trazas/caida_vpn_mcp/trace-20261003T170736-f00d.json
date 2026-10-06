@@ -1,0 +1,25 @@
+{
+  "question": "Crea una tabla resumen_2026 con el importe por mes para dejarla guardada y dime el importe de agosto de 2026.",
+  "answer": "No pude completar la tarea: APIConnectionError: Connection error.",
+  "trace": [
+    {
+      "paso": 1,
+      "model": null,
+      "tokens_entrada": 0,
+      "tokens_salida": 0,
+      "latencia_s": 1.44,
+      "error": "APIConnectionError: Connection error.",
+      "thought": null,
+      "action": null,
+      "observation": null
+    }
+  ],
+  "status": "error",
+  "model": null,
+  "usage": {
+    "tokens_entrada": 0,
+    "tokens_salida": 0
+  },
+  "error": "APIConnectionError: Connection error.",
+  "segundos": 1.44
+}

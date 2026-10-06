@@ -1,0 +1,6 @@
+{
+  "question": "¿Cuál fue el importe medio por unidad vendida de la categoría soporte en 2025?",
+  "answer": "No puedo calcular el importe medio por unidad vendida de la categoría 'soporte' en 2025 porque no dispongo de acceso a los datos de ventas ni a una fuente de datos especificada en esta conversación. No inventaré cifras. Para poder responder, necesito que proporciones: (1) el dataset o fuente de datos con las ventas (por ejemplo, un archivo con columnas como categoría, unidades vendidas e importe total), y (2) la definición exacta del cálculo deseado (importe medio por unidad = importe total de ventas de la categoría 'soporte' en 2025 ÷ unidades totales vendidas de esa categoría en 2025). Con esa evidencia, podré realizar el cálculo e indicar supuestos y limitaciones.",
+  "trace": [],
+  "status": "completed"
+}
