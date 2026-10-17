@@ -46,6 +46,8 @@ def main() -> None:
     ap.add_argument("--golden", default="golden_set.json")
     ap.add_argument("--ids", nargs="+", required=True)
     ap.add_argument("-o", "--salida", default="etiquetar.html")
+    ap.add_argument("--quien", default="Jaime Astudillo", help="quién etiqueta (va en el título)")
+    ap.add_argument("--descarga", default="etiquetas.csv", help="nombre del CSV que descarga la hoja")
     a = ap.parse_args()
     casos = {c["id"]: c for c in json.loads(Path(a.golden).read_text(encoding="utf-8"))["preguntas"]}
     with open(a.resultados, encoding="utf-8") as f:
@@ -86,12 +88,12 @@ pre{{white-space:pre-wrap;background:#f6f6f6;padding:.6rem;border-radius:4px;fon
 .botones label{{margin-right:1.5rem;font-weight:600}} button{{font-size:1rem;padding:.6rem 1.2rem}}
 #estado{{margin-left:1rem;color:#555}}
 </style>
-<h1>Etiquetas a mano — Taller 04 (Jaime Astudillo)</h1>
+<h1>Etiquetas a mano — Taller 04 ({html.escape(a.quien)})</h1>
 <p>{len(a.ids)} casos de la corrida base. Lee la pregunta, el criterio, la referencia y la respuesta, y marca
 <b>aprueba</b> o <b>falla</b> con tu criterio. Esta hoja no muestra qué dijo el juez ni el verificador
-automático: así las etiquetas se escriben antes de mirarlos. Al final, «Descargar etiquetas.csv».</p>
+automático: así las etiquetas se escriben antes de mirarlos. Al final, «Descargar {a.descarga}».</p>
 {''.join(tarjetas)}
-<p><button id="bajar">Descargar etiquetas.csv</button><span id="estado"></span></p>
+<p><button id="bajar">Descargar {a.descarga}</button><span id="estado"></span></p>
 <script>
 document.getElementById('bajar').onclick = () => {{
   const casos = [...document.querySelectorAll('.caso')];
@@ -101,7 +103,7 @@ document.getElementById('bajar').onclick = () => {{
   const csv = 'id,etiqueta\\n' + filas.map(f => f.join(',')).join('\\n') + '\\n';
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([csv], {{type: 'text/csv'}}));
-  a.download = 'etiquetas.csv'; a.click();
+  a.download = '{a.descarga}'; a.click();
   document.getElementById('estado').textContent = 'Listo: ' + filas.length + ' etiquetas descargadas.';
 }};
 </script></html>"""

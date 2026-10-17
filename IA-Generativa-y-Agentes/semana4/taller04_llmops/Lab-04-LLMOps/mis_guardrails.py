@@ -33,8 +33,8 @@ from dataclasses import dataclass, field
 
 ABSTENCION = "No puedo responder con los datos disponibles."  # la frase del Taller 3 (evaluar.py)
 
-# G4 — sacado de las mediciones: la pregunta legítima más larga del golden set y del banco tiene
-# ~260 caracteres; el límite deja más de 5× de margen y corta el relleno masivo de contexto.
+# G4 — sacado de las mediciones: la pregunta no adversarial más larga del golden set tiene 162
+# caracteres (CL1); el límite deja más de 9× de margen y corta el relleno masivo de contexto.
 MAX_CHARS_ENTRADA = 1500
 
 OK, REDACTADA, BLOQUEADA = "ok", "redactada", "bloqueada"

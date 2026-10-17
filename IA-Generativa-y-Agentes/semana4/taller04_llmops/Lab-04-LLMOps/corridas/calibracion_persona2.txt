@@ -1,0 +1,9 @@
+{
+  "pares": 20,
+  "acuerdo": 0.95,
+  "kappa": 0.828,
+  "discrepancias": [
+    "P6"
+  ],
+  "excluidos_sin_parsear": []
+}

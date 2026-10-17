@@ -1,0 +1,18 @@
+{
+  "pares": 77,
+  "acuerdo": 0.87,
+  "kappa": 0.239,
+  "discrepancias": [
+    "S1",
+    "S2",
+    "S3",
+    "M3",
+    "M16",
+    "M18",
+    "A4",
+    "P6",
+    "P9",
+    "CL1"
+  ],
+  "excluidos_sin_parsear": []
+}

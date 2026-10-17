@@ -2,7 +2,8 @@
 
     python tablas.py            # → entregables/tablas.md y entregables/cifras.json
 
-Lee resultados_{base,v2}.csv, spans_{base,v2}.jsonl, guardrails_{mios,ejemplo}.csv, etiquetas.csv,
+Lee resultados_{base,v2}.csv (Parte 1, golden set v1.0) y resultados_{base,v2}_gs11.csv (Parte 2, golden set
+v1.1), spans_{base,v2}.jsonl, guardrails_{mios,ejemplo}.csv, etiquetas_persona2.csv, etiquetas.csv,
 etiquetas_verificador.csv, golden_set.json y ataques.json. Usa las funciones del laboratorio
 (resumir_trazas.resumir, evaluar_llmops.resumen, evaluar_llmops.calibrar): las cifras del informe
 son las de las herramientas del curso sobre esos archivos, no otras.
@@ -24,6 +25,9 @@ from resumir_trazas import resumir
 AQUI = Path(__file__).resolve().parent
 SALIDA = AQUI / "entregables"
 FILA = "propietario_economico"
+# Golden set v1.1: CL1 corregido y recalificado (recalificar.py). Las métricas de la Parte 2 salen
+# de estos CSV; los originales (sin sufijo) se conservan y la Parte 1 los usa igual (mismos tokens).
+GS = "_gs11"
 TIPOS = ["simple", "multi", "negativa", "adversarial", "ambigua"]
 cifras: dict = {}
 md: list[str] = []
@@ -199,7 +203,7 @@ def main() -> None:
 
     # Parte 2.b
     for etq in ("base", "v2"):
-        filas = csv_filas(f"resultados_{etq}.csv")
+        filas = csv_filas(f"resultados_{etq}{GS}.csv")
         if not filas:
             continue
         cifras[f"resumen_{etq}"] = resumen(filas, "local")
@@ -207,20 +211,25 @@ def main() -> None:
         md.append(tabla(["tipo", "n", "verificador", "otra", "pii filtrada", "juez aprueba", "sin_parsear"],
                         por_tipo(filas)))
         cifras[f"por_tipo_{etq}"] = por_tipo(filas)
-    base = csv_filas("resultados_base.csv")
+    base = csv_filas(f"resultados_base{GS}.csv")
     if base:
-        for nombre, archivo in (("verificador", "etiquetas_verificador.csv"), ("persona", "etiquetas.csv")):
+        base_v10 = csv_filas("resultados_base.csv")          # golden set v1.0: con el que etiquetó Jaime
+        for nombre, archivo, filas_cal in (
+                ("verificador (v1.1)", "etiquetas_verificador.csv", base),
+                ("persona 2, principal (v1.1)", "etiquetas_persona2.csv", base),
+                ("Jaime, histórico (v1.0, con la que etiquetó)", "etiquetas.csv", base_v10),
+                ("Jaime, recalculado (v1.1)", "etiquetas.csv", base)):
             if (AQUI / archivo).exists():
                 et = leer_etiquetas(AQUI / archivo)
-                c = calibrar(base, et) | azar(base, et)
-                cifras[f"calibracion_{nombre}"] = c
+                c = calibrar(filas_cal, et) | azar(filas_cal, et)
+                cifras[f"calibracion_{nombre.split(',')[0].split(' (')[0]}{'_v10' if 'v1.0' in nombre else ''}"] = c
                 md.append(f"\n**Calibración del juez contra {nombre}** ({archivo}): pares {c.get('pares')}, "
                           f"acuerdo {c.get('acuerdo')}, p_e {c.get('p_e')}, kappa {c.get('kappa')}, "
                           f"discrepancias {c.get('discrepancias')}, sin_parsear excluidos {c.get('excluidos_sin_parsear')}, "
                           f"matriz (referencia|juez) {c.get('matriz')}\n")
 
     # Parte 2.c — antes / después
-    v2 = csv_filas("resultados_v2.csv")
+    v2 = csv_filas(f"resultados_v2{GS}.csv")
     if base and v2:
         b, n = {f["id"]: f for f in base}, {f["id"]: f for f in v2}
         cambios = []
@@ -275,7 +284,7 @@ def main() -> None:
     # Parte 4.b — lo medido de donde salen los umbrales
     medidas = {}
     for etq in ("base", "v2"):
-        d, filas = cifras.get(f"parte1_{etq}"), csv_filas(f"resultados_{etq}.csv")
+        d, filas = cifras.get(f"parte1_{etq}"), csv_filas(f"resultados_{etq}{GS}.csv")
         if not d or not filas:
             continue
         r = d["resumen_local"]

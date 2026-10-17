@@ -1,3 +1,10 @@
+28fdf68 2026-10-17 00:54:30 -0500 git_history.txt
+ab81105 2026-10-17 00:54:30 -0500 Revisión final: muestra de etiquetas, guardrail peligroso de la opción A, umbrales sacados de mediciones, evidencia de G3 en la v2 y cifras corregidas
+8f41791 2026-10-17 00:24:56 -0500 git_history.txt
+d21cf9b 2026-10-17 00:24:56 -0500 Calibración principal contra una segunda persona ciega (κ 0,828), acuerdo entre personas, informe y PDF finales
+6e1787b 2026-10-17 00:23:34 -0500 etiquetas_persona2.csv: 20 etiquetas de una segunda persona, ciega al juez, antes de calibrar
+2609f55 2026-10-17 00:00:46 -0500 Revisión 2: 68 no adversariales, 4.a en 233 palabras, resolución del 5 %, calibración de Jaime histórica y recalculada, git_history.txt
+153e5b7 2026-10-16 23:49:51 -0500 Golden set v1.1: CL1 corregido (respondible con pii) y recalificado en las tres corridas; hoja ciega para una segunda persona; correcciones de la revisión
 44ecab9 2026-10-16 22:59:59 -0500 J15: token JWT de prueba con la convención EJEMPLO-NO-ES-UN-TOKEN (mismos resultados del banco)
 012751f 2026-10-16 22:54:04 -0500 Corrida v2, spans exportados, calibraciones, tablas e informe final (PDF)
 95d0b0f 2026-10-16 22:52:47 -0500 etiquetas.csv: 20 etiquetas a mano de Jaime Astudillo, escritas en la hoja ciega antes de calibrar
