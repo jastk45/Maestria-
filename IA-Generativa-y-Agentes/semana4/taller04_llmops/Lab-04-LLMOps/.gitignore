@@ -9,3 +9,4 @@ reports/answers.json
 reports/evaluation_report.json
 juez_solver*.csv
 ragas_resultados*.csv
+informe/informe.html

@@ -1,0 +1,7 @@
+# Horas (UTC) de cada corrida y la traza de la prueba de G3
+inicio_base: 2026-10-17T02:04:00Z
+fin_base: 2026-10-17T02:48:10Z
+inicio_v1_repeticion: 2026-10-17T02:12:02Z
+inicio_v2: 2026-10-17T02:50:23Z
+fin_v2: 2026-10-17T03:35:27Z
+traza de la corrida de prueba en que saltó G3 (sesión jaime-astudillo-prueba): 0ce4a9b898cb2576e9aa2acb7de3947c

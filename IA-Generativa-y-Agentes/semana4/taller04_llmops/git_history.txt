@@ -1,3 +1,5 @@
+b7b16c9 2026-10-17 01:20:36 -0500 git_history.txt
+000026f 2026-10-17 01:20:36 -0500 Informe condensado (8 páginas) y rediseñado (Constantia, Corbel, Consolas); fuera archivos que la opción A no usa; README.md en la raíz
 28fdf68 2026-10-17 00:54:30 -0500 git_history.txt
 ab81105 2026-10-17 00:54:30 -0500 Revisión final: muestra de etiquetas, guardrail peligroso de la opción A, umbrales sacados de mediciones, evidencia de G3 en la v2 y cifras corregidas
 8f41791 2026-10-17 00:24:56 -0500 git_history.txt

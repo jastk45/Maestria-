@@ -1,4 +1,6 @@
-# Taller 04 — Evaluar, observar y proteger el agente (opción A) · Jaime Astudillo
+# Taller 04: evaluar, observar y proteger el agente (opción A)
+
+Jaime Astudillo, trabajo individual. MMIA 6013 IA Generativa y Agentes, USFQ.
 
 El sistema del Taller 3 —`MiAgente`, el agente analista SQL (`Lab-03-Agentes/mi_agente.py`,
 `herramientas.py`)— instrumentado con Langfuse, evaluado con un golden set de 81 casos y un juez
@@ -16,7 +18,7 @@ calibrado, y protegido con cuatro guardrails. Informe: `Lab-04-LLMOps/informe/in
 | `Lab-04-LLMOps/resultados_{base,v2,v1_repeticion}.csv`, sus recalificaciones con el golden set v1.1 `resultados_*_gs11.csv`, `spans_{base,v2}.jsonl`, `guardrails_{mios,ejemplo}.csv` | archivos crudos: las tablas del informe salen de aquí (`tablas.py`) |
 | `Lab-04-LLMOps/{ver_traza,buscar_pii,verificar_correcciones,calibracion,recalificar,seleccion_etiquetas,latencia_guardrails,hoja_etiquetas,tablas}.py` | evidencia: spans de un caso, búsqueda de datos personales, las tres correcciones, calibración, latencia de guardrails, hoja de etiquetado, tablas |
 | `fuentes/modelos/modelos-2026-1.json` | la tabla de precios del Anexo del enunciado, transcrita (sin ella `--precio` no corre) |
-| el resto | el laboratorio tal como se repartió (sin cambios: `evaluar_llmops.py`, `exportar_trazas.py`, `resumir_trazas.py`, `probar_guardrails.py`, `guion.py`, y el andamiaje de la Parte 0) |
+| el resto | el laboratorio tal como se repartió, sin cambios (`evaluar_llmops.py`, `exportar_trazas.py`, `resumir_trazas.py`, `probar_guardrails.py`, `guion.py` y el andamiaje de la Parte 0). Se quitaron los archivos que la opción A no usa: `juez_solver.py` (opción B), `ragas-langfuse/` (opción C), `solver-v2/`, la demo de la sesión 17 y la plantilla `reports/` |
 
 ## Reproducir (bash, desde la carpeta del taller)
 
