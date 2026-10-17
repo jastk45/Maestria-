@@ -1,3 +1,5 @@
+a1d9b50 2026-10-17 01:24:52 -0500 git_history.txt
+b50e257 2026-10-17 01:24:52 -0500 Encabezado: un dato de la entrega por línea
 17960d8 2026-10-17 01:22:45 -0500 git_history.txt
 c6a0556 2026-10-17 01:22:45 -0500 Encabezado tipo paper: título, autor, afiliación y fecha centrados, y los datos de la entrega en un párrafo
 b7b16c9 2026-10-17 01:20:36 -0500 git_history.txt

@@ -46,9 +46,9 @@ td strong{color:var(--tinta)}
 .afiliacion,.fecha{font:9.6pt/1.4 Corbel,"Segoe UI",sans-serif;color:var(--gris)}
 .afiliacion{margin-top:.8mm!important}
 .fecha{margin-top:1.2mm!important}
-.datos{border-top:.6pt solid var(--linea);border-bottom:.6pt solid var(--linea);padding:2.6mm 0 1.2mm;margin:0 0 4mm}
-.datos p{max-width:none;font-size:8.9pt;line-height:1.45;text-align:left}
-.datos strong{color:var(--acento)}
+.datos{border-top:.6pt solid var(--linea);border-bottom:.6pt solid var(--linea);padding:2.6mm 0 1.3mm;margin:0 0 4mm}
+.datos p{max-width:none;font-size:8.9pt;line-height:1.42;text-align:left;margin:0 0 1.4mm}
+.datos strong{color:var(--acento);white-space:nowrap}
 .nota{font:8.5pt/1.4 Corbel,"Segoe UI",sans-serif;color:var(--gris);margin-top:-.6mm}
 """
 html = markdown.markdown((AQUI / "informe.md").read_text(encoding="utf-8"),
