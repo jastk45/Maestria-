@@ -2,8 +2,8 @@
 
 Diseño de impresión: tinta azul pizarra, un acento petróleo (el de un panel de trazas), Constantia para
 el texto, Corbel para títulos y tablas (cifras tabulares) y Consolas para las salidas de consola: fuentes
-estáticas de Windows (las variables de la web dejan contornos superpuestos en el PDF). Lo único que llama la atención es la ficha inicial —opción, ruta, modelos, fecha y
-repositorio—, que es lo primero que pide la rúbrica; el resto, sobrio.
+estáticas de Windows (las variables de la web dejan contornos superpuestos en el PDF). El encabezado va como el de un paper: título, autor, afiliación y fecha centrados, y debajo los
+datos de la entrega (opción, ruta, modelos, fecha y repositorio) en un párrafo entre dos líneas finas.
 """
 import shutil
 import subprocess
@@ -22,7 +22,6 @@ p{orphans:3;widows:3}
 strong{font-weight:700}
 h1,h2,h3{font-family:Corbel,"Segoe UI",sans-serif;break-after:avoid;line-height:1.2}
 h1{font-size:21pt;font-weight:700;letter-spacing:-.01em;margin:0 0 1.6mm}
-.autor{font:9.6pt/1.4 Corbel,"Segoe UI",sans-serif;color:var(--gris);margin:0 0 4.5mm}
 h2{font-size:13.5pt;font-weight:700;color:var(--acento);margin:6.5mm 0 2.4mm;padding-bottom:1.2mm;
    border-bottom:.6pt solid var(--linea)}
 h3{font-size:11pt;font-weight:700;margin:4.5mm 0 1.8mm}
@@ -40,13 +39,16 @@ td{padding:1.15mm 1.7mm;border-bottom:.4pt solid var(--linea);vertical-align:top
 tr{break-inside:avoid}
 td code,th code{font-size:.9em}
 td strong{color:var(--tinta)}
-.ficha{background:var(--acento-suave);border-left:3pt solid var(--acento);padding:1.6mm 4mm 1.8mm;margin:0 0 5mm}
-.ficha table{margin:0;font-size:9pt;line-height:1.38}
-.ficha thead{display:none}
-.ficha td{border-bottom:.4pt solid #c9dfe1;padding:1.25mm 1.6mm}
-.ficha tr:last-child td{border-bottom:none}
-.ficha td:first-child{width:31mm;font-weight:700;color:var(--acento);white-space:nowrap}
-.ficha code{background:#fff}
+.portada{text-align:center;margin:3mm 0 4.5mm}
+.portada h1{font-size:20pt;margin:0 0 3.2mm}
+.portada p{max-width:none;margin:0}
+.autor{font:11.5pt/1.35 Corbel,"Segoe UI",sans-serif;color:var(--tinta)}
+.afiliacion,.fecha{font:9.6pt/1.4 Corbel,"Segoe UI",sans-serif;color:var(--gris)}
+.afiliacion{margin-top:.8mm!important}
+.fecha{margin-top:1.2mm!important}
+.datos{border-top:.6pt solid var(--linea);border-bottom:.6pt solid var(--linea);padding:2.6mm 0 1.2mm;margin:0 0 4mm}
+.datos p{max-width:none;font-size:8.9pt;line-height:1.45;text-align:left}
+.datos strong{color:var(--acento)}
 .nota{font:8.5pt/1.4 Corbel,"Segoe UI",sans-serif;color:var(--gris);margin-top:-.6mm}
 """
 html = markdown.markdown((AQUI / "informe.md").read_text(encoding="utf-8"),

@@ -1,15 +1,13 @@
-# Taller 04: evaluar, observar y proteger el agente analítico
+<header class="portada">
+<h1>Taller 04: evaluar, observar y proteger el agente analítico</h1>
+<p class="autor">Jaime Astudillo</p>
+<p class="afiliacion">Trabajo individual. MMIA 6013 IA Generativa y Agentes<br>Universidad San Francisco de Quito</p>
+<p class="fecha">17 de octubre de 2026</p>
+</header>
 
-<p class="autor">Jaime Astudillo, trabajo individual. MMIA 6013 IA Generativa y Agentes, Universidad San Francisco de Quito. 17 de octubre de 2026.</p>
+<div class="datos" markdown="1">
 
-<div class="ficha" markdown="1">
-
-| | |
-|---|---|
-| Opción del Taller 3 | **A.** `MiAgente`, el agente analista SQL sobre la base del Lab 03 (`crear_base.py`, semilla 6013), con sus seis reglas y la frase de abstención «No puedo responder con los datos disponibles.» |
-| Ruta y modelos | H200 de la USFQ (GlobalProtect). Agente `zai-org/GLM-5.3-Flash` (vLLM, `http://172.28.230.10:12555/v1`); juez `gemma3:27b` (Ollama, `http://172.28.230.10:11434/v1`), de otra familia (Zhipu frente a Google). Ids leídos de `/v1/models` el **2026-10-16**; los dos con `temperature=0` |
-| Observabilidad | Langfuse 4.50.0 autoalojado (Docker), SDK `langfuse` 4.17.0. Costo real de todo el taller: 0 USD |
-| Repositorio | <https://github.com/jastk45/Maestria-/tree/main/IA-Generativa-y-Agentes/semana4/taller04_llmops>. Cómo reproducir: `README.md`. Las tablas salen de los archivos crudos con `tablas.py` |
+**Opción del Taller 3:** A, `MiAgente`, el agente analista SQL sobre la base del Lab 03 (`crear_base.py`, semilla 6013), con sus seis reglas y la frase de abstención «No puedo responder con los datos disponibles.» **Ruta y modelos:** H200 de la USFQ (GlobalProtect); agente `zai-org/GLM-5.3-Flash` (vLLM, `http://172.28.230.10:12555/v1`) y juez `gemma3:27b` (Ollama, `http://172.28.230.10:11434/v1`), de otra familia (Zhipu frente a Google), con los ids leídos de `/v1/models` el **2026-10-16** y `temperature=0` en los dos. **Observabilidad:** Langfuse 4.50.0 autoalojado (Docker) y SDK `langfuse` 4.17.0; costo real de todo el taller, 0 USD. **Repositorio:** <https://github.com/jastk45/Maestria-/tree/main/IA-Generativa-y-Agentes/semana4/taller04_llmops> (cómo reproducir, en `README.md`; las tablas salen de los archivos crudos con `tablas.py`).
 
 </div>
 
