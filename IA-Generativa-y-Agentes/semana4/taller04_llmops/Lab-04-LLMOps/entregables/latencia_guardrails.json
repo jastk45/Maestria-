@@ -1,0 +1,60 @@
+{
+ "python": "3.13.5",
+ "pasadas": 200,
+ "textos_entrada": 107,
+ "textos_salida": 8,
+ "mios": {
+  "longitud_entrada": {
+   "mediana_us": 0.3,
+   "p95_us": 0.4,
+   "llamadas": 21400
+  },
+  "inyeccion_entrada": {
+   "mediana_us": 15.4,
+   "p95_us": 39.9,
+   "llamadas": 21400
+  },
+  "pii_entrada": {
+   "mediana_us": 5.9,
+   "p95_us": 11.8,
+   "llamadas": 21400
+  },
+  "claves_salida": {
+   "mediana_us": 6.6,
+   "p95_us": 10.2,
+   "llamadas": 1600
+  },
+  "pii_salida": {
+   "mediana_us": 9.9,
+   "p95_us": 19.1,
+   "llamadas": 1600
+  },
+  "validar_entrada (cadena)": {
+   "mediana_us": 19.2,
+   "p95_us": 37.0,
+   "llamadas": 21400
+  },
+  "validar_salida (cadena)": {
+   "mediana_us": 13.25,
+   "p95_us": 18.8,
+   "llamadas": 1600
+  },
+  "enmascarar (máscara de la traza)": {
+   "mediana_us": 11.8,
+   "p95_us": 23.0,
+   "llamadas": 21400
+  }
+ },
+ "ejemplo": {
+  "validate_input": {
+   "mediana_us": 5.1,
+   "p95_us": 9.4,
+   "llamadas": 21400
+  },
+  "validate_output": {
+   "mediana_us": 0.8,
+   "p95_us": 1.5,
+   "llamadas": 1600
+  }
+ }
+}

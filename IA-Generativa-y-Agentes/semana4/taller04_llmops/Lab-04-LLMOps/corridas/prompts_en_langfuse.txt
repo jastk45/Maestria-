@@ -1,0 +1,2 @@
+v1 · etiquetas ['production'] · 1088 caracteres · commit «v1: prompt del Taller 3 sin cambios (seis reglas, frase de abstención).»
+v2 · etiquetas ['candidata', 'latest'] · 1439 caracteres · commit «v2: regla nueva contra los supuestos silenciosos: abstenerse si la respuesta depende de un dato que la base no registra (moneda, impuesto, costo, unidad, precio pasado). Sale de los peores casos de la v1: N13 (base) y N7, N12, N13 (repetición).»

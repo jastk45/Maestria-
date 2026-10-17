@@ -1,0 +1,852 @@
+{"traza": "70bf11b8d6dd1b552510e1539e926ac5", "span": "corrida", "nombre": "corrida", "duracion_ms": 6.0, "error": null, "prompt_version": "v2"}
+{"traza": "70bf11b8d6dd1b552510e1539e926ac5", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "f6a809761b10b64353ec72f8885e98a4", "span": "corrida", "nombre": "corrida", "duracion_ms": 7775.0, "error": null, "prompt_version": "v2"}
+{"traza": "f6a809761b10b64353ec72f8885e98a4", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 2.0, "error": null}
+{"traza": "f6a809761b10b64353ec72f8885e98a4", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "f6a809761b10b64353ec72f8885e98a4", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 4844.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1102, "tokens_salida": 848, "tokens_razonamiento": 838, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "f6a809761b10b64353ec72f8885e98a4", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "f6a809761b10b64353ec72f8885e98a4", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "f6a809761b10b64353ec72f8885e98a4", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1401.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1413, "tokens_salida": 252, "tokens_razonamiento": 231, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "f6a809761b10b64353ec72f8885e98a4", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "f6a809761b10b64353ec72f8885e98a4", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1512.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1519, "tokens_salida": 229, "tokens_razonamiento": 149, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "f6a809761b10b64353ec72f8885e98a4", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "fd9a387a675281d9552df2a96edbdb6c", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "fd9a387a675281d9552df2a96edbdb6c", "span": "corrida", "nombre": "corrida", "duracion_ms": 2645.0, "error": null, "prompt_version": "v2"}
+{"traza": "fd9a387a675281d9552df2a96edbdb6c", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "fd9a387a675281d9552df2a96edbdb6c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1210.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1087, "tokens_salida": 252, "tokens_razonamiento": 242, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "fd9a387a675281d9552df2a96edbdb6c", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "fd9a387a675281d9552df2a96edbdb6c", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 3.0, "error": null}
+{"traza": "fd9a387a675281d9552df2a96edbdb6c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1427.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1398, "tokens_salida": 307, "tokens_razonamiento": 174, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "fd9a387a675281d9552df2a96edbdb6c", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "fd9a387a675281d9552df2a96edbdb6c", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "d8adb4d490713e985aca72c21c1325d9", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "d8adb4d490713e985aca72c21c1325d9", "span": "corrida", "nombre": "corrida", "duracion_ms": 3.0, "error": null, "prompt_version": "v2"}
+{"traza": "d8adb4d490713e985aca72c21c1325d9", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "60a5c6622f5215d267b6e5512e953b24", "span": "corrida", "nombre": "corrida", "duracion_ms": 4.0, "error": null, "prompt_version": "v2"}
+{"traza": "60a5c6622f5215d267b6e5512e953b24", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "60a5c6622f5215d267b6e5512e953b24", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "ea58559cbf103fdfc001c9f905ed450d", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "ea58559cbf103fdfc001c9f905ed450d", "span": "corrida", "nombre": "corrida", "duracion_ms": 3761.0, "error": null, "prompt_version": "v2"}
+{"traza": "ea58559cbf103fdfc001c9f905ed450d", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "ea58559cbf103fdfc001c9f905ed450d", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "ea58559cbf103fdfc001c9f905ed450d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 838.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1089, "tokens_salida": 105, "tokens_razonamiento": 95, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ea58559cbf103fdfc001c9f905ed450d", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "ea58559cbf103fdfc001c9f905ed450d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 979.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1400, "tokens_salida": 193, "tokens_razonamiento": 145, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ea58559cbf103fdfc001c9f905ed450d", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 6.0, "error": null}
+{"traza": "ea58559cbf103fdfc001c9f905ed450d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1925.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1549, "tokens_salida": 261, "tokens_razonamiento": 125, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ea58559cbf103fdfc001c9f905ed450d", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "ea58559cbf103fdfc001c9f905ed450d", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "29963e08f4db687a73fe85ae20c03785", "span": "corrida", "nombre": "corrida", "duracion_ms": 4707.0, "error": null, "prompt_version": "v2"}
+{"traza": "29963e08f4db687a73fe85ae20c03785", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "29963e08f4db687a73fe85ae20c03785", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "29963e08f4db687a73fe85ae20c03785", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "29963e08f4db687a73fe85ae20c03785", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 838.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1096, "tokens_salida": 85, "tokens_razonamiento": 75, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "29963e08f4db687a73fe85ae20c03785", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "29963e08f4db687a73fe85ae20c03785", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1061.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1407, "tokens_salida": 189, "tokens_razonamiento": 101, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "29963e08f4db687a73fe85ae20c03785", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 8.0, "error": null}
+{"traza": "29963e08f4db687a73fe85ae20c03785", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 2788.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1637, "tokens_salida": 355, "tokens_razonamiento": 152, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "29963e08f4db687a73fe85ae20c03785", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "29963e08f4db687a73fe85ae20c03785", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "corrida", "nombre": "corrida", "duracion_ms": 7976.0, "error": null, "prompt_version": "v2"}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 527.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1059, "tokens_salida": 71, "tokens_razonamiento": 61, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1910.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1370, "tokens_salida": 451, "tokens_razonamiento": 276, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 10.0, "error": null}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 3064.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1824, "tokens_salida": 621, "tokens_razonamiento": 407, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 9.0, "error": null}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 361.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2386, "tokens_salida": 36, "tokens_razonamiento": 0, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "herramienta", "nombre": "grafico", "duracion_ms": 133.0, "error": null}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1951.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2481, "tokens_salida": 402, "tokens_razonamiento": 54, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "7350624762926a58b7decadc5497f866", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "corrida", "nombre": "corrida", "duracion_ms": 4258.0, "error": null, "prompt_version": "v2"}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 466.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1064, "tokens_salida": 73, "tokens_razonamiento": 63, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 873.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1375, "tokens_salida": 179, "tokens_razonamiento": 113, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 6.0, "error": null}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1195.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1544, "tokens_salida": 277, "tokens_razonamiento": 214, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 4.0, "error": null}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1699.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1697, "tokens_salida": 207, "tokens_razonamiento": 28, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "37776b0a857937098dbac15a0e5d462f", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "1aa6817a6d39ebfe72682c8adafedc3a", "span": "corrida", "nombre": "corrida", "duracion_ms": 3076.0, "error": null, "prompt_version": "v2"}
+{"traza": "1aa6817a6d39ebfe72682c8adafedc3a", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "1aa6817a6d39ebfe72682c8adafedc3a", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "1aa6817a6d39ebfe72682c8adafedc3a", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "1aa6817a6d39ebfe72682c8adafedc3a", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 505.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1080, "tokens_salida": 51, "tokens_razonamiento": 41, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "1aa6817a6d39ebfe72682c8adafedc3a", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "1aa6817a6d39ebfe72682c8adafedc3a", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 956.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1391, "tokens_salida": 201, "tokens_razonamiento": 79, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "1aa6817a6d39ebfe72682c8adafedc3a", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 10.0, "error": null}
+{"traza": "1aa6817a6d39ebfe72682c8adafedc3a", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1591.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1782, "tokens_salida": 266, "tokens_razonamiento": 27, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "1aa6817a6d39ebfe72682c8adafedc3a", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "1aa6817a6d39ebfe72682c8adafedc3a", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "d5f69359058421d12ed93f9b679f49cf", "span": "corrida", "nombre": "corrida", "duracion_ms": 2242.0, "error": null, "prompt_version": "v2"}
+{"traza": "d5f69359058421d12ed93f9b679f49cf", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "d5f69359058421d12ed93f9b679f49cf", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d5f69359058421d12ed93f9b679f49cf", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d5f69359058421d12ed93f9b679f49cf", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 806.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1088, "tokens_salida": 144, "tokens_razonamiento": 134, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d5f69359058421d12ed93f9b679f49cf", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 3.0, "error": null}
+{"traza": "d5f69359058421d12ed93f9b679f49cf", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 510.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1399, "tokens_salida": 87, "tokens_razonamiento": 33, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d5f69359058421d12ed93f9b679f49cf", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "d5f69359058421d12ed93f9b679f49cf", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 906.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1542, "tokens_salida": 179, "tokens_razonamiento": 58, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d5f69359058421d12ed93f9b679f49cf", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "d5f69359058421d12ed93f9b679f49cf", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "d636178d595b44095839c25cc351a611", "span": "corrida", "nombre": "corrida", "duracion_ms": 2698.0, "error": null, "prompt_version": "v2"}
+{"traza": "d636178d595b44095839c25cc351a611", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d636178d595b44095839c25cc351a611", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d636178d595b44095839c25cc351a611", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "d636178d595b44095839c25cc351a611", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 780.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1088, "tokens_salida": 94, "tokens_razonamiento": 84, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d636178d595b44095839c25cc351a611", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "d636178d595b44095839c25cc351a611", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 958.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1399, "tokens_salida": 197, "tokens_razonamiento": 127, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d636178d595b44095839c25cc351a611", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "d636178d595b44095839c25cc351a611", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 942.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1561, "tokens_salida": 170, "tokens_razonamiento": 55, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d636178d595b44095839c25cc351a611", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "d636178d595b44095839c25cc351a611", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "049e6a7ac8d8a03ac9d9b14fccff23fe", "span": "corrida", "nombre": "corrida", "duracion_ms": 7448.0, "error": null, "prompt_version": "v2"}
+{"traza": "049e6a7ac8d8a03ac9d9b14fccff23fe", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "049e6a7ac8d8a03ac9d9b14fccff23fe", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "049e6a7ac8d8a03ac9d9b14fccff23fe", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "049e6a7ac8d8a03ac9d9b14fccff23fe", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 5630.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1079, "tokens_salida": 1322, "tokens_razonamiento": 1312, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "049e6a7ac8d8a03ac9d9b14fccff23fe", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 2.0, "error": null}
+{"traza": "049e6a7ac8d8a03ac9d9b14fccff23fe", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 937.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1390, "tokens_salida": 171, "tokens_razonamiento": 75, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "049e6a7ac8d8a03ac9d9b14fccff23fe", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 6.0, "error": null}
+{"traza": "049e6a7ac8d8a03ac9d9b14fccff23fe", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 862.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1582, "tokens_salida": 171, "tokens_razonamiento": 25, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "049e6a7ac8d8a03ac9d9b14fccff23fe", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "049e6a7ac8d8a03ac9d9b14fccff23fe", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "d5e43d18bac3a0ca47ae90c7fb6fa9f3", "span": "corrida", "nombre": "corrida", "duracion_ms": 4.0, "error": null, "prompt_version": "v2"}
+{"traza": "d5e43d18bac3a0ca47ae90c7fb6fa9f3", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "d5e43d18bac3a0ca47ae90c7fb6fa9f3", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "94525e9cd1996ae43aaa662b7f55ee4c", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "94525e9cd1996ae43aaa662b7f55ee4c", "span": "corrida", "nombre": "corrida", "duracion_ms": 1523.0, "error": null, "prompt_version": "v2"}
+{"traza": "94525e9cd1996ae43aaa662b7f55ee4c", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "94525e9cd1996ae43aaa662b7f55ee4c", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "94525e9cd1996ae43aaa662b7f55ee4c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 609.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1067, "tokens_salida": 85, "tokens_razonamiento": 75, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "94525e9cd1996ae43aaa662b7f55ee4c", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "94525e9cd1996ae43aaa662b7f55ee4c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 897.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1378, "tokens_salida": 129, "tokens_razonamiento": 65, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "94525e9cd1996ae43aaa662b7f55ee4c", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "94525e9cd1996ae43aaa662b7f55ee4c", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 6.0, "error": null}
+{"traza": "73d563e482ce8a40c1d168bf03689adc", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "73d563e482ce8a40c1d168bf03689adc", "span": "corrida", "nombre": "corrida", "duracion_ms": 2792.0, "error": null, "prompt_version": "v2"}
+{"traza": "73d563e482ce8a40c1d168bf03689adc", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "73d563e482ce8a40c1d168bf03689adc", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "73d563e482ce8a40c1d168bf03689adc", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 800.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1060, "tokens_salida": 110, "tokens_razonamiento": 100, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "73d563e482ce8a40c1d168bf03689adc", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "73d563e482ce8a40c1d168bf03689adc", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 738.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1371, "tokens_salida": 128, "tokens_razonamiento": 45, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "73d563e482ce8a40c1d168bf03689adc", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "73d563e482ce8a40c1d168bf03689adc", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1233.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2169, "tokens_salida": 236, "tokens_razonamiento": 33, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "73d563e482ce8a40c1d168bf03689adc", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "73d563e482ce8a40c1d168bf03689adc", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "c984083dd8db451bdfc8a6394cb2148b", "span": "corrida", "nombre": "corrida", "duracion_ms": 2877.0, "error": null, "prompt_version": "v2"}
+{"traza": "c984083dd8db451bdfc8a6394cb2148b", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "c984083dd8db451bdfc8a6394cb2148b", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "c984083dd8db451bdfc8a6394cb2148b", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "c984083dd8db451bdfc8a6394cb2148b", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 565.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1061, "tokens_salida": 66, "tokens_razonamiento": 56, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "c984083dd8db451bdfc8a6394cb2148b", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "c984083dd8db451bdfc8a6394cb2148b", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 851.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1372, "tokens_salida": 149, "tokens_razonamiento": 83, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "c984083dd8db451bdfc8a6394cb2148b", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "c984083dd8db451bdfc8a6394cb2148b", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1442.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1561, "tokens_salida": 245, "tokens_razonamiento": 97, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "c984083dd8db451bdfc8a6394cb2148b", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "c984083dd8db451bdfc8a6394cb2148b", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "bb4a33b57d228cf140022506b00ce8c6", "span": "corrida", "nombre": "corrida", "duracion_ms": 2350.0, "error": null, "prompt_version": "v2"}
+{"traza": "bb4a33b57d228cf140022506b00ce8c6", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "bb4a33b57d228cf140022506b00ce8c6", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "bb4a33b57d228cf140022506b00ce8c6", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "bb4a33b57d228cf140022506b00ce8c6", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 513.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1080, "tokens_salida": 53, "tokens_razonamiento": 43, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "bb4a33b57d228cf140022506b00ce8c6", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "bb4a33b57d228cf140022506b00ce8c6", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 827.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1391, "tokens_salida": 134, "tokens_razonamiento": 55, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "bb4a33b57d228cf140022506b00ce8c6", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 6.0, "error": null}
+{"traza": "bb4a33b57d228cf140022506b00ce8c6", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 992.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1575, "tokens_salida": 170, "tokens_razonamiento": 39, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "bb4a33b57d228cf140022506b00ce8c6", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "bb4a33b57d228cf140022506b00ce8c6", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "1e5976d48beaa49094fd9fd9c698ca77", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "1e5976d48beaa49094fd9fd9c698ca77", "span": "corrida", "nombre": "corrida", "duracion_ms": 2397.0, "error": null, "prompt_version": "v2"}
+{"traza": "1e5976d48beaa49094fd9fd9c698ca77", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "1e5976d48beaa49094fd9fd9c698ca77", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "1e5976d48beaa49094fd9fd9c698ca77", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 547.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1074, "tokens_salida": 48, "tokens_razonamiento": 38, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "1e5976d48beaa49094fd9fd9c698ca77", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "1e5976d48beaa49094fd9fd9c698ca77", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 767.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1385, "tokens_salida": 136, "tokens_razonamiento": 50, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "1e5976d48beaa49094fd9fd9c698ca77", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 9.0, "error": null}
+{"traza": "1e5976d48beaa49094fd9fd9c698ca77", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1061.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1633, "tokens_salida": 194, "tokens_razonamiento": 25, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "1e5976d48beaa49094fd9fd9c698ca77", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "1e5976d48beaa49094fd9fd9c698ca77", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "5ada812594c9281446e6b55da3672b6d", "span": "corrida", "nombre": "corrida", "duracion_ms": 1926.0, "error": null, "prompt_version": "v2"}
+{"traza": "5ada812594c9281446e6b55da3672b6d", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5ada812594c9281446e6b55da3672b6d", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5ada812594c9281446e6b55da3672b6d", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "5ada812594c9281446e6b55da3672b6d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 497.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1069, "tokens_salida": 55, "tokens_razonamiento": 45, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5ada812594c9281446e6b55da3672b6d", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "5ada812594c9281446e6b55da3672b6d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 555.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1380, "tokens_salida": 88, "tokens_razonamiento": 36, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5ada812594c9281446e6b55da3672b6d", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "5ada812594c9281446e6b55da3672b6d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 856.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1534, "tokens_salida": 146, "tokens_razonamiento": 51, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5ada812594c9281446e6b55da3672b6d", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "5ada812594c9281446e6b55da3672b6d", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "9a20fadbb17a687f9b58b88a2738d4c6", "span": "corrida", "nombre": "corrida", "duracion_ms": 1432.0, "error": null, "prompt_version": "v2"}
+{"traza": "9a20fadbb17a687f9b58b88a2738d4c6", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "9a20fadbb17a687f9b58b88a2738d4c6", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "9a20fadbb17a687f9b58b88a2738d4c6", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 440.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1066, "tokens_salida": 43, "tokens_razonamiento": 33, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "9a20fadbb17a687f9b58b88a2738d4c6", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "9a20fadbb17a687f9b58b88a2738d4c6", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "9a20fadbb17a687f9b58b88a2738d4c6", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 422.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1377, "tokens_salida": 51, "tokens_razonamiento": 21, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "9a20fadbb17a687f9b58b88a2738d4c6", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "9a20fadbb17a687f9b58b88a2738d4c6", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 554.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1492, "tokens_salida": 74, "tokens_razonamiento": 13, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "9a20fadbb17a687f9b58b88a2738d4c6", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "9a20fadbb17a687f9b58b88a2738d4c6", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "d83e4325a7197261b8031e73938828e3", "span": "corrida", "nombre": "corrida", "duracion_ms": 4.0, "error": null, "prompt_version": "v2"}
+{"traza": "d83e4325a7197261b8031e73938828e3", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d83e4325a7197261b8031e73938828e3", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "b817cff1936192441a446fcc76d4fc35", "span": "corrida", "nombre": "corrida", "duracion_ms": 2034.0, "error": null, "prompt_version": "v2"}
+{"traza": "b817cff1936192441a446fcc76d4fc35", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "b817cff1936192441a446fcc76d4fc35", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "b817cff1936192441a446fcc76d4fc35", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "b817cff1936192441a446fcc76d4fc35", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 545.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1074, "tokens_salida": 66, "tokens_razonamiento": 56, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "b817cff1936192441a446fcc76d4fc35", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "b817cff1936192441a446fcc76d4fc35", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1476.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1385, "tokens_salida": 268, "tokens_razonamiento": 161, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "b817cff1936192441a446fcc76d4fc35", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "b817cff1936192441a446fcc76d4fc35", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "fdf41cf2f7c9e358d1e5e29eb4c15a8d", "span": "corrida", "nombre": "corrida", "duracion_ms": 2406.0, "error": null, "prompt_version": "v2"}
+{"traza": "fdf41cf2f7c9e358d1e5e29eb4c15a8d", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "fdf41cf2f7c9e358d1e5e29eb4c15a8d", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "fdf41cf2f7c9e358d1e5e29eb4c15a8d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 568.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1077, "tokens_salida": 61, "tokens_razonamiento": 51, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "fdf41cf2f7c9e358d1e5e29eb4c15a8d", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "fdf41cf2f7c9e358d1e5e29eb4c15a8d", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "fdf41cf2f7c9e358d1e5e29eb4c15a8d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 797.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1388, "tokens_salida": 132, "tokens_razonamiento": 57, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "fdf41cf2f7c9e358d1e5e29eb4c15a8d", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 10.0, "error": null}
+{"traza": "fdf41cf2f7c9e358d1e5e29eb4c15a8d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1018.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1805, "tokens_salida": 175, "tokens_razonamiento": 27, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "fdf41cf2f7c9e358d1e5e29eb4c15a8d", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "fdf41cf2f7c9e358d1e5e29eb4c15a8d", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "ff21cb136cff368f376bfb0e9a302f62", "span": "corrida", "nombre": "corrida", "duracion_ms": 3187.0, "error": null, "prompt_version": "v2"}
+{"traza": "ff21cb136cff368f376bfb0e9a302f62", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "ff21cb136cff368f376bfb0e9a302f62", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "ff21cb136cff368f376bfb0e9a302f62", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "ff21cb136cff368f376bfb0e9a302f62", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 531.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1075, "tokens_salida": 49, "tokens_razonamiento": 39, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ff21cb136cff368f376bfb0e9a302f62", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "ff21cb136cff368f376bfb0e9a302f62", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1567.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1386, "tokens_salida": 287, "tokens_razonamiento": 179, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ff21cb136cff368f376bfb0e9a302f62", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 6.0, "error": null}
+{"traza": "ff21cb136cff368f376bfb0e9a302f62", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1070.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1614, "tokens_salida": 194, "tokens_razonamiento": 41, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ff21cb136cff368f376bfb0e9a302f62", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "ff21cb136cff368f376bfb0e9a302f62", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "corrida", "nombre": "corrida", "duracion_ms": 7315.0, "error": null, "prompt_version": "v2"}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 731.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1092, "tokens_salida": 100, "tokens_razonamiento": 90, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1527.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1403, "tokens_salida": 273, "tokens_razonamiento": 79, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 8.0, "error": null}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 3659.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2263, "tokens_salida": 799, "tokens_razonamiento": 500, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 11.0, "error": null}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1365.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2822, "tokens_salida": 225, "tokens_razonamiento": 43, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "4aa148942fd37b102e865897376d6635", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "f6519ac392450d03f4668bd726a4cba6", "span": "corrida", "nombre": "corrida", "duracion_ms": 2284.0, "error": null, "prompt_version": "v2"}
+{"traza": "f6519ac392450d03f4668bd726a4cba6", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "f6519ac392450d03f4668bd726a4cba6", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "f6519ac392450d03f4668bd726a4cba6", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 493.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1079, "tokens_salida": 50, "tokens_razonamiento": 40, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "f6519ac392450d03f4668bd726a4cba6", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "f6519ac392450d03f4668bd726a4cba6", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 3.0, "error": null}
+{"traza": "f6519ac392450d03f4668bd726a4cba6", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 766.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1390, "tokens_salida": 134, "tokens_razonamiento": 46, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "f6519ac392450d03f4668bd726a4cba6", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 4.0, "error": null}
+{"traza": "f6519ac392450d03f4668bd726a4cba6", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1009.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1619, "tokens_salida": 183, "tokens_razonamiento": 27, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "f6519ac392450d03f4668bd726a4cba6", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "f6519ac392450d03f4668bd726a4cba6", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "249148b5c67927f89093b7586b3c9658", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "249148b5c67927f89093b7586b3c9658", "span": "corrida", "nombre": "corrida", "duracion_ms": 1976.0, "error": null, "prompt_version": "v2"}
+{"traza": "249148b5c67927f89093b7586b3c9658", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "249148b5c67927f89093b7586b3c9658", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "249148b5c67927f89093b7586b3c9658", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 541.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1071, "tokens_salida": 54, "tokens_razonamiento": 44, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "249148b5c67927f89093b7586b3c9658", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "249148b5c67927f89093b7586b3c9658", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 746.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1382, "tokens_salida": 114, "tokens_razonamiento": 47, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "249148b5c67927f89093b7586b3c9658", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "249148b5c67927f89093b7586b3c9658", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 669.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1535, "tokens_salida": 99, "tokens_razonamiento": 16, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "249148b5c67927f89093b7586b3c9658", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "249148b5c67927f89093b7586b3c9658", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "5743c9a145e17064120241a79dda695f", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "5743c9a145e17064120241a79dda695f", "span": "corrida", "nombre": "corrida", "duracion_ms": 2025.0, "error": null, "prompt_version": "v2"}
+{"traza": "5743c9a145e17064120241a79dda695f", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5743c9a145e17064120241a79dda695f", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5743c9a145e17064120241a79dda695f", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 535.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1069, "tokens_salida": 52, "tokens_razonamiento": 42, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5743c9a145e17064120241a79dda695f", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "5743c9a145e17064120241a79dda695f", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 651.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1380, "tokens_salida": 105, "tokens_razonamiento": 43, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5743c9a145e17064120241a79dda695f", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "5743c9a145e17064120241a79dda695f", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 821.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1544, "tokens_salida": 134, "tokens_razonamiento": 37, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5743c9a145e17064120241a79dda695f", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "5743c9a145e17064120241a79dda695f", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "d5e65a74882ce0f3cc8d7dd256b3bccd", "span": "corrida", "nombre": "corrida", "duracion_ms": 10034.0, "error": null, "prompt_version": "v2"}
+{"traza": "d5e65a74882ce0f3cc8d7dd256b3bccd", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d5e65a74882ce0f3cc8d7dd256b3bccd", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d5e65a74882ce0f3cc8d7dd256b3bccd", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d5e65a74882ce0f3cc8d7dd256b3bccd", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 6055.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1088, "tokens_salida": 1238, "tokens_razonamiento": 1228, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d5e65a74882ce0f3cc8d7dd256b3bccd", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "d5e65a74882ce0f3cc8d7dd256b3bccd", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 3122.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1399, "tokens_salida": 618, "tokens_razonamiento": 453, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d5e65a74882ce0f3cc8d7dd256b3bccd", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "d5e65a74882ce0f3cc8d7dd256b3bccd", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 835.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1686, "tokens_salida": 150, "tokens_razonamiento": 41, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d5e65a74882ce0f3cc8d7dd256b3bccd", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "d5e65a74882ce0f3cc8d7dd256b3bccd", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "d9a4121a519a63475bedc2b3a156e46f", "span": "corrida", "nombre": "corrida", "duracion_ms": 1511.0, "error": null, "prompt_version": "v2"}
+{"traza": "d9a4121a519a63475bedc2b3a156e46f", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d9a4121a519a63475bedc2b3a156e46f", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "d9a4121a519a63475bedc2b3a156e46f", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d9a4121a519a63475bedc2b3a156e46f", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1506.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1086, "tokens_salida": 273, "tokens_razonamiento": 198, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d9a4121a519a63475bedc2b3a156e46f", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "d9a4121a519a63475bedc2b3a156e46f", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "37bac615e1668edc3ac7916bdc422420", "span": "corrida", "nombre": "corrida", "duracion_ms": 10098.0, "error": null, "prompt_version": "v2"}
+{"traza": "37bac615e1668edc3ac7916bdc422420", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "37bac615e1668edc3ac7916bdc422420", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "37bac615e1668edc3ac7916bdc422420", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "37bac615e1668edc3ac7916bdc422420", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1636.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1084, "tokens_salida": 315, "tokens_razonamiento": 305, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "37bac615e1668edc3ac7916bdc422420", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "37bac615e1668edc3ac7916bdc422420", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 5076.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1395, "tokens_salida": 1055, "tokens_razonamiento": 917, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "37bac615e1668edc3ac7916bdc422420", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "37bac615e1668edc3ac7916bdc422420", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 4.0, "error": null}
+{"traza": "37bac615e1668edc3ac7916bdc422420", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 3361.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1862, "tokens_salida": 681, "tokens_razonamiento": 337, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "37bac615e1668edc3ac7916bdc422420", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "37bac615e1668edc3ac7916bdc422420", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "275785bb1d2da38407d20fc73dfdbb5a", "span": "corrida", "nombre": "corrida", "duracion_ms": 4588.0, "error": null, "prompt_version": "v2"}
+{"traza": "275785bb1d2da38407d20fc73dfdbb5a", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "275785bb1d2da38407d20fc73dfdbb5a", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "275785bb1d2da38407d20fc73dfdbb5a", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "275785bb1d2da38407d20fc73dfdbb5a", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 2098.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1077, "tokens_salida": 465, "tokens_razonamiento": 455, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "275785bb1d2da38407d20fc73dfdbb5a", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "275785bb1d2da38407d20fc73dfdbb5a", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1321.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1388, "tokens_salida": 266, "tokens_razonamiento": 240, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "275785bb1d2da38407d20fc73dfdbb5a", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "275785bb1d2da38407d20fc73dfdbb5a", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1151.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1556, "tokens_salida": 235, "tokens_razonamiento": 120, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "275785bb1d2da38407d20fc73dfdbb5a", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "275785bb1d2da38407d20fc73dfdbb5a", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "d9af88e9b26d93e8bd246b14045fa31b", "span": "corrida", "nombre": "corrida", "duracion_ms": 4016.0, "error": null, "prompt_version": "v2"}
+{"traza": "d9af88e9b26d93e8bd246b14045fa31b", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d9af88e9b26d93e8bd246b14045fa31b", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d9af88e9b26d93e8bd246b14045fa31b", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d9af88e9b26d93e8bd246b14045fa31b", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 4011.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1087, "tokens_salida": 884, "tokens_razonamiento": 792, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d9af88e9b26d93e8bd246b14045fa31b", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "d9af88e9b26d93e8bd246b14045fa31b", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "bf098cdd238ccadac842db36783156af", "span": "corrida", "nombre": "corrida", "duracion_ms": 5125.0, "error": null, "prompt_version": "v2"}
+{"traza": "bf098cdd238ccadac842db36783156af", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "bf098cdd238ccadac842db36783156af", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "bf098cdd238ccadac842db36783156af", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "bf098cdd238ccadac842db36783156af", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 2721.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1092, "tokens_salida": 555, "tokens_razonamiento": 545, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "bf098cdd238ccadac842db36783156af", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "bf098cdd238ccadac842db36783156af", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1343.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1403, "tokens_salida": 272, "tokens_razonamiento": 240, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "bf098cdd238ccadac842db36783156af", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 4.0, "error": null}
+{"traza": "bf098cdd238ccadac842db36783156af", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1046.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1524, "tokens_salida": 189, "tokens_razonamiento": 62, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "bf098cdd238ccadac842db36783156af", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "bf098cdd238ccadac842db36783156af", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "1a92d13df2e4696be250c769e22ef65d", "span": "corrida", "nombre": "corrida", "duracion_ms": 4569.0, "error": null, "prompt_version": "v2"}
+{"traza": "1a92d13df2e4696be250c769e22ef65d", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 2.0, "error": null}
+{"traza": "1a92d13df2e4696be250c769e22ef65d", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "1a92d13df2e4696be250c769e22ef65d", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "1a92d13df2e4696be250c769e22ef65d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 824.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1066, "tokens_salida": 102, "tokens_razonamiento": 92, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "1a92d13df2e4696be250c769e22ef65d", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "1a92d13df2e4696be250c769e22ef65d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 3732.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1377, "tokens_salida": 607, "tokens_razonamiento": 499, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "1a92d13df2e4696be250c769e22ef65d", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "1a92d13df2e4696be250c769e22ef65d", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "e60cd9abd08980528aa5c9149c7a1b57", "span": "corrida", "nombre": "corrida", "duracion_ms": 6978.0, "error": null, "prompt_version": "v2"}
+{"traza": "e60cd9abd08980528aa5c9149c7a1b57", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "e60cd9abd08980528aa5c9149c7a1b57", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "e60cd9abd08980528aa5c9149c7a1b57", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1357.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1074, "tokens_salida": 141, "tokens_razonamiento": 131, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "e60cd9abd08980528aa5c9149c7a1b57", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "e60cd9abd08980528aa5c9149c7a1b57", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "e60cd9abd08980528aa5c9149c7a1b57", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 5609.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1385, "tokens_salida": 697, "tokens_razonamiento": 616, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "e60cd9abd08980528aa5c9149c7a1b57", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "e60cd9abd08980528aa5c9149c7a1b57", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "d619f83f774f3a452264de0eef71fa0f", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "d619f83f774f3a452264de0eef71fa0f", "span": "corrida", "nombre": "corrida", "duracion_ms": 5962.0, "error": null, "prompt_version": "v2"}
+{"traza": "d619f83f774f3a452264de0eef71fa0f", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d619f83f774f3a452264de0eef71fa0f", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "d619f83f774f3a452264de0eef71fa0f", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1583.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1071, "tokens_salida": 388, "tokens_razonamiento": 378, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d619f83f774f3a452264de0eef71fa0f", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "d619f83f774f3a452264de0eef71fa0f", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 4365.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1382, "tokens_salida": 1096, "tokens_razonamiento": 945, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "d619f83f774f3a452264de0eef71fa0f", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "d619f83f774f3a452264de0eef71fa0f", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "342fb0fe3276831eca22042994c45ffb", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "342fb0fe3276831eca22042994c45ffb", "span": "corrida", "nombre": "corrida", "duracion_ms": 2960.0, "error": null, "prompt_version": "v2"}
+{"traza": "342fb0fe3276831eca22042994c45ffb", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "342fb0fe3276831eca22042994c45ffb", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "342fb0fe3276831eca22042994c45ffb", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 970.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1071, "tokens_salida": 149, "tokens_razonamiento": 139, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "342fb0fe3276831eca22042994c45ffb", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 7.0, "error": null}
+{"traza": "342fb0fe3276831eca22042994c45ffb", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1977.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1382, "tokens_salida": 510, "tokens_razonamiento": 402, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "342fb0fe3276831eca22042994c45ffb", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "342fb0fe3276831eca22042994c45ffb", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "07e197f221ca33fe4c2c566ab406c5e7", "span": "corrida", "nombre": "corrida", "duracion_ms": 2589.0, "error": null, "prompt_version": "v2"}
+{"traza": "07e197f221ca33fe4c2c566ab406c5e7", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "07e197f221ca33fe4c2c566ab406c5e7", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "07e197f221ca33fe4c2c566ab406c5e7", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "07e197f221ca33fe4c2c566ab406c5e7", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 601.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1068, "tokens_salida": 75, "tokens_razonamiento": 65, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "07e197f221ca33fe4c2c566ab406c5e7", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "07e197f221ca33fe4c2c566ab406c5e7", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1977.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1379, "tokens_salida": 426, "tokens_razonamiento": 352, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "07e197f221ca33fe4c2c566ab406c5e7", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "07e197f221ca33fe4c2c566ab406c5e7", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "corrida", "nombre": "corrida", "duracion_ms": 2916.0, "error": null, "prompt_version": "v2"}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 486.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1071, "tokens_salida": 51, "tokens_razonamiento": 41, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 3.0, "error": null}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 829.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1382, "tokens_salida": 172, "tokens_razonamiento": 62, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 430.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1581, "tokens_salida": 41, "tokens_razonamiento": 17, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1146.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2016, "tokens_salida": 229, "tokens_razonamiento": 135, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "e95ef043637faa4a159f30532b9490ed", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "7f342de3415514285cbffaaf22437f3c", "span": "corrida", "nombre": "corrida", "duracion_ms": 2381.0, "error": null, "prompt_version": "v2"}
+{"traza": "7f342de3415514285cbffaaf22437f3c", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "7f342de3415514285cbffaaf22437f3c", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "7f342de3415514285cbffaaf22437f3c", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "7f342de3415514285cbffaaf22437f3c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 432.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1075, "tokens_salida": 48, "tokens_razonamiento": 38, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "7f342de3415514285cbffaaf22437f3c", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "7f342de3415514285cbffaaf22437f3c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1935.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1386, "tokens_salida": 436, "tokens_razonamiento": 326, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "7f342de3415514285cbffaaf22437f3c", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "7f342de3415514285cbffaaf22437f3c", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "99f055b4be337a5b37dc604d5ed76f9d", "span": "corrida", "nombre": "corrida", "duracion_ms": 4154.0, "error": null, "prompt_version": "v2"}
+{"traza": "99f055b4be337a5b37dc604d5ed76f9d", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "99f055b4be337a5b37dc604d5ed76f9d", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 3.0, "error": null}
+{"traza": "99f055b4be337a5b37dc604d5ed76f9d", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "99f055b4be337a5b37dc604d5ed76f9d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1118.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1072, "tokens_salida": 188, "tokens_razonamiento": 178, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "99f055b4be337a5b37dc604d5ed76f9d", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 6.0, "error": null}
+{"traza": "99f055b4be337a5b37dc604d5ed76f9d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 3021.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1383, "tokens_salida": 662, "tokens_razonamiento": 543, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "99f055b4be337a5b37dc604d5ed76f9d", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "99f055b4be337a5b37dc604d5ed76f9d", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "e621e55f2242f7d4b6c9123949ea8910", "span": "corrida", "nombre": "corrida", "duracion_ms": 3272.0, "error": null, "prompt_version": "v2"}
+{"traza": "e621e55f2242f7d4b6c9123949ea8910", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "e621e55f2242f7d4b6c9123949ea8910", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "e621e55f2242f7d4b6c9123949ea8910", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "e621e55f2242f7d4b6c9123949ea8910", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 611.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1083, "tokens_salida": 78, "tokens_razonamiento": 68, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "e621e55f2242f7d4b6c9123949ea8910", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "e621e55f2242f7d4b6c9123949ea8910", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1618.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1394, "tokens_salida": 337, "tokens_razonamiento": 292, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "e621e55f2242f7d4b6c9123949ea8910", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "e621e55f2242f7d4b6c9123949ea8910", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1022.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1545, "tokens_salida": 202, "tokens_razonamiento": 119, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "e621e55f2242f7d4b6c9123949ea8910", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "e621e55f2242f7d4b6c9123949ea8910", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "6f9109bf309635f83ef91e73c50589f1", "span": "corrida", "nombre": "corrida", "duracion_ms": 3862.0, "error": null, "prompt_version": "v2"}
+{"traza": "6f9109bf309635f83ef91e73c50589f1", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 2.0, "error": null}
+{"traza": "6f9109bf309635f83ef91e73c50589f1", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "6f9109bf309635f83ef91e73c50589f1", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "6f9109bf309635f83ef91e73c50589f1", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 540.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1070, "tokens_salida": 73, "tokens_razonamiento": 63, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "6f9109bf309635f83ef91e73c50589f1", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "6f9109bf309635f83ef91e73c50589f1", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1753.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1381, "tokens_salida": 378, "tokens_razonamiento": 309, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "6f9109bf309635f83ef91e73c50589f1", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 8.0, "error": null}
+{"traza": "6f9109bf309635f83ef91e73c50589f1", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1544.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1571, "tokens_salida": 331, "tokens_razonamiento": 231, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "6f9109bf309635f83ef91e73c50589f1", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "6f9109bf309635f83ef91e73c50589f1", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "ae566f3a515868b7e2a4221bf583794f", "span": "corrida", "nombre": "corrida", "duracion_ms": 1295.0, "error": null, "prompt_version": "v2"}
+{"traza": "ae566f3a515868b7e2a4221bf583794f", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "ae566f3a515868b7e2a4221bf583794f", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "ae566f3a515868b7e2a4221bf583794f", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "ae566f3a515868b7e2a4221bf583794f", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 472.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1073, "tokens_salida": 51, "tokens_razonamiento": 41, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ae566f3a515868b7e2a4221bf583794f", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 3.0, "error": null}
+{"traza": "ae566f3a515868b7e2a4221bf583794f", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 814.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1384, "tokens_salida": 125, "tokens_razonamiento": 68, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ae566f3a515868b7e2a4221bf583794f", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "ae566f3a515868b7e2a4221bf583794f", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "b9426a71c6f5c1b050f10fe186058de9", "span": "corrida", "nombre": "corrida", "duracion_ms": 1790.0, "error": null, "prompt_version": "v2"}
+{"traza": "b9426a71c6f5c1b050f10fe186058de9", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "b9426a71c6f5c1b050f10fe186058de9", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "b9426a71c6f5c1b050f10fe186058de9", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "b9426a71c6f5c1b050f10fe186058de9", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 580.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1065, "tokens_salida": 85, "tokens_razonamiento": 75, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "b9426a71c6f5c1b050f10fe186058de9", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "b9426a71c6f5c1b050f10fe186058de9", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1199.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1376, "tokens_salida": 267, "tokens_razonamiento": 192, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "b9426a71c6f5c1b050f10fe186058de9", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "b9426a71c6f5c1b050f10fe186058de9", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "5ed891b1b69849f87d15332c393fe3b4", "span": "corrida", "nombre": "corrida", "duracion_ms": 1179.0, "error": null, "prompt_version": "v2"}
+{"traza": "5ed891b1b69849f87d15332c393fe3b4", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5ed891b1b69849f87d15332c393fe3b4", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5ed891b1b69849f87d15332c393fe3b4", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5ed891b1b69849f87d15332c393fe3b4", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 470.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1069, "tokens_salida": 60, "tokens_razonamiento": 50, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5ed891b1b69849f87d15332c393fe3b4", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "5ed891b1b69849f87d15332c393fe3b4", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 695.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1380, "tokens_salida": 134, "tokens_razonamiento": 67, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5ed891b1b69849f87d15332c393fe3b4", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "5ed891b1b69849f87d15332c393fe3b4", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 2.0, "error": null}
+{"traza": "836ed608f0d718f244c49f68417c8156", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "836ed608f0d718f244c49f68417c8156", "span": "corrida", "nombre": "corrida", "duracion_ms": 1238.0, "error": null, "prompt_version": "v2"}
+{"traza": "836ed608f0d718f244c49f68417c8156", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "836ed608f0d718f244c49f68417c8156", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "836ed608f0d718f244c49f68417c8156", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 576.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1066, "tokens_salida": 73, "tokens_razonamiento": 63, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "836ed608f0d718f244c49f68417c8156", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "836ed608f0d718f244c49f68417c8156", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 651.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1377, "tokens_salida": 115, "tokens_razonamiento": 64, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "836ed608f0d718f244c49f68417c8156", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "836ed608f0d718f244c49f68417c8156", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "corrida", "nombre": "corrida", "duracion_ms": 5998.0, "error": null, "prompt_version": "v2"}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 820.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1068, "tokens_salida": 143, "tokens_razonamiento": 133, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 3005.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1379, "tokens_salida": 704, "tokens_razonamiento": 673, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 4.0, "error": null}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1291.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1638, "tokens_salida": 283, "tokens_razonamiento": 190, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 857.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1834, "tokens_salida": 155, "tokens_razonamiento": 0, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "2c46bc2d55b71493665a3ff97aca5871", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "ba4a7c293fc516da5161b31697e8b2a7", "span": "corrida", "nombre": "corrida", "duracion_ms": 3405.0, "error": null, "prompt_version": "v2"}
+{"traza": "ba4a7c293fc516da5161b31697e8b2a7", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "ba4a7c293fc516da5161b31697e8b2a7", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "ba4a7c293fc516da5161b31697e8b2a7", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "ba4a7c293fc516da5161b31697e8b2a7", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 478.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1076, "tokens_salida": 63, "tokens_razonamiento": 53, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ba4a7c293fc516da5161b31697e8b2a7", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 7.0, "error": null}
+{"traza": "ba4a7c293fc516da5161b31697e8b2a7", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1771.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1387, "tokens_salida": 419, "tokens_razonamiento": 241, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ba4a7c293fc516da5161b31697e8b2a7", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 8.0, "error": null}
+{"traza": "ba4a7c293fc516da5161b31697e8b2a7", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1132.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1910, "tokens_salida": 220, "tokens_razonamiento": 31, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ba4a7c293fc516da5161b31697e8b2a7", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "ba4a7c293fc516da5161b31697e8b2a7", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "5a520e5b33ce863921b1d431d39f48dd", "span": "corrida", "nombre": "corrida", "duracion_ms": 1737.0, "error": null, "prompt_version": "v2"}
+{"traza": "5a520e5b33ce863921b1d431d39f48dd", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "5a520e5b33ce863921b1d431d39f48dd", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5a520e5b33ce863921b1d431d39f48dd", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 429.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1068, "tokens_salida": 48, "tokens_razonamiento": 38, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5a520e5b33ce863921b1d431d39f48dd", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5a520e5b33ce863921b1d431d39f48dd", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "5a520e5b33ce863921b1d431d39f48dd", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 613.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1379, "tokens_salida": 102, "tokens_razonamiento": 52, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5a520e5b33ce863921b1d431d39f48dd", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 6.0, "error": null}
+{"traza": "5a520e5b33ce863921b1d431d39f48dd", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 677.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1519, "tokens_salida": 112, "tokens_razonamiento": 31, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5a520e5b33ce863921b1d431d39f48dd", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "5a520e5b33ce863921b1d431d39f48dd", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "35f414d77b6d645f9ae80e7a790fe475", "span": "corrida", "nombre": "corrida", "duracion_ms": 2736.0, "error": null, "prompt_version": "v2"}
+{"traza": "35f414d77b6d645f9ae80e7a790fe475", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "35f414d77b6d645f9ae80e7a790fe475", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "35f414d77b6d645f9ae80e7a790fe475", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "35f414d77b6d645f9ae80e7a790fe475", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 520.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1077, "tokens_salida": 61, "tokens_razonamiento": 51, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "35f414d77b6d645f9ae80e7a790fe475", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "35f414d77b6d645f9ae80e7a790fe475", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 999.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1388, "tokens_salida": 205, "tokens_razonamiento": 60, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "35f414d77b6d645f9ae80e7a790fe475", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 6.0, "error": null}
+{"traza": "35f414d77b6d645f9ae80e7a790fe475", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1197.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1761, "tokens_salida": 259, "tokens_razonamiento": 27, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "35f414d77b6d645f9ae80e7a790fe475", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "35f414d77b6d645f9ae80e7a790fe475", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "910ef081f337beca79f74d4a4e9d6342", "span": "corrida", "nombre": "corrida", "duracion_ms": 2120.0, "error": null, "prompt_version": "v2"}
+{"traza": "910ef081f337beca79f74d4a4e9d6342", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "910ef081f337beca79f74d4a4e9d6342", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "910ef081f337beca79f74d4a4e9d6342", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "910ef081f337beca79f74d4a4e9d6342", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 465.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1080, "tokens_salida": 59, "tokens_razonamiento": 49, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "910ef081f337beca79f74d4a4e9d6342", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "910ef081f337beca79f74d4a4e9d6342", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 843.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1391, "tokens_salida": 167, "tokens_razonamiento": 78, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "910ef081f337beca79f74d4a4e9d6342", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "910ef081f337beca79f74d4a4e9d6342", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 791.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1571, "tokens_salida": 135, "tokens_razonamiento": 15, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "910ef081f337beca79f74d4a4e9d6342", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "910ef081f337beca79f74d4a4e9d6342", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "137a7908db9c232fe4478915d982723a", "span": "corrida", "nombre": "corrida", "duracion_ms": 2594.0, "error": null, "prompt_version": "v2"}
+{"traza": "137a7908db9c232fe4478915d982723a", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "137a7908db9c232fe4478915d982723a", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "137a7908db9c232fe4478915d982723a", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "137a7908db9c232fe4478915d982723a", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 757.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1090, "tokens_salida": 119, "tokens_razonamiento": 109, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "137a7908db9c232fe4478915d982723a", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "137a7908db9c232fe4478915d982723a", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 733.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1401, "tokens_salida": 129, "tokens_razonamiento": 43, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "137a7908db9c232fe4478915d982723a", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "137a7908db9c232fe4478915d982723a", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1084.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1616, "tokens_salida": 234, "tokens_razonamiento": 81, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "137a7908db9c232fe4478915d982723a", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "137a7908db9c232fe4478915d982723a", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "2cfe6e1bba7574b01e8ef747a4c9acad", "span": "corrida", "nombre": "corrida", "duracion_ms": 2435.0, "error": null, "prompt_version": "v2"}
+{"traza": "2cfe6e1bba7574b01e8ef747a4c9acad", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "2cfe6e1bba7574b01e8ef747a4c9acad", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "2cfe6e1bba7574b01e8ef747a4c9acad", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "2cfe6e1bba7574b01e8ef747a4c9acad", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 512.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1077, "tokens_salida": 69, "tokens_razonamiento": 59, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "2cfe6e1bba7574b01e8ef747a4c9acad", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "2cfe6e1bba7574b01e8ef747a4c9acad", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1015.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1388, "tokens_salida": 221, "tokens_razonamiento": 53, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "2cfe6e1bba7574b01e8ef747a4c9acad", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "2cfe6e1bba7574b01e8ef747a4c9acad", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 889.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1680, "tokens_salida": 181, "tokens_razonamiento": 27, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "2cfe6e1bba7574b01e8ef747a4c9acad", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "2cfe6e1bba7574b01e8ef747a4c9acad", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "corrida", "nombre": "corrida", "duracion_ms": 2992.0, "error": null, "prompt_version": "v2"}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 607.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1075, "tokens_salida": 76, "tokens_razonamiento": 66, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 819.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1386, "tokens_salida": 158, "tokens_razonamiento": 54, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 795.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1582, "tokens_salida": 158, "tokens_razonamiento": 40, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 747.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1805, "tokens_salida": 135, "tokens_razonamiento": 0, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "35b0ccdf11cdc814f8f7751ac825c659", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "corrida", "nombre": "corrida", "duracion_ms": 8521.0, "error": null, "prompt_version": "v2"}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1829.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1071, "tokens_salida": 370, "tokens_razonamiento": 360, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 517.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1382, "tokens_salida": 86, "tokens_razonamiento": 34, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 8.0, "error": null}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 4609.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1992, "tokens_salida": 1083, "tokens_razonamiento": 875, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 14.0, "error": null}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1532.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2319, "tokens_salida": 327, "tokens_razonamiento": 188, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "da626d7b1d387a888d0d5d951cf2dd0c", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "906ff501f60c9b740e629d07585a423e", "span": "corrida", "nombre": "corrida", "duracion_ms": 4593.0, "error": null, "prompt_version": "v2"}
+{"traza": "906ff501f60c9b740e629d07585a423e", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "906ff501f60c9b740e629d07585a423e", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "906ff501f60c9b740e629d07585a423e", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "906ff501f60c9b740e629d07585a423e", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1179.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1079, "tokens_salida": 207, "tokens_razonamiento": 197, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "906ff501f60c9b740e629d07585a423e", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "906ff501f60c9b740e629d07585a423e", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 2381.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1390, "tokens_salida": 564, "tokens_razonamiento": 369, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "906ff501f60c9b740e629d07585a423e", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 14.0, "error": null}
+{"traza": "906ff501f60c9b740e629d07585a423e", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1006.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1784, "tokens_salida": 195, "tokens_razonamiento": 37, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "906ff501f60c9b740e629d07585a423e", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "906ff501f60c9b740e629d07585a423e", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "597103e78ee904fa04233540ae99b826", "span": "corrida", "nombre": "corrida", "duracion_ms": 2865.0, "error": null, "prompt_version": "v2"}
+{"traza": "597103e78ee904fa04233540ae99b826", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "597103e78ee904fa04233540ae99b826", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "597103e78ee904fa04233540ae99b826", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "597103e78ee904fa04233540ae99b826", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 478.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1091, "tokens_salida": 60, "tokens_razonamiento": 50, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "597103e78ee904fa04233540ae99b826", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "597103e78ee904fa04233540ae99b826", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 857.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1402, "tokens_salida": 169, "tokens_razonamiento": 65, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "597103e78ee904fa04233540ae99b826", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 6.0, "error": null}
+{"traza": "597103e78ee904fa04233540ae99b826", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1511.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1651, "tokens_salida": 366, "tokens_razonamiento": 234, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "597103e78ee904fa04233540ae99b826", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "597103e78ee904fa04233540ae99b826", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "corrida", "nombre": "corrida", "duracion_ms": 3411.0, "error": null, "prompt_version": "v2"}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 649.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1077, "tokens_salida": 99, "tokens_razonamiento": 89, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1053.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1388, "tokens_salida": 217, "tokens_razonamiento": 131, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 10.0, "error": null}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 6.0, "error": null}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 359.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2590, "tokens_salida": 44, "tokens_razonamiento": 0, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "herramienta", "nombre": "estadisticas", "duracion_ms": 5.0, "error": null}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "herramienta", "nombre": "estadisticas", "duracion_ms": 5.0, "error": null}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1308.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2886, "tokens_salida": 296, "tokens_razonamiento": 77, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "ba0e8d5361ae2f25230a8091ef25b85d", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "corrida", "nombre": "corrida", "duracion_ms": 5747.0, "error": null, "prompt_version": "v2"}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 417.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1079, "tokens_salida": 44, "tokens_razonamiento": 34, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 2649.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1390, "tokens_salida": 641, "tokens_razonamiento": 436, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 18.0, "error": null}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1027.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2109, "tokens_salida": 208, "tokens_razonamiento": 120, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 6.0, "error": null}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 382.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2782, "tokens_salida": 23, "tokens_razonamiento": 0, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "herramienta", "nombre": "estadisticas", "duracion_ms": 4.0, "error": null}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1226.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2935, "tokens_salida": 265, "tokens_razonamiento": 54, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "5b193dba4b0fc8443ee36780614262ff", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "5d5ebcf7ac72e9642499274fc8e581a6", "span": "corrida", "nombre": "corrida", "duracion_ms": 1841.0, "error": null, "prompt_version": "v2"}
+{"traza": "5d5ebcf7ac72e9642499274fc8e581a6", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "5d5ebcf7ac72e9642499274fc8e581a6", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5d5ebcf7ac72e9642499274fc8e581a6", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "5d5ebcf7ac72e9642499274fc8e581a6", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 463.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1077, "tokens_salida": 61, "tokens_razonamiento": 51, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5d5ebcf7ac72e9642499274fc8e581a6", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "5d5ebcf7ac72e9642499274fc8e581a6", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 575.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1388, "tokens_salida": 102, "tokens_razonamiento": 26, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5d5ebcf7ac72e9642499274fc8e581a6", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "5d5ebcf7ac72e9642499274fc8e581a6", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 785.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1562, "tokens_salida": 142, "tokens_razonamiento": 68, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "5d5ebcf7ac72e9642499274fc8e581a6", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "5d5ebcf7ac72e9642499274fc8e581a6", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "79e68b594a7432e3026a1c4c3284ed04", "span": "corrida", "nombre": "corrida", "duracion_ms": 2483.0, "error": null, "prompt_version": "v2"}
+{"traza": "79e68b594a7432e3026a1c4c3284ed04", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "79e68b594a7432e3026a1c4c3284ed04", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "79e68b594a7432e3026a1c4c3284ed04", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "79e68b594a7432e3026a1c4c3284ed04", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 801.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1083, "tokens_salida": 138, "tokens_razonamiento": 128, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "79e68b594a7432e3026a1c4c3284ed04", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 6.0, "error": null}
+{"traza": "79e68b594a7432e3026a1c4c3284ed04", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 831.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1394, "tokens_salida": 171, "tokens_razonamiento": 80, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "79e68b594a7432e3026a1c4c3284ed04", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "79e68b594a7432e3026a1c4c3284ed04", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 829.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1620, "tokens_salida": 157, "tokens_razonamiento": 17, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "79e68b594a7432e3026a1c4c3284ed04", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "79e68b594a7432e3026a1c4c3284ed04", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "6cc4f2f9f62f7e4b2bc193865aba0b5d", "span": "corrida", "nombre": "corrida", "duracion_ms": 3462.0, "error": null, "prompt_version": "v2"}
+{"traza": "6cc4f2f9f62f7e4b2bc193865aba0b5d", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "6cc4f2f9f62f7e4b2bc193865aba0b5d", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "6cc4f2f9f62f7e4b2bc193865aba0b5d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 469.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1080, "tokens_salida": 52, "tokens_razonamiento": 42, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "6cc4f2f9f62f7e4b2bc193865aba0b5d", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "6cc4f2f9f62f7e4b2bc193865aba0b5d", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 3.0, "error": null}
+{"traza": "6cc4f2f9f62f7e4b2bc193865aba0b5d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1625.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1391, "tokens_salida": 377, "tokens_razonamiento": 236, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "6cc4f2f9f62f7e4b2bc193865aba0b5d", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 8.0, "error": null}
+{"traza": "6cc4f2f9f62f7e4b2bc193865aba0b5d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1349.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1801, "tokens_salida": 300, "tokens_razonamiento": 38, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "6cc4f2f9f62f7e4b2bc193865aba0b5d", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "6cc4f2f9f62f7e4b2bc193865aba0b5d", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "corrida", "nombre": "corrida", "duracion_ms": 3131.0, "error": null, "prompt_version": "v2"}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 492.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1071, "tokens_salida": 65, "tokens_razonamiento": 55, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 3.0, "error": null}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 703.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1382, "tokens_salida": 137, "tokens_razonamiento": 109, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1095.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1513, "tokens_salida": 232, "tokens_razonamiento": 170, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 818.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1678, "tokens_salida": 139, "tokens_razonamiento": 0, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "135c03905a23011b7b115de253e17a05", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "f5caad1d59badeddacecab1c2ce683c4", "span": "corrida", "nombre": "corrida", "duracion_ms": 1976.0, "error": null, "prompt_version": "v2"}
+{"traza": "f5caad1d59badeddacecab1c2ce683c4", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "f5caad1d59badeddacecab1c2ce683c4", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "f5caad1d59badeddacecab1c2ce683c4", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "f5caad1d59badeddacecab1c2ce683c4", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 492.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1076, "tokens_salida": 66, "tokens_razonamiento": 56, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "f5caad1d59badeddacecab1c2ce683c4", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "f5caad1d59badeddacecab1c2ce683c4", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 630.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1387, "tokens_salida": 121, "tokens_razonamiento": 55, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "f5caad1d59badeddacecab1c2ce683c4", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 4.0, "error": null}
+{"traza": "f5caad1d59badeddacecab1c2ce683c4", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 837.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1556, "tokens_salida": 158, "tokens_razonamiento": 21, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "f5caad1d59badeddacecab1c2ce683c4", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "f5caad1d59badeddacecab1c2ce683c4", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "corrida", "nombre": "corrida", "duracion_ms": 3880.0, "error": null, "prompt_version": "v2"}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 670.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1083, "tokens_salida": 87, "tokens_razonamiento": 77, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 890.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1394, "tokens_salida": 172, "tokens_razonamiento": 99, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 875.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1796, "tokens_salida": 173, "tokens_razonamiento": 20, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 9.0, "error": null}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1412.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2530, "tokens_salida": 310, "tokens_razonamiento": 80, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "0f8a903990b2bd4e4f9c66d9a849f759", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "b00d3b661e19814dd67e3b840f903041", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "b00d3b661e19814dd67e3b840f903041", "span": "corrida", "nombre": "corrida", "duracion_ms": 3395.0, "error": null, "prompt_version": "v2"}
+{"traza": "b00d3b661e19814dd67e3b840f903041", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "b00d3b661e19814dd67e3b840f903041", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "b00d3b661e19814dd67e3b840f903041", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 618.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1074, "tokens_salida": 89, "tokens_razonamiento": 79, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "b00d3b661e19814dd67e3b840f903041", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "b00d3b661e19814dd67e3b840f903041", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1665.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1385, "tokens_salida": 357, "tokens_razonamiento": 232, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "b00d3b661e19814dd67e3b840f903041", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "b00d3b661e19814dd67e3b840f903041", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1091.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1636, "tokens_salida": 221, "tokens_razonamiento": 39, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "b00d3b661e19814dd67e3b840f903041", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "b00d3b661e19814dd67e3b840f903041", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "corrida", "nombre": "corrida", "duracion_ms": 2875.0, "error": null, "prompt_version": "v2"}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 690.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1078, "tokens_salida": 78, "tokens_razonamiento": 68, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 941.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1389, "tokens_salida": 189, "tokens_razonamiento": 118, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 310.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1789, "tokens_salida": 23, "tokens_razonamiento": 0, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "herramienta", "nombre": "estadisticas", "duracion_ms": 4.0, "error": null}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 906.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1947, "tokens_salida": 174, "tokens_razonamiento": 28, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "dbe0ae8c506e2f3076ca073f6aca1f4b", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 3.0, "error": null}
+{"traza": "c9b6e1cead27f5b50be821140f2e11ec", "span": "corrida", "nombre": "corrida", "duracion_ms": 3611.0, "error": null, "prompt_version": "v2"}
+{"traza": "c9b6e1cead27f5b50be821140f2e11ec", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "c9b6e1cead27f5b50be821140f2e11ec", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 2.0, "error": null}
+{"traza": "c9b6e1cead27f5b50be821140f2e11ec", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "c9b6e1cead27f5b50be821140f2e11ec", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 557.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1088, "tokens_salida": 75, "tokens_razonamiento": 65, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "c9b6e1cead27f5b50be821140f2e11ec", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "c9b6e1cead27f5b50be821140f2e11ec", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 844.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1399, "tokens_salida": 155, "tokens_razonamiento": 53, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "c9b6e1cead27f5b50be821140f2e11ec", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "c9b6e1cead27f5b50be821140f2e11ec", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 2187.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1621, "tokens_salida": 546, "tokens_razonamiento": 367, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "c9b6e1cead27f5b50be821140f2e11ec", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "c9b6e1cead27f5b50be821140f2e11ec", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "corrida", "nombre": "corrida", "duracion_ms": 2873.0, "error": null, "prompt_version": "v2"}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 534.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1072, "tokens_salida": 67, "tokens_razonamiento": 57, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1028.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1383, "tokens_salida": 211, "tokens_razonamiento": 136, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 40.0, "error": null}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 413.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1545, "tokens_salida": 55, "tokens_razonamiento": 27, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 839.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1658, "tokens_salida": 155, "tokens_razonamiento": 27, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "31224d08616519ca9b04a4ed2056308d", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "corrida", "nombre": "corrida", "duracion_ms": 2473.0, "error": null, "prompt_version": "v2"}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 549.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1072, "tokens_salida": 74, "tokens_razonamiento": 64, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 555.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1383, "tokens_salida": 97, "tokens_razonamiento": 24, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 6.0, "error": null}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 289.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2474, "tokens_salida": 24, "tokens_razonamiento": 0, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "herramienta", "nombre": "estadisticas", "duracion_ms": 3.0, "error": null}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1056.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2628, "tokens_salida": 210, "tokens_razonamiento": 44, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "51d9946b005a17107c20583a45e857e2", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "corrida", "nombre": "corrida", "duracion_ms": 2859.0, "error": null, "prompt_version": "v2"}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 541.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1088, "tokens_salida": 75, "tokens_razonamiento": 65, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 3.0, "error": null}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 712.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1399, "tokens_salida": 141, "tokens_razonamiento": 53, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 352.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1642, "tokens_salida": 34, "tokens_razonamiento": 0, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "herramienta", "nombre": "grafico", "duracion_ms": 123.0, "error": null}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1113.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1734, "tokens_salida": 240, "tokens_razonamiento": 27, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "7514654c91e6ba773b92b1463c8f16be", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "4b3f96d510943aafbfb2a970b09a61bc", "span": "corrida", "nombre": "corrida", "duracion_ms": 2197.0, "error": null, "prompt_version": "v2"}
+{"traza": "4b3f96d510943aafbfb2a970b09a61bc", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "4b3f96d510943aafbfb2a970b09a61bc", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 555.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1076, "tokens_salida": 70, "tokens_razonamiento": 60, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "4b3f96d510943aafbfb2a970b09a61bc", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "4b3f96d510943aafbfb2a970b09a61bc", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "4b3f96d510943aafbfb2a970b09a61bc", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 2.0, "error": null}
+{"traza": "4b3f96d510943aafbfb2a970b09a61bc", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 813.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1387, "tokens_salida": 165, "tokens_razonamiento": 50, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "4b3f96d510943aafbfb2a970b09a61bc", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 7.0, "error": null}
+{"traza": "4b3f96d510943aafbfb2a970b09a61bc", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 815.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1605, "tokens_salida": 138, "tokens_razonamiento": 34, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "4b3f96d510943aafbfb2a970b09a61bc", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "4b3f96d510943aafbfb2a970b09a61bc", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "83df3377f9a14c143ea2a92e41eee71a", "span": "corrida", "nombre": "corrida", "duracion_ms": 2079.0, "error": null, "prompt_version": "v2"}
+{"traza": "83df3377f9a14c143ea2a92e41eee71a", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "83df3377f9a14c143ea2a92e41eee71a", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "83df3377f9a14c143ea2a92e41eee71a", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "83df3377f9a14c143ea2a92e41eee71a", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 457.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1074, "tokens_salida": 51, "tokens_razonamiento": 41, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "83df3377f9a14c143ea2a92e41eee71a", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "83df3377f9a14c143ea2a92e41eee71a", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 801.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1385, "tokens_salida": 132, "tokens_razonamiento": 39, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "83df3377f9a14c143ea2a92e41eee71a", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 9.0, "error": null}
+{"traza": "83df3377f9a14c143ea2a92e41eee71a", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 800.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1661, "tokens_salida": 154, "tokens_razonamiento": 33, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "83df3377f9a14c143ea2a92e41eee71a", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "83df3377f9a14c143ea2a92e41eee71a", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "52655bda992c093b51bbffbfaa663cda", "span": "corrida", "nombre": "corrida", "duracion_ms": 2391.0, "error": null, "prompt_version": "v2"}
+{"traza": "52655bda992c093b51bbffbfaa663cda", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "52655bda992c093b51bbffbfaa663cda", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "52655bda992c093b51bbffbfaa663cda", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "52655bda992c093b51bbffbfaa663cda", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 537.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1071, "tokens_salida": 47, "tokens_razonamiento": 37, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "52655bda992c093b51bbffbfaa663cda", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "52655bda992c093b51bbffbfaa663cda", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 821.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1382, "tokens_salida": 149, "tokens_razonamiento": 56, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "52655bda992c093b51bbffbfaa663cda", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 8.0, "error": null}
+{"traza": "52655bda992c093b51bbffbfaa663cda", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 1014.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1630, "tokens_salida": 209, "tokens_razonamiento": 51, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "52655bda992c093b51bbffbfaa663cda", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "52655bda992c093b51bbffbfaa663cda", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "corrida", "nombre": "corrida", "duracion_ms": 2090.0, "error": null, "prompt_version": "v2"}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 492.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1069, "tokens_salida": 56, "tokens_razonamiento": 46, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 4.0, "error": null}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 563.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1380, "tokens_salida": 97, "tokens_razonamiento": 42, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 9.0, "error": null}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 299.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2347, "tokens_salida": 23, "tokens_razonamiento": 0, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "herramienta", "nombre": "estadisticas", "duracion_ms": 5.0, "error": null}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 709.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2501, "tokens_salida": 130, "tokens_razonamiento": 0, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "1b06f79937c5e1dbcdd9d428e2c71b9c", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "b3e23113f08f861cf7402c24c7f0f5db", "span": "corrida", "nombre": "corrida", "duracion_ms": 1736.0, "error": null, "prompt_version": "v2"}
+{"traza": "b3e23113f08f861cf7402c24c7f0f5db", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "b3e23113f08f861cf7402c24c7f0f5db", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "b3e23113f08f861cf7402c24c7f0f5db", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 443.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1069, "tokens_salida": 50, "tokens_razonamiento": 40, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "b3e23113f08f861cf7402c24c7f0f5db", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "b3e23113f08f861cf7402c24c7f0f5db", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 5.0, "error": null}
+{"traza": "b3e23113f08f861cf7402c24c7f0f5db", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 554.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1380, "tokens_salida": 98, "tokens_razonamiento": 36, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "b3e23113f08f861cf7402c24c7f0f5db", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 4.0, "error": null}
+{"traza": "b3e23113f08f861cf7402c24c7f0f5db", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 724.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1545, "tokens_salida": 137, "tokens_razonamiento": 30, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "b3e23113f08f861cf7402c24c7f0f5db", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "b3e23113f08f861cf7402c24c7f0f5db", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "2d1460d1fcc759d83469761155bdfe8d", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "2d1460d1fcc759d83469761155bdfe8d", "span": "corrida", "nombre": "corrida", "duracion_ms": 1797.0, "error": null, "prompt_version": "v2"}
+{"traza": "2d1460d1fcc759d83469761155bdfe8d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 438.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1067, "tokens_salida": 48, "tokens_razonamiento": 38, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "2d1460d1fcc759d83469761155bdfe8d", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "2d1460d1fcc759d83469761155bdfe8d", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "2d1460d1fcc759d83469761155bdfe8d", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 3.0, "error": null}
+{"traza": "2d1460d1fcc759d83469761155bdfe8d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 648.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1378, "tokens_salida": 99, "tokens_razonamiento": 69, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "2d1460d1fcc759d83469761155bdfe8d", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 8.0, "error": null}
+{"traza": "2d1460d1fcc759d83469761155bdfe8d", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 694.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1552, "tokens_salida": 126, "tokens_razonamiento": 28, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "2d1460d1fcc759d83469761155bdfe8d", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 1.0, "error": null}
+{"traza": "2d1460d1fcc759d83469761155bdfe8d", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "692a5ea7382215a9f4976a0173d903c4", "span": "guardrail", "nombre": "longitud_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "692a5ea7382215a9f4976a0173d903c4", "span": "corrida", "nombre": "corrida", "duracion_ms": 1304.0, "error": null, "prompt_version": "v2"}
+{"traza": "692a5ea7382215a9f4976a0173d903c4", "span": "guardrail", "nombre": "inyeccion_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "692a5ea7382215a9f4976a0173d903c4", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 460.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1064, "tokens_salida": 51, "tokens_razonamiento": 41, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "692a5ea7382215a9f4976a0173d903c4", "span": "guardrail", "nombre": "pii_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "692a5ea7382215a9f4976a0173d903c4", "span": "herramienta", "nombre": "describir_esquema", "duracion_ms": 3.0, "error": null}
+{"traza": "692a5ea7382215a9f4976a0173d903c4", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 405.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1375, "tokens_salida": 49, "tokens_razonamiento": 21, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "692a5ea7382215a9f4976a0173d903c4", "span": "herramienta", "nombre": "consultar_sql", "duracion_ms": 5.0, "error": null}
+{"traza": "692a5ea7382215a9f4976a0173d903c4", "span": "llm", "nombre": "zai-org/GLM-5.3-Flash", "duracion_ms": 425.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1488, "tokens_salida": 48, "tokens_razonamiento": 0, "prompt": "agente-sql-sistema", "prompt_version_ligada": 2}
+{"traza": "692a5ea7382215a9f4976a0173d903c4", "span": "guardrail", "nombre": "claves_salida", "duracion_ms": 0.0, "error": null}
+{"traza": "692a5ea7382215a9f4976a0173d903c4", "span": "guardrail", "nombre": "pii_salida", "duracion_ms": 1.0, "error": null}

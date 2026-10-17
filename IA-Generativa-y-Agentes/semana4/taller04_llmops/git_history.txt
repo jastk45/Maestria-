@@ -1,0 +1,10 @@
+012751f 2026-10-16 22:54:04 -0500 Corrida v2, spans exportados, calibraciones, tablas e informe final (PDF)
+95d0b0f 2026-10-16 22:52:47 -0500 etiquetas.csv: 20 etiquetas a mano de Jaime Astudillo, escritas en la hoja ciega antes de calibrar
+1aa3737 2026-10-16 21:49:57 -0500 Prompt v2: regla contra los supuestos silenciosos (a partir de N13 en la base y N7, N12, N13 en la repetición)
+1142ae8 2026-10-16 21:49:57 -0500 Corrida base (v1, juez gemma3:27b) y repetición de la v1 sin juez: resultados crudos y logs
+40c7822 2026-10-16 21:16:45 -0500 Herramientas de evidencia: verificación de las correcciones, calibración, hoja de etiquetas, tablas, latencia de guardrails
+29185d6 2026-10-16 21:03:46 -0500 CL1: clave de prueba con la convención EJEMPLO-NO-ES-UNA-CLAVE; verificar_correcciones.py
+d76d85e 2026-10-16 20:58:04 -0500 Datos personales de prueba ficticios en PI1 y J10; ver_traza.py y buscar_pii.py
+b6ee006 2026-10-16 20:55:06 -0500 Taller 4: agente instrumentado con Langfuse, guardrails G1-G4, golden set de 81 casos, banco de 34 ataques y Parte 0
+3d277ec 2026-10-16 20:42:12 -0500 Agente del Taller 3 (opción A) y su golden set de 52 preguntas, sin cambios
+6642296 2026-10-16 20:35:35 -0500 Material del Taller 04 tal como se repartió

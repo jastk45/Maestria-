@@ -1,0 +1,19 @@
+====================================================================================================
+M29 · traza 1b906f59324998aa67a188ccb645ab37 · corrida 27298 ms · status completed · prompt_version v1
+  pregunta (enmascarada): ¿Cuántos meses de soporte se vendieron en 2025?
+  [guardrail] longitud_entrada → ok · 0 ms
+  [guardrail] inyeccion_entrada → ok · 1 ms
+  [llm] zai-org/GLM-5.3-Flash · 1526 ms · 977→97 tokens · prompt agente-sql-sistema v1
+      pidió: describir_esquema({})
+  [guardrail] pii_entrada → ok · 0 ms
+  [herramienta] describir_esquema({}) · 4 ms · 1015 caracteres
+      recibió: {"tablas": {"productos": {"columnas": ["producto_id INTEGER", "nombre TEXT", "categoria TEXT", "precio_lista REAL"], "filas": 13}, "clientes": {"columnas": ["cliente_id INTEGER", "nombre TEXT", "region TEXT", "segmento TEXT", "fecha_alta TEXT"], "filas": 320}, "ventas": {"columnas": ["venta_id INTEGER", "fecha TEXT", "cliente_id INTEGER", "producto_id INTEGER", "cantidad INTEGER", "precio_unitario REAL", "descuento REAL"], "filas": 6000}}, "relaciones": ["ventas.cliente_id -> clientes.cliente_id …[515 caracteres más]
+  [llm] zai-org/GLM-5.3-Flash · 16562 ms · 1288→737 tokens · prompt agente-sql-sistema v1
+      pidió: consultar_sql({"consulta": "SELECT p.categoria, SUM(v.cantidad) AS unidades, COUNT(*) AS num_ventas FROM ventas v JOIN productos p ON v.producto_id = p.producto_id WHERE p.categoria = 'soporte' AND v.fecha >= '2025-01-01' AND v.fecha <= '2025-12-31' GROUP BY p.categoria"})
+  [herramienta] consultar_sql({"consulta": "SELECT p.categoria, SUM(v.cantidad) AS unidades, COUNT(*) AS num_ventas FROM ventas v JOIN productos p ON v.producto_id = p.producto_id WHERE p.categoria = 'soporte' AND v.fecha >= '2025-01-01' AND v.fecha <= '2025-12-31' GROUP BY p.categoria"}) · 8 ms · 297 caracteres
+      recibió: {"resultado_id": "r1", "columnas": ["categoria", "unidades", "num_ventas"], "total_filas": 1, "filas": [{"categoria": "soporte", "unidades": 6201, "num_ventas": 1092}], "vista_truncada": false, "nota": "Ves 1 de 1 filas. Para medias, medianas o dispersión usa estadisticas con resultado_id='r1'."}
+  [llm] zai-org/GLM-5.3-Flash · 9189 ms · 1482→585 tokens · prompt agente-sql-sistema v1
+      dijo: No puedo responder con los datos disponibles. La base registra la columna `cantidad` como un número genérico de unidades, pero no existe ninguna columna ni campo que indique la unidad de medida (p. ej., que una unidad de soporte equivalga a un mes), por lo que el concepto "meses de soporte" no está registrado. Lo más cercano que sí puedo decirte: en 2025 se vendieron **6.201 unidades** de productos de la categoría "s …[173 caracteres más]
+  [guardrail] claves_salida → ok · 1 ms
+  [guardrail] pii_salida → ok · 1 ms
+  respuesta final: No puedo responder con los datos disponibles. La base registra la columna `cantidad` como un número genérico de unidades, pero no existe ninguna columna ni campo que indique la unidad de medida (p. ej., que una unidad de soporte equivalga a un mes), por lo que el concepto "meses de soporte" no está registrado. Lo más cercano que sí puedo decirte: en 2025 se vendieron **6.201 unidades** de productos de la categoría "soporte", en 1.092 ventas. Si en tu negocio cada unidad de soporte corresponde a un mes, esa sería la cifra; pero eso es una suposición externa, no algo que la base confirme.

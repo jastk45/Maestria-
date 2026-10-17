@@ -1,0 +1,6 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+langfuse/.langfuse/
+Lab-03-Agentes/data/

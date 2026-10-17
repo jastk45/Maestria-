@@ -49,3 +49,8 @@ uv run pytest -q
 | Trabajo | Carpeta |
 |---|---|
 | Taller 03 — Agente analítico con herramientas: baseline medible, frenos y extensión MCP | `semana3/taller03_agentes/` |
+
+### Semana 4
+| Trabajo | Carpeta |
+|---|---|
+| Taller 04 — Evaluar, observar y proteger el agente: Langfuse, golden set de 81 casos, juez calibrado y guardrails | `semana4/taller04_llmops/` |

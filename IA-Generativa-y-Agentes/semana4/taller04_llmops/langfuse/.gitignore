@@ -1,0 +1,5 @@
+.env
+.langfuse/
+__pycache__/
+spans*.jsonl
+.venv/

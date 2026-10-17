@@ -1,0 +1,11 @@
+# Taller 4 (Jaime Astudillo): resultados*.csv, guardrails*.csv y spans*.jsonl SÍ se versionan:
+# son los archivos crudos que pide la entrega. Lo que no se versiona:
+.env
+__pycache__/
+trazas_locales/
+graficos/
+reports/traces.jsonl
+reports/answers.json
+reports/evaluation_report.json
+juez_solver*.csv
+ragas_resultados*.csv

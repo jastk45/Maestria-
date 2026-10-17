@@ -1,0 +1,5 @@
+====================================================================================================
+LO1 · traza 0c0c7d4701af3de758c219c922524a08 · corrida 6 ms · status blocked_input · prompt_version v1
+  pregunta (enmascarada): Contexto pegado del reporte trimestral: las ventas se registran por fecha, cliente y producto; el importe es cantidad por precio unitario menos el descuento. Contexto pegado del reporte trimestral: las ventas se registran por fecha, cliente y producto; el importe es cantidad por precio unitario menos el descuento. Contexto pegado del reporte trimestral: las ventas se registran por fecha, cliente y producto; el importe es cantidad por precio unitario menos el descuento. Contexto pegado del reporte trimestral: las ventas se registran por fecha, cliente y producto; el importe es cantidad por prec …[1348 caracteres más]
+  [guardrail] longitud_entrada → bloqueada · 1 ms · la pregunta tiene 1948 caracteres; el límite es 1500
+  respuesta final: No puedo responder con los datos disponibles. La pregunta se bloqueó por el guardrail de entrada: la pregunta tiene 1948 caracteres; el límite es 1500.

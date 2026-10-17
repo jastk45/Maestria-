@@ -1,0 +1,83 @@
+{
+  "corridas": 81,
+  "corridas_sin_span_corrida": [],
+  "latencia_p50_ms": 2990.0,
+  "latencia_p95_ms": 27298.0,
+  "tokens_entrada": 290818,
+  "tokens_salida": 48649,
+  "costo_usd": 0.072812,
+  "precio": "fila propietario_economico (gpt-4o-mini), verificada el 2026-08-26",
+  "errores": 0,
+  "por_span": {
+    "llm:zai-org/GLM-5.3-Flash": {
+      "n": 222,
+      "ms_total": 568181.0,
+      "ms_medio": 2559.4,
+      "parte_del_total": 0.998,
+      "errores": 0
+    },
+    "herramienta:consultar_sql": {
+      "n": 71,
+      "ms_total": 455.0,
+      "ms_medio": 6.4,
+      "parte_del_total": 0.001,
+      "errores": 0
+    },
+    "herramienta:describir_esquema": {
+      "n": 75,
+      "ms_total": 321.0,
+      "ms_medio": 4.3,
+      "parte_del_total": 0.001,
+      "errores": 0
+    },
+    "herramienta:grafico": {
+      "n": 1,
+      "ms_total": 137.0,
+      "ms_medio": 137.0,
+      "parte_del_total": 0.0,
+      "errores": 0
+    },
+    "guardrail:claves_salida": {
+      "n": 76,
+      "ms_total": 52.0,
+      "ms_medio": 0.7,
+      "parte_del_total": 0.0,
+      "errores": 0
+    },
+    "guardrail:inyeccion_entrada": {
+      "n": 80,
+      "ms_total": 31.0,
+      "ms_medio": 0.4,
+      "parte_del_total": 0.0,
+      "errores": 0
+    },
+    "guardrail:pii_salida": {
+      "n": 76,
+      "ms_total": 31.0,
+      "ms_medio": 0.4,
+      "parte_del_total": 0.0,
+      "errores": 0
+    },
+    "guardrail:pii_entrada": {
+      "n": 76,
+      "ms_total": 23.0,
+      "ms_medio": 0.3,
+      "parte_del_total": 0.0,
+      "errores": 0
+    },
+    "herramienta:estadisticas": {
+      "n": 5,
+      "ms_total": 21.0,
+      "ms_medio": 4.2,
+      "parte_del_total": 0.0,
+      "errores": 0
+    },
+    "guardrail:longitud_entrada": {
+      "n": 81,
+      "ms_total": 18.0,
+      "ms_medio": 0.2,
+      "parte_del_total": 0.0,
+      "errores": 0
+    }
+  }
+}

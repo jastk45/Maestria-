@@ -1,0 +1,83 @@
+{
+  "corridas": 81,
+  "corridas_sin_span_corrida": [],
+  "latencia_p50_ms": 2736.0,
+  "latencia_p95_ms": 7775.0,
+  "tokens_entrada": 327063,
+  "tokens_salida": 48319,
+  "costo_usd": 0.078051,
+  "precio": "fila propietario_economico (gpt-4o-mini), verificada el 2026-08-26",
+  "errores": 0,
+  "por_span": {
+    "llm:zai-org/GLM-5.3-Flash": {
+      "n": 228,
+      "ms_total": 259435.0,
+      "ms_medio": 1137.9,
+      "parte_del_total": 0.995,
+      "errores": 0
+    },
+    "herramienta:consultar_sql": {
+      "n": 73,
+      "ms_total": 541.0,
+      "ms_medio": 7.4,
+      "parte_del_total": 0.002,
+      "errores": 0
+    },
+    "herramienta:describir_esquema": {
+      "n": 74,
+      "ms_total": 309.0,
+      "ms_medio": 4.2,
+      "parte_del_total": 0.001,
+      "errores": 0
+    },
+    "herramienta:grafico": {
+      "n": 2,
+      "ms_total": 256.0,
+      "ms_medio": 128.0,
+      "parte_del_total": 0.001,
+      "errores": 0
+    },
+    "guardrail:claves_salida": {
+      "n": 76,
+      "ms_total": 48.0,
+      "ms_medio": 0.6,
+      "parte_del_total": 0.0,
+      "errores": 0
+    },
+    "guardrail:pii_salida": {
+      "n": 75,
+      "ms_total": 45.0,
+      "ms_medio": 0.6,
+      "parte_del_total": 0.0,
+      "errores": 0
+    },
+    "guardrail:inyeccion_entrada": {
+      "n": 80,
+      "ms_total": 34.0,
+      "ms_medio": 0.4,
+      "parte_del_total": 0.0,
+      "errores": 0
+    },
+    "guardrail:longitud_entrada": {
+      "n": 81,
+      "ms_total": 30.0,
+      "ms_medio": 0.4,
+      "parte_del_total": 0.0,
+      "errores": 0
+    },
+    "herramienta:estadisticas": {
+      "n": 6,
+      "ms_total": 26.0,
+      "ms_medio": 4.3,
+      "parte_del_total": 0.0,
+      "errores": 0
+    },
+    "guardrail:pii_entrada": {
+      "n": 76,
+      "ms_total": 23.0,
+      "ms_medio": 0.3,
+      "parte_del_total": 0.0,
+      "errores": 0
+    }
+  }
+}

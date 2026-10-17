@@ -1,0 +1,11 @@
+19 valores pii a buscar (de los campos `pii` del golden set)
+Langfuse, sesión jaime-astudillo-t4-base: 844 registros · valores pii del golden set encontrados: ninguno · detectores: ninguno
+Langfuse, sesión jaime-astudillo-t4-v2: 852 registros · valores pii del golden set encontrados: ninguno · detectores: ninguno
+Langfuse, todo de 2026-10-17T02:04:00Z a 2026-10-17T03:35:27Z: 2713 registros · valores pii del golden set encontrados: ninguno · detectores: ninguno
+spans_base.jsonl: 844 registros · valores pii del golden set encontrados: ninguno · detectores: ninguno
+spans_v2.jsonl: 852 registros · valores pii del golden set encontrados: ninguno · detectores: ninguno
+resultados_base.csv: 81 registros · valores pii del golden set encontrados: ninguno · detectores: ninguno
+resultados_v2.csv: 81 registros · valores pii del golden set encontrados: ninguno · detectores: ninguno
+resultados_v1_repeticion.csv: 81 registros · valores pii del golden set encontrados: ninguno · detectores: ninguno
+trazas_locales: 41374 registros · valores pii del golden set encontrados: ninguno · detectores: ninguno
+✓ nada que se parezca a un dato personal o a una clave
