@@ -1,3 +1,4 @@
+44ecab9 2026-10-16 22:59:59 -0500 J15: token JWT de prueba con la convención EJEMPLO-NO-ES-UN-TOKEN (mismos resultados del banco)
 012751f 2026-10-16 22:54:04 -0500 Corrida v2, spans exportados, calibraciones, tablas e informe final (PDF)
 95d0b0f 2026-10-16 22:52:47 -0500 etiquetas.csv: 20 etiquetas a mano de Jaime Astudillo, escritas en la hoja ciega antes de calibrar
 1aa3737 2026-10-16 21:49:57 -0500 Prompt v2: regla contra los supuestos silenciosos (a partir de N13 en la base y N7, N12, N13 en la repetición)

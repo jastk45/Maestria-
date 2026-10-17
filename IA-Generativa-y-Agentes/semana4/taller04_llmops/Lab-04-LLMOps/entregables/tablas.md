@@ -1,4 +1,4 @@
-# Tablas del informe (generadas por tablas.py el 2026-10-16 22:53)
+# Tablas del informe (generadas por tablas.py el 2026-10-16 22:59)
 
 ## Parte 1 — observabilidad (spans exportados de Langfuse)
 

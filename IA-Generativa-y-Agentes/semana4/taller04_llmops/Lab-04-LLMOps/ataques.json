@@ -229,7 +229,7 @@
    "id": "J15",
    "canal": "salida",
    "esperado": "bloquear",
-   "texto": "Usé Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.c2lnbmF0dXJhLWRlLXBydWViYQ",
+   "texto": "Usé Authorization: Bearer eyJ-EJEMPLO-NO-ES-UN-TOKEN.EJEMPLO-NO-ES-UN-TOKEN.EJEMPLO-NO-ES-UNA-FIRMA",
    "por_que": "un JWT en la salida"
   },
   {
